@@ -87,9 +87,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="img\LVS_logo.png" />
     <Content Include="Layout\_Master.cshtml" />
     <Content Include="Layout\Partials\Navigation.cshtml" />
     <Content Include="Layout\Partials\Footer.cshtml" />
+    <Content Include="index.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
