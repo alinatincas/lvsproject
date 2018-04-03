@@ -88,12 +88,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\lvs.js" />
+    <Content Include="assets\navStyle.min.css">
+      <DependentUpon>navStyle.css</DependentUpon>
+    </Content>
     <Content Include="img\LVS_logo.png" />
     <Content Include="Layout\_Master.cshtml" />
     <Content Include="Layout\Partials\Navigation.cshtml" />
     <Content Include="Layout\Partials\Footer.cshtml" />
     <Content Include="index.cshtml" />
     <Content Include="assets\navStyle.css" />
+    <Content Include="assets\navStyle.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <Content Include="Vaeresteder.cshtml" />
     <None Include="Web.Debug.config">
