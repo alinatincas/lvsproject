@@ -87,12 +87,15 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\lvs.js" />
     <Content Include="img\LVS_logo.png" />
     <Content Include="Layout\_Master.cshtml" />
     <Content Include="Layout\Partials\Navigation.cshtml" />
     <Content Include="Layout\Partials\Footer.cshtml" />
     <Content Include="index.cshtml" />
+    <Content Include="assets\navStyle.css" />
     <None Include="packages.config" />
+    <Content Include="Vaeresteder.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
