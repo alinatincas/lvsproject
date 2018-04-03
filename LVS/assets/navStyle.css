@@ -2,26 +2,27 @@
   padding-left: 4px;
   padding-right: 4px; }
 
-/* unvisited link */
 a:link, a:visited {
   color: black; }
 
-/* mouse over link */
-a:hover {
-  color: #68B022; }
-
-/* selected link */
-a:active {
+a:hover a:active {
   color: #68B022; }
 
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-size: 18px; }
 
 li {
   display: inline; }
 
 .active_nav a {
   border-bottom: 2px solid #68B022; }
+
+header {
+  margin-top: 10px; }
+
+.LVSlogo {
+  height: 80px; }
 
