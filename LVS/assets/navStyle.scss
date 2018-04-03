@@ -4,7 +4,7 @@
 }
 
 a:link, a:visited {
-    color: black;
+    color: #3B3B3B;
 }
 
 a:hover a:active {
@@ -16,6 +16,7 @@ ul {
     margin: 0;
     padding: 0;
     font-size: 18px;
+    font-family: Raleway;
 }
 
 li {
@@ -23,6 +24,7 @@ li {
 }
 
 .active_nav a {
+    font-weight: bold;
     border-bottom: 2px solid #68B022;
 }
 
@@ -33,4 +35,25 @@ header{
 }
 .LVSlogo{
     height: 80px;
+}
+.footerDiv {
+    background-color: #f8f8f8;
+}
+.footer-h {
+    font-size: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 8px;
+    border-bottom: 4px solid #68B022;
+    font-family: Oswald;
+}
+.contact-info, .shortcuts, .social-media {
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 16px;
+    font-family: Raleway;
+    color: #3B3B3B;
+}
+.social-icons {
+    height: 51px;
 }
