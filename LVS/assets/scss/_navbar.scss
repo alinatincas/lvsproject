@@ -1,19 +1,23 @@
 a {
     padding-left: 4px;
     padding-right: 4px;
-    &:link, &:visited {
+    &:link,
+    &:visited {
         color: $darkGray;
     }
-    &:hover, &:active {
+    &:hover,
+    &:active {
         color: $lightGreen;
     }
 }
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     font-size: 18px;
     font-family: $raleway;
+    display: $darkGray;
 }
 
 li {
