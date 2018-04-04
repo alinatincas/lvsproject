@@ -27,6 +27,11 @@ use
 
 to automatic compile and watch the files changed
 
+use
+
+    gulp minify
+
+to minify the CSS
   
   
 everytime you start working on the project, then you need to use the 2 gulp commands again.
