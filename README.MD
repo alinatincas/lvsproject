@@ -12,8 +12,6 @@ run
     1: npm install gulp -g
     2: npm install
 
-  
-
 in the project
 use
 
@@ -39,4 +37,8 @@ everytime you start working on the project, then you need to use the 2 gulp comm
     gulp scss
     gulp watch
 
-  npm install is only used once, unless other packages is added.
+npm install is only used once, unless other packages is added.
+
+When working in the HTML folder, just use
+
+    gulp

@@ -6,6 +6,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
+var browserSync = require('browser-sync').create();
 
 // compaile scss
 gulp.task('scss', function () {
@@ -50,12 +51,19 @@ gulp.task('minify', ['scss'], function () {
         .pipe(gulp.dest('html/assets/css'))
 });
 
+gulp.task('browserSync', function () {
+    browserSync.init({
+        server: {
+            baseDir: 'html'
+        },
+    })
+})
 
 gulp.task('watch', function () {
     gulp.watch('html/assets/scss/**/*.scss', ['scss']);
 
 })
 
-gulp.task('default', ['minify', 'watch'], function () {
+gulp.task('default', ['minify', 'watch', 'browserSync'], function () {
     //console.log('Running Gulp ...');
 })
