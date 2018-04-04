@@ -89,9 +89,11 @@
   <ItemGroup>
     <Content Include="assets\css\style.css" />
     <Content Include="assets\js\lvs.js" />
+    <Content Include="img\house.png" />
     <Content Include="img\LookingGlass.png" />
     <Content Include="img\LVS_logo.png" />
     <Content Include="img\map.png" />
+    <Content Include="img\pointer.png" />
     <Content Include="Layout\_Master.cshtml" />
     <Content Include="Layout\Partials\Navigation.cshtml" />
     <Content Include="Layout\Partials\Footer.cshtml" />
