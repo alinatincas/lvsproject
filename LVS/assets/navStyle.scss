@@ -4,7 +4,7 @@
 }
 
 a:link, a:visited {
-    color: #3B3B3B;
+    color: #707070;
 }
 
 a:hover a:active {
@@ -48,7 +48,7 @@ header {
     opacity: 1;
 }
 
-.footerDiv {
+.backgroundcolordiv {
     background-color: #f8f8f8;
 }
 
@@ -74,4 +74,9 @@ header {
 }
 .bottomline {
     border-bottom: 10px solid #00833D;
+}
+.map{
+    width: 75%;
+    padding-bottom: 30px;
+    padding-top: 30px;
 }
