@@ -1,0 +1,28 @@
+{
+  "name": "lvsproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jespertastesen/lvsproject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jespertastesen/lvsproject/issues"
+  },
+  "homepage": "https://github.com/Jespertastesen/lvsproject#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.2.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.5"
+  },
+  "dependencies": {
+    "gulp-cssnano": "^2.1.3"
+  }
+}
