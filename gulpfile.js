@@ -13,6 +13,7 @@ var rename = require('gulp-rename');
 gulp.task('scss', function () {
     return gulp.src('LVS/assets/scss/style.scss')
         .pipe(sass())
+        .pipe(autoprefixer('last 2 version', 'safari 6', 'ie 10', 'ie 11'))
         .pipe(gulp.dest('LVS/assets/css'))
 });
 
@@ -27,7 +28,6 @@ gulp.task('minify', function () {
 
 gulp.task('watch', function () {
     gulp.watch('LVS/assets/scss/**/*.scss', ['scss']);
-    gulp.watch('LVS/assets/scss/**/*.scss', ['minify']);
     // Other watchers
 })
 
