@@ -1,10 +1,5 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var useref = require('gulp-useref');
-var cssnano = require('gulp-cssnano');
-var uglify = require('gulp-uglify');
-var gulpIf = require('gulp-if');
-var gulp = require('gulp');
 var concat = require('gulp-concat');
 var minifyCSS = require('gulp-minify-css');
 var autoprefixer = require('gulp-autoprefixer');
@@ -12,37 +7,55 @@ var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
 
+// compaile scss
 gulp.task('scss', function () {
+    // load files
     return gulp.src('LVS/assets/scss/style.scss')
+        // compailer    
         .pipe(sass())
+        // autoprefixing
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
+        // saving
         .pipe(gulp.dest('LVS/assets/css'))
-    gulp.task('minify');
+
 });
 
+
+// runs scss task before it can minify
 gulp.task('minify', ['scss'], function () {
+
+    //load and delete the old style.min.css
     del(['LVS/assets/css/*.css', '!LVS/assets/css/style.css']).then(paths => {
-        console.log('Deleted files and folders:\n', paths.join('\n'));
+        //console.log('Deleted files and folders:\n', paths.join('\n'));
     });
+    // load file
     gulp.src('LVS/assets/css/**/style.css')
+        //minify    
         .pipe(minifyCSS())
+        //auto prefix
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
+        // start create map
         .pipe(sourcemaps.init())
+        //init change name
         .pipe(concat('style.min.css'))
+        //create map
         .pipe(sourcemaps.write())
+        //create save file
         .pipe(gulp.dest('LVS/assets/css'))
 });
 
 
 gulp.task('watch', function () {
     gulp.watch('LVS/assets/scss/**/*.scss', ['scss']);
-    // Other watchers
+
 })
 
-gulp.task('default', ['scss', 'minify', 'watch']);
+gulp.task('default', ['minify', 'watch'], function () {
+    //console.log('Running Gulp ...');
+})
