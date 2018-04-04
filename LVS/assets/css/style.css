@@ -1,13 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald|Raleway");
 a {
   padding-left: 4px;
   padding-right: 4px; }
-  a:link {
+  a:link, a:visited {
     color: #3B3B3B; }
-  a:visited {
-    color: #3B3B3B; }
-  a:hover {
-    color: #68B022; }
-  a:active {
+  a:hover, a:active {
     color: #68B022; }
 
 ul {
@@ -15,7 +12,7 @@ ul {
   margin: 0;
   padding: 0;
   font-size: 18px;
-  font-family: Raleway; }
+  font-family: "Raleway", sans-serif; }
 
 li {
   display: inline; }
@@ -30,8 +27,15 @@ header {
 .LVSlogo {
   height: 80px; }
 
-.footerDiv {
-  background-color: #f8f8f8; }
+.searchLogo {
+  height: 18px;
+  opacity: 0.5; }
+
+.searchLogo:hover {
+  opacity: 1; }
+
+.bottomline {
+  border-bottom: 10px solid #00833D; }
 
 .footer-h {
   font-size: 40px;
@@ -39,16 +43,23 @@ header {
   padding-right: 10px;
   padding-bottom: 8px;
   border-bottom: 4px solid #68B022;
-  font-family: Oswald; }
+  font-family: "Oswald", sans-serif; }
 
-.contact-info,
-.shortcuts,
-.social-media {
+.contact-info, .shortcuts, .social-media {
   padding-top: 10px;
   padding-left: 10px;
   font-size: 16px;
-  font-family: Raleway;
+  font-family: "Raleway", sans-serif;
   color: #3B3B3B; }
 
 .social-icons {
-  height: 51px; }
+  height: 51px;
+  padding-right: 10px; }
+
+.backgroundcolordiv {
+  background-color: #f8f8f8; }
+
+.map {
+  width: 65%;
+  padding-bottom: 30px;
+  padding-top: 30px; }

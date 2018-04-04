@@ -87,10 +87,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\lvs.js" />
-    <Content Include="assets\navStyle.min.css">
-      <DependentUpon>navStyle.css</DependentUpon>
-    </Content>
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\js\lvs.js" />
     <Content Include="img\LookingGlass.png" />
     <Content Include="img\LVS_logo.png" />
     <Content Include="img\map.png" />
@@ -98,8 +96,12 @@
     <Content Include="Layout\Partials\Navigation.cshtml" />
     <Content Include="Layout\Partials\Footer.cshtml" />
     <Content Include="index.cshtml" />
-    <Content Include="assets\navStyle.css" />
-    <Content Include="assets\navStyle.scss" />
+    <Content Include="assets\scss\style.scss" />
+    <Content Include="assets\scss\_frontpage.scss" />
+    <Content Include="assets\scss\_navbar.scss" />
+    <Content Include="assets\scss\_variables.scss" />
+    <Content Include="assets\scss\_footer.scss" />
+    <Content Include="assets\scss\_vaersteder.scss" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
