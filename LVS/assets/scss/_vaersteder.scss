@@ -7,3 +7,48 @@
     padding-bottom: 30px;
     padding-top: 30px;
 }
+.headlineVaested {
+    font-family: $oswald;
+    font-size: 28px;
+    font-weight: 600;
+}
+.vaestedDesc{
+    font-family: $raleway;
+    font-size: 25px;
+}
+.smallVaestedBox, .vaestedBox {
+    border: 1px solid $offWhite;
+    box-shadow: 2px 4px 6px $greyShadow;
+}
+.smallVaestedBox {
+    padding: 5px;
+}
+.infoContainer{
+    padding-bottom: 15px;   
+}
+.vaestedBox {
+    background-color: $offWhite;
+    padding: 0px;
+}
+p {
+    font-family: $raleway;
+    font-size: 16px;
+    display: inline
+}
+.vaestedName {
+    font-family: $oswald;
+    font-size: 18px;
+    font-weight: 600;
+    display: inline
+}
+.vaestedImage {
+    width: 100%;
+}
+.vaestedTxt{
+    padding: 20px; 
+}
+.pointer{
+    width: 37px;
+    height: 54px;
+    display: inline-block;
+}

@@ -1,6 +1,7 @@
-﻿[
+[
   {
     "outputFile": "assets/navStyle.css",
-    "inputFile": "assets/navStyle.scss"
+    "inputFile": "assets/navStyle.scss",
+    "sourceMap": false
   }
 ]
