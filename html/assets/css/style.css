@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald|Raleway");
+a {
+  padding-left: 4px;
+  padding-right: 4px; }
+  a:link, a:visited {
+    color: #3B3B3B; }
+  a:hover, a:active {
+    color: #68B022; }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+  display: #3B3B3B; }
+
+li {
+  display: inline; }
+
+.active_nav a {
+  font-weight: bold;
+  border-bottom: 2px solid #68B022; }
+
+header {
+  margin-top: 10px; }
+
+.LVSlogo {
+  height: 80px; }
+
+.searchLogo {
+  height: 18px;
+  opacity: 0.5; }
+
+.searchLogo:hover {
+  opacity: 1; }
+
+.bottomline {
+  border-bottom: 10px solid #00833D; }
+
+.footer-h {
+  font-size: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 8px;
+  border-bottom: 4px solid #68B022;
+  font-family: "Oswald", sans-serif; }
+
+.contact-info, .shortcuts, .social-media {
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  color: #3B3B3B; }
+
+.social-icons {
+  height: 51px;
+  padding-right: 10px; }
+
+.backgroundcolordiv {
+  background-color: #f8f8f8; }
+
+.map {
+  width: 65%;
+  padding-bottom: 30px;
+  padding-top: 30px; }

@@ -10,7 +10,7 @@ var del = require('del');
 // compaile scss
 gulp.task('scss', function () {
     // load files
-    return gulp.src('LVS/assets/scss/style.scss')
+    return gulp.src('html/assets/scss/style.scss')
         // compailer    
         .pipe(sass())
         // autoprefixing
@@ -28,11 +28,11 @@ gulp.task('scss', function () {
 gulp.task('minify', ['scss'], function () {
 
     //load and delete the old style.min.css
-    del(['LVS/assets/css/*.css', '!LVS/assets/css/style.css']).then(paths => {
+    del(['html/assets/css/*.css', '!html/assets/css/style.css']).then(paths => {
         //console.log('Deleted files and folders:\n', paths.join('\n'));
     });
     // load file
-    gulp.src('LVS/assets/css/**/style.css')
+    gulp.src('html/assets/css/**/style.css')
         //minify    
         .pipe(minifyCSS())
         //auto prefix
@@ -47,12 +47,12 @@ gulp.task('minify', ['scss'], function () {
         //create map
         .pipe(sourcemaps.write())
         //create save file
-        .pipe(gulp.dest('LVS/assets/css'))
+        .pipe(gulp.dest('html/assets/css'))
 });
 
 
 gulp.task('watch', function () {
-    gulp.watch('LVS/assets/scss/**/*.scss', ['scss']);
+    gulp.watch('html/assets/scss/**/*.scss', ['scss']);
 
 })
 
