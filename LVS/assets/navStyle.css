@@ -28,6 +28,13 @@ header {
 .LVSlogo {
   height: 80px; }
 
+.searchLogo {
+  height: 18px;
+  opacity: 0.5; }
+
+.searchLogo:hover {
+  opacity: 1; }
+
 .footerDiv {
   background-color: #f8f8f8; }
 
@@ -47,5 +54,9 @@ header {
   color: #3B3B3B; }
 
 .social-icons {
-  height: 51px; }
+  height: 51px;
+  padding-right: 10px; }
+
+.bottomline {
+  border-bottom: 10px solid #00833D; }
 

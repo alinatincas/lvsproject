@@ -91,6 +91,7 @@
     <Content Include="assets\navStyle.min.css">
       <DependentUpon>navStyle.css</DependentUpon>
     </Content>
+    <Content Include="img\LookingGlass.png" />
     <Content Include="img\LVS_logo.png" />
     <Content Include="Layout\_Master.cshtml" />
     <Content Include="Layout\Partials\Navigation.cshtml" />

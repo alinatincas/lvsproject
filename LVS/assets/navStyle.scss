@@ -30,15 +30,28 @@ li {
 
 .navLink {
 }
-header{
+
+header {
     margin-top: 10px;
 }
-.LVSlogo{
+
+.LVSlogo {
     height: 80px;
 }
+
+.searchLogo {
+    height: 18px;
+    opacity: 0.5;
+}
+
+.searchLogo:hover {
+    opacity: 1;
+}
+
 .footerDiv {
     background-color: #f8f8f8;
 }
+
 .footer-h {
     font-size: 40px;
     padding-left: 10px;
@@ -47,6 +60,7 @@ header{
     border-bottom: 4px solid #68B022;
     font-family: Oswald;
 }
+
 .contact-info, .shortcuts, .social-media {
     padding-top: 10px;
     padding-left: 10px;
@@ -56,4 +70,8 @@ header{
 }
 .social-icons {
     height: 51px;
+    padding-right: 10px;
+}
+.bottomline {
+    border-bottom: 10px solid #00833D;
 }
