@@ -20,7 +20,7 @@ gulp.task('scss', function () {
             cascade: false
         }))
         // saving
-        .pipe(gulp.dest('LVS/assets/css'))
+        .pipe(gulp.dest('html/assets/css'))
 
 });
 

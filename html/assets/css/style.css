@@ -64,3 +64,49 @@ header {
   width: 65%;
   padding-bottom: 30px;
   padding-top: 30px; }
+
+.headlineVaested {
+  font-family: "Oswald", sans-serif;
+  font-size: 28px;
+  font-weight: 600; }
+
+.vaestedDesc {
+  font-family: "Raleway", sans-serif;
+  font-size: 25px; }
+
+.smallVaestedBox, .vaestedBox {
+  border: 1px solid #f8f8f8;
+  -webkit-box-shadow: 2px 4px 6px #888888;
+  box-shadow: 2px 4px 6px #888888; }
+
+.smallVaestedBox {
+  padding: 5px; }
+
+.infoContainer {
+  padding-bottom: 15px; }
+
+.vaestedBox {
+  background-color: #f8f8f8;
+  padding: 0px; }
+
+p {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  display: inline; }
+
+.vaestedName {
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  display: inline; }
+
+.vaestedImage {
+  width: 100%; }
+
+.vaestedTxt {
+  padding: 20px; }
+
+.pointer {
+  width: 37px;
+  height: 54px;
+  display: inline-block; }
