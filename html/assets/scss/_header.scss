@@ -1,0 +1,49 @@
+.hero-image {
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('');
+    background-color: orange;
+    height: 300px;
+    &-tall {
+        height: 550px;
+    }
+}
+
+.action-bar {
+    position: absolute;
+    background: white;
+    border-radius: 2px;
+    box-shadow: 2px 2px 4px $greyShadow;
+    width: 70%;
+    height: 160px;
+    bottom: -80px;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 15px 0 15px 0
+}
+
+.action-bar-container {
+    height: 130px;
+    span {
+        text-align: center;
+    }
+}
+
+.action-bar-large-text {
+    width: 100%;
+    font-size: 2em;
+    text-align: center;
+    font-family: $oswald;
+}
+
+.action-bar-small-text {
+    width: 100%;
+    text-align: center;
+}
+
+.border-rl {
+    border-right: 1px solid $actionbarBorder;
+    border-left: 1px solid $actionbarBorder;
+}
