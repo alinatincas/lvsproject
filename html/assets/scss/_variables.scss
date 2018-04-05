@@ -1,10 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald|Raleway');
-
 $darkGray: #3B3B3B;
 $lightGreen: #68B022;
 $darkGreen: #00833D;
 $offWhite: #f8f8f8;
-$greyShadow: #888888;
-$oswald: 'Oswald', sans-serif;
-$raleway: 'Raleway', sans-serif;
-
+$greyShadow: transparentize( #000000,
+0.85);
+$actionbarBorder: transparentize(#848484,
+0.85);
+$oswald: 'Oswald',
+sans-serif;
+$raleway: 'Raleway',
+sans-serif;
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+    >.col,
+    >[class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
