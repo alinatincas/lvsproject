@@ -1,0 +1,43 @@
+/* Section image-web-grid */
+
+.bg-hjem-grid-1 {
+    background-image: url("../img/bg-hjem-grid-1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-hjem-grid-2 {
+    background-image: url("../img/bg-hjem-grid-2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-hjem-grid-3 {
+    background-image: url("../img/bg-hjem-grid-3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-hjem-grid-4 {
+    background-image: url("../img/bg-hjem-grid-4.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.image-web-grid {
+    h1,
+    h3,
+    p {
+        color: $offWhite;
+    }
+    h1,
+    h3 {
+        font-family: $oswald;
+    }
+}
+
+/*End style for section image-web-grid*/

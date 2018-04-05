@@ -10,9 +10,12 @@
 .logo {
   height: 60px; }
 
+<<<<<<< HEAD
+=======
 .nav-link {
   padding: 0.6em 0.8em !important; }
 
+>>>>>>> 511e0712161d14699af87902657641b5b8ea68da
 .nav-item.active .nav-link {
   font-weight: 500;
   position: relative; }
@@ -30,6 +33,15 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+<<<<<<< HEAD
+  background-image: url("");
+  background-color: orange;
+  height: 300px; }
+  .hero-image-tall {
+    height: 550px; }
+
+.action-bar {
+=======
   background-image: url("../img/frontpage-header.png");
   background-color: orange;
   height: 450px; }
@@ -53,12 +65,17 @@
 
 .action-bar {
   z-index: 30;
+>>>>>>> 511e0712161d14699af87902657641b5b8ea68da
   position: absolute;
   background: white;
   border-radius: 2px;
   -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+<<<<<<< HEAD
+  width: 70%;
+=======
   width: 960px;
+>>>>>>> 511e0712161d14699af87902657641b5b8ea68da
   height: 160px;
   bottom: -80px;
   left: 50%;
@@ -85,6 +102,44 @@
   border-right: 1px solid rgba(132, 132, 132, 0.15);
   border-left: 1px solid rgba(132, 132, 132, 0.15); }
 
+<<<<<<< HEAD
+/* Section image-web-grid */
+.bg-hjem-grid-1 {
+  background-image: url("../img/bg-hjem-grid-1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.bg-hjem-grid-2 {
+  background-image: url("../img/bg-hjem-grid-2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.bg-hjem-grid-3 {
+  background-image: url("../img/bg-hjem-grid-3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.bg-hjem-grid-4 {
+  background-image: url("../img/bg-hjem-grid-4.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.image-web-grid h1,
+.image-web-grid h3,
+.image-web-grid p {
+  color: #f8f8f8; }
+
+.image-web-grid h1,
+.image-web-grid h3 {
+  font-family: "Oswald", sans-serif; }
+
+/*End style for section image-web-grid*/
+=======
+>>>>>>> 511e0712161d14699af87902657641b5b8ea68da
 .bottomline {
   border-bottom: 10px solid #00833D; }
 
