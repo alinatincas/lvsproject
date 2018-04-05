@@ -1,0 +1,39 @@
+/* Forms */   
+.form-container{
+    justify-content: center;
+    width: 50%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    
+    
+}
+.form-field {
+    padding-bottom:15px;
+}
+
+.form-control {    
+display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    display: inline;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px #f5f5;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    border-radius: .25rem;
+    
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-control:focus {
+    background-color: #fff;
+    border-color: #68b022;
+    outline: 0;
+    box-shadow: none;
+}
