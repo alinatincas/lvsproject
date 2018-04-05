@@ -42,7 +42,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 10; }
+    z-index: 10;
+    }
+    .hero-image .overlay-yellow {
+      background: rgba(255, 255, 0, 0.3) !important; }
 
 .header-title-white {
   color: #ffffff;
@@ -90,13 +93,16 @@
   background-image: url("../img/bg-hjem-grid-1.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  width: 100%;
+  }
 
 .bg-hjem-grid-2 {
   background-image: url("../img/bg-hjem-grid-2.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  width: 100%; }
 
 .bg-hjem-grid-3 {
   background-image: url("../img/bg-hjem-grid-3.jpg");

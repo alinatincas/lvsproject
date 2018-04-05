@@ -17,6 +17,9 @@
         right: 0;
         bottom: 0;
         z-index: 10;
+        &-yellow {
+            background: transparentize(yellow, 0.7) !important;
+        }
     }
 }
 
