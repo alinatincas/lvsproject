@@ -41,7 +41,7 @@ function squareboxes() {
 
         $(this).css({
 
-            'height': cwWidth + 'px'
+            'height': cwWidthHalf + 'px'
 
         });
     });
