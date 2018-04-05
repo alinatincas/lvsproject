@@ -21,6 +21,9 @@ gulp.task('scss', function () {
         }))
         // saving
         .pipe(gulp.dest('html/assets/css'))
+        .pipe(browserSync.reload({
+            stream: true
+        }))
 
 });
 
@@ -59,8 +62,10 @@ gulp.task('browserSync', function () {
     })
 })
 
-gulp.task('watch', function () {
+gulp.task('watch', ['browserSync', 'scss'], function () {
     gulp.watch('html/assets/scss/**/*.scss', ['scss']);
+    gulp.watch('html/*.html', browserSync.reload);
+    gulp.watch('html/assets/js/**/*.js', browserSync.reload);
 
 })
 
