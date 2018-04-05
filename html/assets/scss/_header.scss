@@ -3,20 +3,39 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('');
+    background-image: url('../img/frontpage-header.png');
     background-color: orange;
-    height: 300px;
+    height: 450px;
     &-tall {
-        height: 550px;
+        height: 700px;
+    }
+    .overlay {
+        background: transparentize(#000000, 0.7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        color:
     }
 }
 
+.header-title-white {
+    color: #ffffff;
+    font-family: $oswald;
+    z-index: 30;
+    font-size: 3.2em;
+    text-align: center;
+}
+
 .action-bar {
+    z-index: 30;
     position: absolute;
     background: white;
     border-radius: 2px;
     box-shadow: 2px 2px 4px $greyShadow;
-    width: 70%;
+    width: 960px;
     height: 160px;
     bottom: -80px;
     left: 50%;

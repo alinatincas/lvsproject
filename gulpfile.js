@@ -14,11 +14,13 @@ gulp.task('scss', function () {
     return gulp.src('html/assets/scss/style.scss')
         // compailer    
         .pipe(sass())
+        .on('error', onError)
         // autoprefixing
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
+
         // saving
         .pipe(gulp.dest('html/assets/css'))
         .pipe(browserSync.reload({
@@ -72,3 +74,8 @@ gulp.task('watch', ['browserSync', 'scss'], function () {
 gulp.task('default', ['minify', 'watch', 'browserSync'], function () {
     //console.log('Running Gulp ...');
 })
+
+function onError(err) {
+    console.log(err);
+    this.emit('end');
+}
