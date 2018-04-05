@@ -28,4 +28,16 @@
     background-size: cover;
 }
 
+.image-web-grid {
+    h1,
+    h3,
+    p {
+        color: $offWhite;
+    }
+    h1,
+    h3 {
+        font-family: $oswald;
+    }
+}
+
 /*End style for section image-web-grid*/
