@@ -238,6 +238,9 @@ p {
   height: 54px;
   display: inline-block; }
 
+.input_vaersted {
+  width: 100%; }
+
 /* AKTIVITITER */
 .header-padding-bottom {
   padding-bottom: 10rem;
