@@ -7,38 +7,19 @@ it comes with nodejs
 
 https://nodejs.org/en/
 
-run
+install gulp and install packeges using following:
 
     1: npm install gulp -g
     2: npm install
 
-in the project
-use
-
-    gulp scss
-
-to compile the scss files
-
-use
+Run gulp using
 
     gulp watch
+    
 
-to automatic compile and watch the files changed
+Other commands: 
 
-use
-
-    gulp minify
-
-to minify the CSS
-  
-  
-everytime you start working on the project, then you need to use the 2 gulp commands again.
-
-    gulp scss
-    gulp watch
-
-npm install is only used once, unless other packages is added.
-
-When working in the HTML folder, just use
-
-    gulp
+    gulp scss       // compile
+    gulp minify     // compile and minify in a new file
+    gulp watch      // watches for changes, starts webserver, reloads and compailes.
+    gulp            // the default command.
