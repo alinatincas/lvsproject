@@ -347,6 +347,15 @@ p.spacing {
   -webkit-box-shadow: none;
   box-shadow: none; }
 
+.submit-button {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  color: #fff;
+  background-color: #68B022;
+  border: none;
+  border-radius: none;
+  padding: 5px 40px 5px 40px; }
+
 @media only screen and (max-width: 992px) {
   .action-bar {
     width: 90%; } }
