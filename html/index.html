@@ -8,6 +8,7 @@
     <title>LVS</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
     <link rel="stylesheet" href="assets/fontawesome/fontawesome-all.min.css">
     <link href="assets/css/style.css" rel="stylesheet">
 
@@ -21,12 +22,29 @@
     </header>
 
     <main>
+        <!-- Start section sponsors carousel -->
+        <section class="container sponsors-carousel">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="carousel-sponsors my-auto">
+                        <div><img class="mx-auto" src="assets/img/sponsors/Screen Shot 2018-03-06 at 19.19.20.png" alt=""></div>
+                        <div><img class="my-auto" src="assets/img/sponsors/kmd logo svg svg-01.png" alt=""></div>
+                        <div><img class="mx-auto" src="assets/img/sponsors/kronsprins.png" alt=""></div>
+                        <div><img src="assets/img/sponsors/kommunelogo2014sort.png" alt=""></div>
+                        <div><img src="assets/img/sponsors/Odense_Boldklub.svg.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- End section sponsors carousel -->
+
         <!-- Start section image-web-grid -->
-        <section class="container image-web-grid">
-            <div class="row no-gutters">
-                <div class="col-md-6 bg-hjem-grid-1">
-                    <h1 class="hjem-grid-h1 text-uppercase">SUMMERCAMP
-                        <br> 2018</h1>
+        <section class="container image-web-grid">            
+            <div class="row">
+                <div class="card col-md-6 bg-hjem-grid-1 overlay">
+                    <h1 class="hjem-grid-h1 text-uppercase">SUMMERCAMP <br> 2018</h1>
+
                     <p class="hjem-grid-p">er lige på trapperne, skal du være med i årets fedeste event?</p>
                 </div>
                 <div class="col-md-6">
@@ -51,6 +69,7 @@
             </div>
         </section>
         <!-- End section image-web-grid -->
+
         <section class="container image-web-grid">
             <div class="row">
                 <div class="col-md-6 bg-hjem-grid-1">
@@ -67,7 +86,6 @@
             </div>
         </section>
 
-
     </main>
 
     <footer id="footer" class="container-fluid p-0 backgroundcolordiv">
@@ -80,7 +98,17 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="assets/js/lvs.js"></script>
+
+    <script type="text/javascript">
+        $('.carousel-sponsors').slick({
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            });        
+    </script>
 </body>
 
 </html>

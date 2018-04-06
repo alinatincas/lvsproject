@@ -1,11 +1,25 @@
+.sponsors-carousel {
+    margin-top: 150px;
+    color: $darkGray;
+}
+
+.carousel-sponsors {
+    img {
+        width: 100px;
+    }
+}
+
 /* Section image-web-grid */
 
 .bg-hjem-grid-1 {
     background-image: url("../img/bg-hjem-grid-1.jpg");
+    display: block;
+    object-fit: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+    padding: 10px;
 }
 
 .bg-hjem-grid-2 {
