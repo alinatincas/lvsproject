@@ -1,17 +1,18 @@
 /* AKTIVITITER */
 
-.header-padding-bottom {       // adds padding under the action bar and above the footer
-    padding-bottom: 10rem;      // to used on the <main> tag
+.header-padding-bottom {
+    // adds padding under the action bar and above the footer
+    padding-bottom: 10rem; // to used on the <main> tag
     background-color: #f5f5f5;
 }
 
-.shadow-1{
+.shadow-1 {
     -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
-.bg-grey{
+.bg-grey {
     background-color: #F5F5F5;
 }
 
@@ -20,15 +21,15 @@ h3 {
     padding-bottom: 2rem;
 }
 
-p{
-    line-height: 1.5rem;    
+p {
+    line-height: 1.5rem;
 }
 
-p.spacing{
+p.spacing {
     margin: 20px 0;
 }
 
-.btn-readmore{
+.btn-readmore {
     position: relative;
     background-color: $lightGreen;
     font-size: 1em;
@@ -36,14 +37,14 @@ p.spacing{
     text-decoration: none;
     text-transform: uppercase;
     cursor: pointer;
-
     border: 0;
     outline: 0;
     transition: box-shadow 0.2s;
 }
 
 /*  CALENDAR STYLES */
-.container-calender{
+
+.container-calender {
     padding-bottom: 3rem;
 }
 
@@ -51,14 +52,13 @@ p.spacing{
     background-color: $darkGreen !important;
 }
 
-.h5 {
+.h5 {
     font-family: 'Raleway', sans-serif;
 }
 
 .day {
     background-color: white;
 }
-
 
 @media (max-width:575px) {
     .display-4 {
@@ -76,6 +76,6 @@ p.spacing{
 
 @media (min-width: 576px) {
     .day {
-        height: 14.2857vw;
+        height: 9vw;
     }
 }
