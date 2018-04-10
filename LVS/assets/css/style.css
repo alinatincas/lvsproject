@@ -74,3 +74,7 @@ p {
   width: 37px;
   height: 54px;
   display: inline-block; }
+#mapid {
+    height: 600px;
+    width: 55%;
+}
