@@ -1,11 +1,7 @@
+@import 'variables';
 
+@import 'layout/z-module-layout';
 @import 'pages/z-module-pages';
 
-@import 'variables';
-@import 'navbar';
-@import 'header';
-@import 'footer';
-
-@import 'forms';
 @import '_mediaquery-max-768px';
 @import '_mediaquery-max-992px';
