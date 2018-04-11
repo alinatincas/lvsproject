@@ -12,13 +12,13 @@ Convention:
 
 > Modules have the _*z-*_ prefix to be pinned at the bottom of the file explorer in the IDE (faster visual recognition)
 
-*base
-*components
-*helpers
-*layout
-*pages
-*themes
-*vendors
+* base
+* components
+* helpers
+* layout
+* pages
+* themes
+* vendors
 
 ---
 
