@@ -1,12 +1,11 @@
+
+@import 'pages/z-module-pages';
+
 @import 'variables';
 @import 'navbar';
 @import 'header';
 @import 'footer';
-@import 'frontpage';
-@import 'vaersteder';
-@import 'aktiviteter';
-@import 'publikationer';
-@import 'nyheder';
+
 @import 'forms';
 @import '_mediaquery-max-768px';
 @import '_mediaquery-max-992px';
