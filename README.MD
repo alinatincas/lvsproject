@@ -1,6 +1,28 @@
-## LVS Project
+## PROJECT: LANDSFORENING AF VÆRESTEDER
+### 
 
+---
 
+## SASS STRUCTURE
+
+### Modules
+
+Convention:
+> All modules are stored into their corresponding folders, while only the _*_z-module*_ files are called into styles.scss
+
+> Modules have the _*z-*_ prefix to be pinned at the bottom of the file explorer in the IDE (faster visual recognition)
+
+*base
+*components
+*helpers
+*layout
+*pages
+*themes
+*vendors
+
+---
+
+## SETUP
 Install NPM 
 
 it comes with nodejs
