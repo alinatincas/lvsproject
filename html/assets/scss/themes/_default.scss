@@ -1,0 +1,40 @@
+/*---DEFAULT THEME---*/
+
+/*---FONTS---*/
+@import url('https://fonts.googleapis.com/css?family=Oswald|Raleway');
+$font-headline: Oswald, sans-serif;
+$font-subheadline: Oswald, sans-serif;
+$font-body: Raleway, sans-serif;
+
+/*---COLORS---*/
+$color-primary: #000000;
+$color-primary-light: #000000;
+$color-primary-dark: #000000;
+$color-secondary: #000000;
+$color-secondary-light: #000000;
+$color-secondary-dark: #000000;
+
+/*---GENERAL SHADOWS---*/
+$greyShadow: transparentize( #000000,
+0.85);
+/*---SECTION SPACING---*/
+.clearance {
+    margin-top: 100px !important;
+    margin-bottom: 100px !important;
+}
+/*---For the grey background section---*/
+.clearance-grey {                          
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+}
+
+.img-grayscale {
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+    filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+    /* Disable grayscale on hover */
+    &:hover {
+    -webkit-filter: grayscale(0);
+    filter: none;
+    }
+}
