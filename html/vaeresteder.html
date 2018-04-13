@@ -1,48 +1,44 @@
+<!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>LVS</title>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-              crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-        <link href="assets/css/style.css" rel="stylesheet">
-
-
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Landsforening af Væresteder - HJEM</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="assets/fontawesome/fontawesome-all.min.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
 
     <body>
         <header id="header">
-            <div data-includeHTML="partials/_header.html"></div>
-
+            <div data-includeHTML="partials/_header-vaeresteder.html"></div>
         </header>
-        <main> 	
-            <div class="backgroundcolordiv container-fluid">
-                <br><br><br><br>
-                <center><h2 class="headlineVaested">Væresteder fundet</h2></center>
+
+        <main>
+            <!-- START RESULTS MAPS -->
+            <section class="container-fluid bg-light clearance-grey">
                 <div class="row">
-                    <div class="col d-flex align-items-center justify-content-center">
-                        <img class="map" src="assets/img/map.png" alt="LVSmap" />
+                    <div class="col-md-12 d-flex justify-content-center">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1218554.7023152593!2d10.405898103599023!3d55.2792606371077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sv%C3%A6resteder!5e0!3m2!1sen!2sdk!4v1523644881930" width="900" height="600" frameborder="0" style="border:0"></iframe>
+                </section>
                     </div>
                 </div>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm text-center">
-                        <br><h2 class="headlineVaested">Læs mere om de enkelte steder her under</h2>
-                        <p class="text-muted vaestedDesc">
-                            Landsforeningen af VæreSteder er paraplyorganisation for mere end 100 af landets væresteder for socialt udsatte mennesker.<br /><br />
-                            Her under finder du de væresteder der er en del af fællesskabet.
-                        </p>
+                    
+            <!-- END RESULTS MAPS -->
+
+            <div class="container">
+                <div class="row clearance">
+                    <div class="col-md-12 text-center">
+                        <h2>Læs mere om de enkelte steder her under</h2>
+                        <p>Landsforeningen af VæreSteder er paraplyorganisation for mere end 100 af landets væresteder for socialt udsatte mennesker.</p><br/>  
+                        <p>Her under finder du de væresteder der er en del af fællesskabet.</p>
                     </div>
-                    <div class="col-sm-1"></div>
                 </div>
-                <br/>
-                <div class="row">
-                    <div class="col-1"></div>
+                <div class="row clearance">
                     <div class="col-5 infoContainer">
                         <div class="smallVaestedBox">
                             <img class="pointer" src="assets/img/pointer.png" alt="pointer" />
@@ -90,7 +86,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-1"></div>
                 </div>
             </div>
             <br>
@@ -162,17 +157,30 @@
                 </div>
             </div>
         </main>
-        <footer id="footer" class="container-fluid p-0 backgroundcolordiv">
+        <footer id="footer" class="container-fluid p-0 bg-light">
             <div data-includeHTML="partials/_footer.html"></div>
         </footer>
-
+        
+        
+        
+        <!-- PAGE INDIVIDUAL SCRIPTS -->
+        <!--  <script type="text/javascript">
+            $('.carousel-sponsors').slick({
+                    slidesToShow: 5,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                });        
+        </script> -->
+    
+        <!-- GENERAL JS SCRIPTS -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
         <script src="assets/js/lvs.js"></script>
-    </body>
-
+</body>
 </html>

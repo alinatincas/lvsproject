@@ -10,13 +10,13 @@
 }
 
 .headlineVaested {
-    font-family: $oswald;
+    font-family: $font-headline;
     font-size: 28px;
     font-weight: 600;
 }
 
 .vaestedDesc {
-    font-family: $raleway;
+    font-family: $font-body;
     font-size: 25px;
 }
 
@@ -40,13 +40,13 @@
 }
 
 p {
-    font-family: $raleway;
+    font-family: $font-body;
     font-size: 1em;
     display: inline
 }
 
 .vaestedName {
-    font-family: $oswald;
+    font-family: $font-headline;
     font-size: 18px;
     font-weight: 600;
     display: inline
