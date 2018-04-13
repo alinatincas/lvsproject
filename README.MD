@@ -1,7 +1,7 @@
 ## PROJECT: LANDSFORENING AF VÆRESTEDER
-### 
+### DEMO
 
----
+LIVE DEMO(http://stef183a.my.eal.dk/projects/wep-lvs-github-clone/index.html)
 
 ## SASS STRUCTURE
 
@@ -19,8 +19,6 @@ Convention:
 * pages
 * themes
 * vendors
-
----
 
 ## SETUP
 Install NPM 
