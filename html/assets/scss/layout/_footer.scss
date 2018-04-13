@@ -1,4 +1,8 @@
-﻿.bottomline {
+﻿.footer {
+    /* background-color: $bg-light; */
+}
+
+.bottomline {
     border-bottom: 10px solid $darkGreen;
 }
 
@@ -8,7 +12,7 @@
     padding-right: 10px;
     padding-bottom: 8px;
     border-bottom: 4px solid $lightGreen;
-    font-family: $oswald;
+    font-family: $font-headline;
 }
 
 .footer-social {
@@ -25,10 +29,10 @@
     padding-top: 10px;
     padding-left: 10px;
     font-size: 1em;
-    font-family: $raleway;
+    font-family: $font-body;
     color: $darkGray;
     a {
-        font-family: $raleway;
+        font-family: $font-body;
         color: $darkGray;
     }
 }
