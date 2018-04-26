@@ -43,3 +43,8 @@ Other commands:
     gulp minify     // compile and minify in a new file
     gulp watch      // watches for changes, starts webserver, reloads and compailes.
     gulp            // the default command.
+
+Compaile bootstrap
+
+    gulp bootstrap  // compailes the bootstrap.css
+    gulp miniboot   // compailes and minifys the bootstrap.min.css
