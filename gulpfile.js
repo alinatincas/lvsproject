@@ -29,12 +29,34 @@ gulp.task('scss', function () {
 
 });
 
+// compaile bootstrap scss
+gulp.task('bootstrap', function () {
+    // load files
+    return gulp.src('html/assets/scss/bootstrap/bootstrap.scss')
+        // compailer    
+        .pipe(sass())
+        .on('error', onError)
+
+        // autoprefixing
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+
+        // saving
+        .pipe(gulp.dest('html/assets/css'))
+        .pipe(browserSync.reload({
+            stream: true
+        }))
+
+});
+
 
 // runs scss task before it can minify
 gulp.task('minify', ['scss'], function () {
 
     //load and delete the old style.min.css
-    del(['html/assets/css/*.css', '!html/assets/css/style.css']).then(paths => {
+    del(['html/assets/css/style.css', '!html/assets/css/style.css']).then(paths => {
         //console.log('Deleted files and folders:\n', paths.join('\n'));
     });
     // load file
@@ -50,6 +72,31 @@ gulp.task('minify', ['scss'], function () {
         .pipe(sourcemaps.init())
         //init change name
         .pipe(concat('style.min.css'))
+        //create map
+        .pipe(sourcemaps.write())
+        //create save file
+        .pipe(gulp.dest('html/assets/css'))
+});
+
+gulp.task('miniboot', ['bootstrap'], function () {
+
+    //load and delete the old style.min.css
+    del(['html/assets/css/bootstrap.css', '!html/assets/css/bootstrap.css']).then(paths => {
+        //console.log('Deleted files and folders:\n', paths.join('\n'));
+    });
+    // load file
+    gulp.src('html/assets/css/**/bootstrap.css')
+        //minify    
+        .pipe(minifyCSS())
+        //auto prefix
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        // start create map
+        .pipe(sourcemaps.init())
+        //init change name
+        .pipe(concat('bootstrap.min.css'))
         //create map
         .pipe(sourcemaps.write())
         //create save file

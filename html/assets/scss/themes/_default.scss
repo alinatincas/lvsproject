@@ -15,8 +15,7 @@ $color-secondary-light: #000000;
 $color-secondary-dark: #000000;
 
 /*---GENERAL SHADOWS---*/
-$shadow-grey: transparentize( #000000,
-0.85);
+$shadow-grey: transparentize( #000000,0.85);
 
 /*---SECTION SPACING---*/
 .clearance {
@@ -59,5 +58,15 @@ $action-bar-border: transparentize(#848484, 0.85);
     &:hover {
     -webkit-filter: grayscale(0);
     filter: none;
+    }
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+    >.col,
+    >[class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
     }
 }
