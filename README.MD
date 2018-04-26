@@ -27,7 +27,7 @@ it comes with nodejs
 
 https://nodejs.org/en/
 
-install gulp and install packeges using following:
+install gulp and install packages using following:
 
     1: npm install gulp -g
     2: npm install
