@@ -1,5 +1,19 @@
 /*---HEADER---*/
+
+/*---LOGO DESCRIPTION---*/
+
+.logo-description {
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: $font-headline;
+    font-size: 0.8rem;  
+    p{
+        line-height: 0.5cm;
+    }
+}
+
 /*---HERO IMAGE---*/
+
 .hero-image {
     position: relative;
     background-position: center center;
@@ -23,7 +37,9 @@
         }
     }
 }
+
 /*---TITLE---*/
+
 .header-title-white {
     color: #ffffff;
     font-family: $font-headline;
