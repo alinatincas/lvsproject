@@ -6,6 +6,10 @@ $font-headline: Oswald, sans-serif;
 $font-subheadline: Oswald, sans-serif;
 $font-body: Raleway, sans-serif;
 
+h1, h2, h3 ,h4, h5, h6 {
+    text-transform: uppercase;
+}
+
 /*---COLORS---*/
 $color-primary: #68B022;
 $color-primary-light: #000000;
@@ -32,7 +36,7 @@ $shadow-grey: transparentize( #000000,0.85);
 }
 
 /*---SECTION SPACING---*/
-/*---For the grey background section---*/
+/*---For the gray background section---*/
 .clearance-grey {                          
     padding-top: 100px !important;
     padding-bottom: 100px !important;
