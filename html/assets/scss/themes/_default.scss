@@ -6,10 +6,16 @@ $font-headline: Oswald, sans-serif;
 $font-subheadline: Oswald, sans-serif;
 $font-body: Raleway, sans-serif;
 
-h1, h2, h3 ,h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
+	/* If padding needed for all headlines, add it here */
 }
-
+h1, h2 {
+    font-family: $font-headline;
+}
+h3, h4, h5, h6 {
+    font-family: $font-subheadline;
+}
 /*---COLORS---*/
 $color-primary: #68B022;
 $color-primary-light: #000000;
