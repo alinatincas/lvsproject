@@ -20,23 +20,8 @@
     font-size: 25px;
 }
 
-.smallVaestedBox,
-.vaestedBox {
-    border: 1px solid $offWhite;
-    box-shadow: 2px 4px 6px $shadow-grey;
-}
-
-.smallVaestedBox {
-    padding: 5px;
-}
-
 .infoContainer {
     padding-bottom: 15px;
-}
-
-.vaestedBox {
-    background-color: $offWhite;
-    padding: 0px;
 }
 
 p {

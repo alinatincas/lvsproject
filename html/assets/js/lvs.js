@@ -9,7 +9,12 @@
     $("div[data-includeHTML]").each(function () {
         $(this).load($(this).attr("data-includeHTML"));
     });
-
+//Below code is used on the search result list, to change active link
+    $('.list-group a').click(function (e) {
+        e.preventDefault()
+        $('.list-group').find('a').removeClass('active').addClass('text-dark');
+        $(this).removeClass('text-dark').addClass('active');
+    });
     // squareboxes();
 });
 
