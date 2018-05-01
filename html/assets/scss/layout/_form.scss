@@ -22,7 +22,7 @@
     color: #495057;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px #f5f5;
+    border: 1px initial #f5f5;
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -43,4 +43,10 @@
     border: none;
     border-radius: none;
     padding: 5px 40px 5px 40px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
