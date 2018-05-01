@@ -52,9 +52,11 @@
     padding: 100px;
 }
 
-.card-img-padding{
-    padding: 20px;;
-} 
+.card-img-padding {
+    padding: 20px;
+    ;
+}
+
 .card {
     .card-body {
         flex-direction: row;
@@ -65,4 +67,13 @@
             font-size: 1rem;
         }
     }
+}
+
+.carousel-indicators li {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: $action-bar-border;
+    margin: 5%;
+    margin-bottom: 100px;
 }
