@@ -48,6 +48,21 @@
     }
 }
 
-.card-body{
-    flex-direction: row;
+.card-member-padding {
+    padding: 100px;
+}
+
+.card-img-padding{
+    padding: 20px;;
+} 
+.card {
+    .card-body {
+        flex-direction: row;
+        .card-quote {
+            font-size: 0.9rem;
+        }
+        .card-text {
+            font-size: 1rem;
+        }
+    }
 }

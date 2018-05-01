@@ -2,7 +2,18 @@
     .action-bar {
         width: 90%;
     }
-    .logo-description{
+    .logo-description {
         display: none;
+    }
+    .hjem-quote {
+        .card {
+            flex-direction: column;
+        }
+    }
+    .card-member-padding {
+        padding: 0;
+    }
+    .card-img-padding{
+        padding: 0;
     }
 }
