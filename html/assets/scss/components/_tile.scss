@@ -6,13 +6,44 @@
     margin: 0 10px 10px 0;
     padding: 0;
     cursor: pointer;
-    background-color: orange;
+    background-color: white;
     box-shadow: inset 0px 0px 1px #FFFFCC;
     width: 275px;
     height: 275px;
     margin: 0 10px 10px 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &:hover {
+        .tile-text {
+            opacity: 1;
+        }
+    }
+    .tile-text-headline {
+        margin: 40px 0 0 20px;
+        color: white !important;
+        z-index: 100;
+        width: 70%;
+        display: block;
+        font-weight: bold;
+    }
+    .tile-text {
+        opacity: 0;
+        margin: 10px 0 0 20px;
+        color: white !important;
+        z-index: 100;
+        transition: all 0.3s;
+        width: 70%;
+        display: block;
+    }
     &.double {
         width: 560px;
+        .tile-text-headline {
+            width: 50% !important;
+        }
+        .tile-text {
+            width: 50% !important;
+        }
     }
     &.half {
         width: 132px;
@@ -24,6 +55,14 @@
     }
     &.double-vertical {
         height: 560px;
+        .tile-text-headline {
+            font-size: 3.5rem !important;
+            width: 50% !important;
+        }
+        .tile-text {
+            font-size: 1.3rem !important;
+            width: 50% !important;
+        }
     }
 }
 
@@ -34,4 +73,24 @@
     padding-left: 0px;
     margin-right: auto;
     margin-left: auto;
+}
+
+.tile-group.half {
+    max-width: 570px;
+    width: 50%;
+}
+
+.overlay {
+    &-green {
+        background: transparentize(#00833D, 0.8) !important;
+    }
+    &-red {
+        background: transparentize(#B92A00, 0.8) !important;
+    }
+    &-blue {
+        background: transparentize(#064F76, 0.8) !important;
+    }
+    &-orange {
+        background: transparentize(#B96500, 0.8) !important;
+    }
 }
