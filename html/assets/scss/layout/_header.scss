@@ -6,8 +6,8 @@
     font-weight: 500;
     color: rgba(0, 0, 0, 0.7);
     font-family: $font-headline;
-    font-size: 0.8rem;  
-    p{
+    font-size: 0.8rem;
+    p {
         line-height: 0.5cm;
     }
 }
@@ -24,17 +24,18 @@
     &-tall {
         height: 600px;
     }
-    .overlay {
-        background: transparentize(#000000, 0.7);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 10;
-        &-yellow {
-            background: transparentize(yellow, 0.7) !important;
-        }
+}
+
+.overlay {
+    background: transparentize(#000000, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    &-yellow {
+        background: transparentize(yellow, 0.7) !important;
     }
 }
 
@@ -46,5 +47,5 @@
     z-index: 30;
     font-size: 3.2em;
     text-align: center;
-	text-transform: uppercase;
+    text-transform: uppercase;
 }

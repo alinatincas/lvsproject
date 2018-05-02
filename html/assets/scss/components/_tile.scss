@@ -1,0 +1,37 @@
+.tile {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    float: left;
+    margin: 0 10px 10px 0;
+    padding: 0;
+    cursor: pointer;
+    background-color: orange;
+    box-shadow: inset 0px 0px 1px #FFFFCC;
+    width: 275px;
+    height: 275px;
+    margin: 0 10px 10px 0;
+    &.double {
+        width: 560px;
+    }
+    &.half {
+        width: 132px;
+        height: 132px;
+    }
+    &.half-double {
+        width: 275px;
+        height: 132px;
+    }
+    &.double-vertical {
+        height: 560px;
+    }
+}
+
+.tile-group.quadro {
+    max-width: 1140px;
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
