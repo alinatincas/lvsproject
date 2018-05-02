@@ -20,34 +20,6 @@
     }
 }
 
-.feature-grid-item {
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 2rem;
-    &-1 {
-        background-image: url("../img/bg-hjem-grid-1.jpg");
-        display: block;
-        object-fit: cover;
-    }
-    &-2 {
-        background-image: url("../img/bg-hjem-grid-2.jpg");
-        display: block;
-        object-fit: cover;
-    }
-    &-3 {
-        background-image: url("../img/bg-hjem-grid-3.jpg");
-        display: block;
-        object-fit: cover;
-    }
-    &-4 {
-        background-image: url("../img/bg-hjem-grid-4.jpeg");
-        display: block;
-        object-fit: cover;
-    }
-}
-
 .card-member-padding {
     padding: 100px;
 }
