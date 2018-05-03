@@ -3,7 +3,14 @@
 /*---FONTS---*/
 @import url("https://fonts.googleapis.com/css?family=Oswald|Raleway");
 h1, h2, h3, h4, h5, h6 {
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  /* If padding needed for all headlines, add it here */ }
+
+h1, h2 {
+  font-family: Oswald, sans-serif; }
+
+h3, h4, h5, h6 {
+  font-family: Oswald, sans-serif; }
 
 /*---COLORS---*/
 /*---GENERAL SHADOWS---*/
@@ -56,6 +63,15 @@ h1, h2, h3, h4, h5, h6 {
 /*---HELPERS MODULE---*/
 /*---LAYOUT MODULE---*/
 /*---HEADER---*/
+/*---LOGO DESCRIPTION---*/
+.logo-description {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: Oswald, sans-serif;
+  font-size: 0.8rem; }
+  .logo-description p {
+    line-height: 0.5cm; }
+
 /*---HERO IMAGE---*/
 .hero-image {
   position: relative;
@@ -66,16 +82,17 @@ h1, h2, h3, h4, h5, h6 {
   height: 420px; }
   .hero-image-tall {
     height: 600px; }
-  .hero-image .overlay {
-    background: rgba(0, 0, 0, 0.3);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10; }
-    .hero-image .overlay-yellow {
-      background: rgba(255, 255, 0, 0.3) !important; }
+
+.overlay {
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10; }
+  .overlay-yellow {
+    background: rgba(255, 255, 0, 0.3) !important; }
 
 /*---TITLE---*/
 .header-title-white {
@@ -83,7 +100,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Oswald, sans-serif;
   z-index: 30;
   font-size: 3.2em;
-  text-align: center; }
+  text-align: center;
+  text-transform: uppercase; }
 
 .logo {
   height: 60px; }
@@ -267,6 +285,88 @@ input[type=number]::-webkit-outer-spin-button {
   color: #68B022;
   border-color: #68B022; }
 
+.tile {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  float: left;
+  margin: 0 10px 10px 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: #ffffff;
+  -webkit-box-shadow: inset 0px 0px 1px #FFFFCC;
+  box-shadow: inset 0px 0px 1px #FFFFCC;
+  width: 275px;
+  height: 275px;
+  margin: 0 10px 10px 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); }
+  .tile:hover .tile-text {
+    opacity: 1; }
+  .tile .tile-text-headline {
+    margin: 40px 0 0 20px;
+    color: #ffffff !important;
+    z-index: 100;
+    width: 70%;
+    display: block;
+    font-weight: bold; }
+  .tile .tile-text {
+    opacity: 0;
+    margin: 10px 0 0 20px;
+    color: #ffffff !important;
+    z-index: 100;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 70%;
+    display: block; }
+  .tile.double {
+    width: 560px; }
+    .tile.double .tile-text-headline {
+      width: 50% !important; }
+    .tile.double .tile-text {
+      width: 50% !important; }
+  .tile.half {
+    width: 132px;
+    height: 132px; }
+  .tile.half-double {
+    width: 275px;
+    height: 132px; }
+  .tile.double-vertical {
+    height: 560px; }
+    .tile.double-vertical .tile-text-headline {
+      font-size: 3.5rem !important;
+      width: 50% !important; }
+    .tile.double-vertical .tile-text {
+      font-size: 1.3rem !important;
+      width: 50% !important; }
+
+.tile-group.quadro {
+  max-width: 1140px;
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto; }
+
+.tile-group.half {
+  max-width: 570px;
+  width: 50%; }
+
+.overlay-green {
+  background: rgba(0, 131, 61, 0.2) !important; }
+
+.overlay-red {
+  background: rgba(185, 42, 0, 0.2) !important; }
+
+.overlay-blue {
+  background: rgba(6, 79, 118, 0.2) !important; }
+
+.overlay-orange {
+  background: rgba(185, 101, 0, 0.2) !important; }
+
 /*---PAGES MODULE---*/
 /*---HJEM---*/
 .carousel-sponsor img {
@@ -282,38 +382,29 @@ input[type=number]::-webkit-outer-spin-button {
 .feature-grid h3 {
   font-family: Oswald, sans-serif; }
 
-.feature-grid-item {
-  width: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 2rem; }
-  .feature-grid-item-1 {
-    background-image: url("../img/bg-hjem-grid-1.jpg");
-    display: block;
-    -o-object-fit: cover;
-    object-fit: cover; }
-  .feature-grid-item-2 {
-    background-image: url("../img/bg-hjem-grid-2.jpg");
-    display: block;
-    -o-object-fit: cover;
-    object-fit: cover; }
-  .feature-grid-item-3 {
-    background-image: url("../img/bg-hjem-grid-3.jpg");
-    display: block;
-    -o-object-fit: cover;
-    object-fit: cover; }
-  .feature-grid-item-4 {
-    background-image: url("../img/bg-hjem-grid-4.jpeg");
-    display: block;
-    -o-object-fit: cover;
-    object-fit: cover; }
+.card-member-padding {
+  padding: 100px; }
 
-.card-body {
+.card-img-padding {
+  padding: 20px; }
+
+.card .card-body {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row; }
+  .card .card-body .card-quote {
+    font-size: 0.9rem; }
+  .card .card-body .card-text {
+    font-size: 1rem; }
+
+.carousel-indicators li {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: rgba(132, 132, 132, 0.15);
+  margin: 5%;
+  margin-bottom: 100px; }
 
 /*---VAERESTEDER---*/
 .backgroundcolordiv {
@@ -333,21 +424,8 @@ input[type=number]::-webkit-outer-spin-button {
   font-family: Raleway, sans-serif;
   font-size: 25px; }
 
-.smallVaestedBox,
-.vaestedBox {
-  border: 1px solid #f8f8f8;
-  -webkit-box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15);
-  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15); }
-
-.smallVaestedBox {
-  padding: 5px; }
-
 .infoContainer {
   padding-bottom: 15px; }
-
-.vaestedBox {
-  background-color: #f8f8f8;
-  padding: 0px; }
 
 p {
   font-family: Raleway, sans-serif;
@@ -405,7 +483,6 @@ p.spacing {
 
 .btn .btn-readmore {
   position: relative;
-  background-color: #000000;
   font-size: 1rem;
   color: white;
   text-decoration: none;
@@ -415,7 +492,8 @@ p.spacing {
   -webkit-transition: -webkit-box-shadow 0.2s;
   transition: -webkit-box-shadow 0.2s;
   transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s; }
+  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+  font-family: Raleway, sans-serif; }
 
 /*---CALENDAR STYLES---*/
 .container-calender {
@@ -471,4 +549,17 @@ p.spacing {
 /*---KONTAKT---*/
 @media only screen and (max-width: 992px) {
   .action-bar {
-    width: 90%; } }
+    width: 90%; }
+  .logo-description {
+    display: none; }
+  .hjem-quote .card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .card-member-padding {
+    padding: 0; }
+  .card-img-padding {
+    padding: 0; }
+  .carousel-indicators li {
+    margin-bottom: 0; } }
