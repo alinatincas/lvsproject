@@ -20,16 +20,27 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>index</summary>
-	[PublishedContentModel("index")]
-	public partial class Index : PublishedContentModel, IHeroimgTallText
+	// Mixin content Type 1068 with alias "heroimgTallText"
+	/// <summary>Heroimg-Tall+text</summary>
+	public partial interface IHeroimgTallText : IPublishedContent
+	{
+		/// <summary>Heroimg</summary>
+		IPublishedContent Heroimg { get; }
+
+		/// <summary>Heroimg-Text</summary>
+		string HeroimgText { get; }
+	}
+
+	/// <summary>Heroimg-Tall+text</summary>
+	[PublishedContentModel("heroimgTallText")]
+	public partial class HeroimgTallText : PublishedContentModel, IHeroimgTallText
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "index";
+		public new const string ModelTypeAlias = "heroimgTallText";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Index(IPublishedContent content)
+		public HeroimgTallText(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,36 +51,9 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Index, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<HeroimgTallText, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Content text left
-		///</summary>
-		[ImplementPropertyType("contentTextLeft")]
-		public string ContentTextLeft
-		{
-			get { return this.GetPropertyValue<string>("contentTextLeft"); }
-		}
-
-		///<summary>
-		/// Content text right
-		///</summary>
-		[ImplementPropertyType("contentTextRight")]
-		public string ContentTextRight
-		{
-			get { return this.GetPropertyValue<string>("contentTextRight"); }
-		}
-
-		///<summary>
-		/// Headline
-		///</summary>
-		[ImplementPropertyType("headline")]
-		public string Headline
-		{
-			get { return this.GetPropertyValue<string>("headline"); }
 		}
 
 		///<summary>
@@ -78,8 +62,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("heroimg")]
 		public IPublishedContent Heroimg
 		{
-			get { return Umbraco.Web.PublishedContentModels.HeroimgTallText.GetHeroimg(this); }
+			get { return GetHeroimg(this); }
 		}
+
+		/// <summary>Static getter for Heroimg</summary>
+		public static IPublishedContent GetHeroimg(IHeroimgTallText that) { return that.GetPropertyValue<IPublishedContent>("heroimg"); }
 
 		///<summary>
 		/// Heroimg-Text
@@ -87,7 +74,10 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("heroimgText")]
 		public string HeroimgText
 		{
-			get { return Umbraco.Web.PublishedContentModels.HeroimgTallText.GetHeroimgText(this); }
+			get { return GetHeroimgText(this); }
 		}
+
+		/// <summary>Static getter for Heroimg-Text</summary>
+		public static string GetHeroimgText(IHeroimgTallText that) { return that.GetPropertyValue<string>("heroimgText"); }
 	}
 }
