@@ -1,0 +1,51 @@
+/*---HJEM---*/
+
+.carousel-sponsor {
+    img {
+        width: 100px !important;
+    }
+}
+
+/*---Section FEATURE-GRID---*/
+
+.feature-grid {
+    h1,
+    h3,
+    p {
+        color: $offWhite;
+    }
+    h1,
+    h3 {
+        font-family: $font-headline;
+    }
+}
+
+.card-member-padding {
+    padding: 100px;
+}
+
+.card-img-padding {
+    padding: 20px;
+    ;
+}
+
+.card {
+    .card-body {
+        flex-direction: row;
+        .card-quote {
+            font-size: 0.9rem;
+        }
+        .card-text {
+            font-size: 1rem;
+        }
+    }
+}
+
+.carousel-indicators li {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: $action-bar-border;
+    margin: 5%;
+    margin-bottom: 100px;
+}

@@ -1,0 +1,65 @@
+﻿/*---VAERESTEDER---*/
+.backgroundcolordiv {
+    background-color: $offWhite;
+}
+
+.map {
+    width: 65%;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.headlineVaested {
+    font-family: $font-headline;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.vaestedDesc {
+    font-family: $font-body;
+    font-size: 25px;
+}
+
+.infoContainer {
+    padding-bottom: 15px;
+}
+
+p {
+    font-family: $font-body;
+    font-size: 1em;
+    display: inline
+}
+
+.vaestedName {
+    font-family: $font-headline;
+    font-size: 18px;
+    font-weight: 600;
+    display: inline
+}
+
+.vaestedImage {
+    width: 100%;
+}
+
+.vaestedTxt {
+    padding: 20px;
+}
+
+.pointer {
+    width: 37px;
+    height: 54px;
+    display: inline-block;
+}
+.input_vaersted{
+    width: 100%;
+}
+
+@media all and (min-width: 900px) {
+    .results-list {display: flex};
+    .results-list-accordeon {display:none;}
+}
+@media all and (max-width: 899px) {
+    .results-list {display:none};
+    .results-list-accordeon {display:block;}
+    
+}
