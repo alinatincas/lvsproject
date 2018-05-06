@@ -1,5 +1,129 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Kontakt>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "_Master.cshtml";
+    Layout = "_Master.cshtml";
 }
+<div class="hero-image hero-image" style="background-image: url('assets/img/frontpage-header.png')">
+    <div class="overlay d-flex align-items-center justify-content-center">
+        <h1 class="header-title-white">KONTAKT OS</h1>
+    </div>
+</div>
+<!-- START MAP -->
+<section class="container-fluid bg-light post-action-bar">
+    <div class="text-center">
+        <h3>HER BOR VI</h3>
+        <p>Danmarksgade 6A, 1. 7000 Fredericia</p>
+    </div><br><br>
+    <div class="row">
+
+        <div class="col-md-12 d-flex justify-content-center">
+            <iframe class="container" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1218554.7023152593!2d10.405898103599023!3d55.2792606371077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sv%C3%A6resteder!5e0!3m2!1sen!2sdk!4v1523644881930" width="1140" height="600" frameborder="0" style="border:0"></iframe>
+
+        </div>
+    </div>
+</section>
+<!-- END MAP -->
+<!-- START LVS CONTACT INFO -->
+<section class="container clearance">
+
+    <div class="row">
+        <div class="col-md-6 d-flex justify-content-center">
+            <p>Danmarksgade 6A, 1<br> 7000 Fredericia <br> Telefon: 75 92 40 00</p>
+
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+            <p>EAN-Nr: 579 800 647 6909<br> CVR-Nr: 29055009  <br> Email : lvsinfo@lavs.dk</p>
+
+        </div>
+    </div>
+
+</section>
+<!-- END LVS CONTACT INFO -->
+<!-- START EMPLOYEE CARD -->
+<section class="container-fluid bg-light">
+    <div class="container clearance-grey">
+        <div class="row justify-content-center">
+            <div class="row justify-content-center card-member-padding">
+                <div class="col-md-12">
+                    <div class="card p-4">
+                        <div class="row align-items-center blockquote">
+                            <div class="col-md-6">
+                                <img class="card-img-top img-fluid rounded-circle card-img-padding" src="assets/img/om/om-medarbejdere/avatar_cliff.jpg" alt="Card image">
+                            </div>
+                            <div class="col-md-6 hjem-quote">
+                                <div class="text-card card-body blockquote">
+                                    <h4 class="card-title pt-4">
+                                        <b>Cliff Kaltoft</b>
+                                    </h4>
+                                    <p class="card-quote">
+                                        <i>Sekretariatschef</i>
+                                        <br>
+                                        <br>
+                                    </p>
+                                    <p class="card-text pt-4">
+                                        Telefon : 75 92 40 00 <br><br>
+                                        Email : lvsinfo@lavs.dk
+                                    </p>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END EMPLOYEE CARD -->
+<!-- START FORM -->
+<section class="container">
+    <div class="containter clearance">
+        <div class="col-md-12 d-flex justify-content-center">
+            <div class="post-action-bar-headline">SKRIVE TIL OS</div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form>
+                    <fieldset class="col-6-md">
+                        <div class="form-group row">
+                            <div class="col-md-2">
+                                <label> Navn: </label>
+                            </div>
+                            <div class="col-md-10 form-field">
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-2">
+                                <label> Postnr: </label>
+                            </div>
+                            <div class="col-md-10 form-field">
+                                <input type="number" class="form-control">
+                            </div>
+                            <div class="col-md-2">
+                                <label> Telefon: </label>
+                            </div>
+                            <div class="col-md-10 form-field">
+                                <input type="number" class="form-control">
+                            </div>
+                            <div class="col-md-2">
+                                <label> Email: </label>
+                            </div>
+                            <div class="col-md-10 form-field">
+                                <input type="email" class="form-control">
+                            </div>
+                            <div class="col-md-2">
+                                <label> Besked: </label>
+                            </div>
+                            <div class="col-md-10 form-field">
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-12 d-flex justify-content-end">
+                                <input type="submit" class="submit-button" value="Submit">
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END FORM -->
