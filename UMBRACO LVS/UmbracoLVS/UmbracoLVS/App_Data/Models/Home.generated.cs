@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Home</summary>
 	[PublishedContentModel("home")]
-	public partial class Home : PublishedContentModel
+	public partial class Home : PublishedContentModel, IActionBar, IBaseContent, IGoodStoryQuotes
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "home";
@@ -43,6 +43,96 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// ActionBarHeadline1
+		///</summary>
+		[ImplementPropertyType("actionBarHeadline1")]
+		public string ActionBarHeadline1
+		{
+			get { return Umbraco.Web.PublishedContentModels.ActionBar.GetActionBarHeadline1(this); }
+		}
+
+		///<summary>
+		/// ActionBarHeadline2
+		///</summary>
+		[ImplementPropertyType("actionBarHeadline2")]
+		public string ActionBarHeadline2
+		{
+			get { return Umbraco.Web.PublishedContentModels.ActionBar.GetActionBarHeadline2(this); }
+		}
+
+		///<summary>
+		/// ActionBarHeadline3
+		///</summary>
+		[ImplementPropertyType("actionBarHeadline3")]
+		public string ActionBarHeadline3
+		{
+			get { return Umbraco.Web.PublishedContentModels.ActionBar.GetActionBarHeadline3(this); }
+		}
+
+		///<summary>
+		/// ActionBarParagraph1
+		///</summary>
+		[ImplementPropertyType("actionBarParagraph1")]
+		public string ActionBarParagraph1
+		{
+			get { return Umbraco.Web.PublishedContentModels.ActionBar.GetActionBarParagraph1(this); }
+		}
+
+		///<summary>
+		/// ActionBarParagraph2
+		///</summary>
+		[ImplementPropertyType("actionBarParagraph2")]
+		public string ActionBarParagraph2
+		{
+			get { return Umbraco.Web.PublishedContentModels.ActionBar.GetActionBarParagraph2(this); }
+		}
+
+		///<summary>
+		/// ActionBarParagraph3
+		///</summary>
+		[ImplementPropertyType("actionBarParagraph3")]
+		public string ActionBarParagraph3
+		{
+			get { return Umbraco.Web.PublishedContentModels.ActionBar.GetActionBarParagraph3(this); }
+		}
+
+		///<summary>
+		/// Body text: Change text
+		///</summary>
+		[ImplementPropertyType("bodyText")]
+		public Newtonsoft.Json.Linq.JToken BodyText
+		{
+			get { return Umbraco.Web.PublishedContentModels.BaseContent.GetBodyText(this); }
+		}
+
+		///<summary>
+		/// Headline: Headline
+		///</summary>
+		[ImplementPropertyType("headline")]
+		public string Headline
+		{
+			get { return Umbraco.Web.PublishedContentModels.BaseContent.GetHeadline(this); }
+		}
+
+		///<summary>
+		/// Hero image: This is where you can change the image for the banner on each page
+		///</summary>
+		[ImplementPropertyType("heroImage")]
+		public IPublishedContent HeroImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.BaseContent.GetHeroImage(this); }
+		}
+
+		///<summary>
+		/// Hero Image Headline: Headline for image banner
+		///</summary>
+		[ImplementPropertyType("heroImageHeadline")]
+		public string HeroImageHeadline
+		{
+			get { return Umbraco.Web.PublishedContentModels.BaseContent.GetHeroImageHeadline(this); }
 		}
 	}
 }

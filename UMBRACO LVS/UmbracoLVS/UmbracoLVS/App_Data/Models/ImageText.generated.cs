@@ -20,9 +20,20 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
+	// Mixin content Type 1077 with alias "imageText"
+	/// <summary>ImageText</summary>
+	public partial interface IImageText : IPublishedContent
+	{
+		/// <summary>Headline</summary>
+		string Headline { get; }
+
+		/// <summary>Image</summary>
+		IPublishedContent Image { get; }
+	}
+
 	/// <summary>ImageText</summary>
 	[PublishedContentModel("imageText")]
-	public partial class ImageText : PublishedContentModel
+	public partial class ImageText : PublishedContentModel, IImageText
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "imageText";
@@ -51,8 +62,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("headline")]
 		public string Headline
 		{
-			get { return this.GetPropertyValue<string>("headline"); }
+			get { return GetHeadline(this); }
 		}
+
+		/// <summary>Static getter for Headline</summary>
+		public static string GetHeadline(IImageText that) { return that.GetPropertyValue<string>("headline"); }
 
 		///<summary>
 		/// Image
@@ -60,7 +74,10 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("image")]
 		public IPublishedContent Image
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("image"); }
+			get { return GetImage(this); }
 		}
+
+		/// <summary>Static getter for Image</summary>
+		public static IPublishedContent GetImage(IImageText that) { return that.GetPropertyValue<IPublishedContent>("image"); }
 	}
 }

@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Publikationer</summary>
 	[PublishedContentModel("publikationer")]
-	public partial class Publikationer : PublishedContentModel
+	public partial class Publikationer : PublishedContentModel, IImageText
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "publikationer";
@@ -43,6 +43,51 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Publikationer, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// contentHeadline
+		///</summary>
+		[ImplementPropertyType("contentHeadline")]
+		public string ContentHeadline
+		{
+			get { return this.GetPropertyValue<string>("contentHeadline"); }
+		}
+
+		///<summary>
+		/// contentLeft
+		///</summary>
+		[ImplementPropertyType("contentLeft")]
+		public string ContentLeft
+		{
+			get { return this.GetPropertyValue<string>("contentLeft"); }
+		}
+
+		///<summary>
+		/// contentRight
+		///</summary>
+		[ImplementPropertyType("contentRight")]
+		public string ContentRight
+		{
+			get { return this.GetPropertyValue<string>("contentRight"); }
+		}
+
+		///<summary>
+		/// Headline
+		///</summary>
+		[ImplementPropertyType("headline")]
+		public string Headline
+		{
+			get { return Umbraco.Web.PublishedContentModels.ImageText.GetHeadline(this); }
+		}
+
+		///<summary>
+		/// Image
+		///</summary>
+		[ImplementPropertyType("image")]
+		public IPublishedContent Image
+		{
+			get { return Umbraco.Web.PublishedContentModels.ImageText.GetImage(this); }
 		}
 	}
 }

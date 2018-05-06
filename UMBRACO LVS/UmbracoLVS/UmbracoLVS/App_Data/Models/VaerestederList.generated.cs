@@ -20,9 +20,15 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
+	// Mixin content Type 1086 with alias "vaerestederList"
+	/// <summary>Shelters list</summary>
+	public partial interface IVaerestederList : IPublishedContent
+	{
+	}
+
 	/// <summary>Shelters list</summary>
 	[PublishedContentModel("vaerestederList")]
-	public partial class VaerestederList : PublishedContentModel
+	public partial class VaerestederList : PublishedContentModel, IVaerestederList
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "vaerestederList";

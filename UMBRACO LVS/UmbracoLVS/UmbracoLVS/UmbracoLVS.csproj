@@ -484,7 +484,20 @@
     <Content Include="Views\_Master.cshtml" />
     <Content Include="Views\Partials\Utils\_navigation.cshtml" />
     <Content Include="Views\Partials\Utils\_footer.cshtml" />
-    <Content Include="Views\index.cshtml" />
+    <Content Include="Views\ActivitiesList.cshtml" />
+    <Content Include="Views\Aktiviteter.cshtml" />
+    <Content Include="Views\GoodStoryQuotes.cshtml" />
+    <Content Include="Views\Home.cshtml" />
+    <Content Include="Views\Kontakt.cshtml" />
+    <Content Include="Views\NewsFeed.cshtml" />
+    <Content Include="Views\Nyheder.cshtml" />
+    <Content Include="Views\OmIDVI.cshtml" />
+    <Content Include="Views\OmLVS.cshtml" />
+    <Content Include="Views\OmMedarbejdere.cshtml" />
+    <Content Include="Views\Publications.cshtml" />
+    <Content Include="Views\Publikationer.cshtml" />
+    <Content Include="Views\Vaeresteder.cshtml" />
+    <Content Include="Views\VaerestederList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -539,7 +552,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>62614</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

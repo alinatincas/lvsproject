@@ -20,9 +20,26 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
+	// Mixin content Type 1075 with alias "baseContent"
+	/// <summary>Base content</summary>
+	public partial interface IBaseContent : IPublishedContent
+	{
+		/// <summary>Body text</summary>
+		Newtonsoft.Json.Linq.JToken BodyText { get; }
+
+		/// <summary>Headline</summary>
+		string Headline { get; }
+
+		/// <summary>Hero image</summary>
+		IPublishedContent HeroImage { get; }
+
+		/// <summary>Hero Image Headline</summary>
+		string HeroImageHeadline { get; }
+	}
+
 	/// <summary>Base content</summary>
 	[PublishedContentModel("baseContent")]
-	public partial class BaseContent : PublishedContentModel
+	public partial class BaseContent : PublishedContentModel, IBaseContent
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "baseContent";
@@ -51,8 +68,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("bodyText")]
 		public Newtonsoft.Json.Linq.JToken BodyText
 		{
-			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("bodyText"); }
+			get { return GetBodyText(this); }
 		}
+
+		/// <summary>Static getter for Body text</summary>
+		public static Newtonsoft.Json.Linq.JToken GetBodyText(IBaseContent that) { return that.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("bodyText"); }
 
 		///<summary>
 		/// Headline: Headline
@@ -60,8 +80,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("headline")]
 		public string Headline
 		{
-			get { return this.GetPropertyValue<string>("headline"); }
+			get { return GetHeadline(this); }
 		}
+
+		/// <summary>Static getter for Headline</summary>
+		public static string GetHeadline(IBaseContent that) { return that.GetPropertyValue<string>("headline"); }
 
 		///<summary>
 		/// Hero image: This is where you can change the image for the banner on each page
@@ -69,8 +92,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("heroImage")]
 		public IPublishedContent HeroImage
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("heroImage"); }
+			get { return GetHeroImage(this); }
 		}
+
+		/// <summary>Static getter for Hero image</summary>
+		public static IPublishedContent GetHeroImage(IBaseContent that) { return that.GetPropertyValue<IPublishedContent>("heroImage"); }
 
 		///<summary>
 		/// Hero Image Headline: Headline for image banner
@@ -78,7 +104,10 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("heroImageHeadline")]
 		public string HeroImageHeadline
 		{
-			get { return this.GetPropertyValue<string>("heroImageHeadline"); }
+			get { return GetHeroImageHeadline(this); }
 		}
+
+		/// <summary>Static getter for Hero Image Headline</summary>
+		public static string GetHeroImageHeadline(IBaseContent that) { return that.GetPropertyValue<string>("heroImageHeadline"); }
 	}
 }

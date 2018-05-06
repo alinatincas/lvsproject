@@ -44,5 +44,59 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Age: Age of the person
+		///</summary>
+		[ImplementPropertyType("age")]
+		public int Age
+		{
+			get { return this.GetPropertyValue<int>("age"); }
+		}
+
+		///<summary>
+		/// Image: Image of the person
+		///</summary>
+		[ImplementPropertyType("image")]
+		public IPublishedContent Image
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("image"); }
+		}
+
+		///<summary>
+		/// Link: Link to the good story page
+		///</summary>
+		[ImplementPropertyType("link")]
+		public string Link
+		{
+			get { return this.GetPropertyValue<string>("link"); }
+		}
+
+		///<summary>
+		/// PersonName: Name of the person
+		///</summary>
+		[ImplementPropertyType("personName")]
+		public string PersonName
+		{
+			get { return this.GetPropertyValue<string>("personName"); }
+		}
+
+		///<summary>
+		/// Quote: Quote from the story
+		///</summary>
+		[ImplementPropertyType("quote")]
+		public string Quote
+		{
+			get { return this.GetPropertyValue<string>("quote"); }
+		}
+
+		///<summary>
+		/// Short text: A short text about from the story
+		///</summary>
+		[ImplementPropertyType("shortText")]
+		public string ShortText
+		{
+			get { return this.GetPropertyValue<string>("shortText"); }
+		}
 	}
 }

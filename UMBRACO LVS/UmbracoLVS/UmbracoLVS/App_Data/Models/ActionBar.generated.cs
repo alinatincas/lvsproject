@@ -20,9 +20,32 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
+	// Mixin content Type 1084 with alias "actionBar"
+	/// <summary>ActionBar</summary>
+	public partial interface IActionBar : IPublishedContent
+	{
+		/// <summary>ActionBarHeadline1</summary>
+		string ActionBarHeadline1 { get; }
+
+		/// <summary>ActionBarHeadline2</summary>
+		string ActionBarHeadline2 { get; }
+
+		/// <summary>ActionBarHeadline3</summary>
+		string ActionBarHeadline3 { get; }
+
+		/// <summary>ActionBarParagraph1</summary>
+		string ActionBarParagraph1 { get; }
+
+		/// <summary>ActionBarParagraph2</summary>
+		string ActionBarParagraph2 { get; }
+
+		/// <summary>ActionBarParagraph3</summary>
+		string ActionBarParagraph3 { get; }
+	}
+
 	/// <summary>ActionBar</summary>
 	[PublishedContentModel("actionBar")]
-	public partial class ActionBar : PublishedContentModel
+	public partial class ActionBar : PublishedContentModel, IActionBar
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "actionBar";
@@ -51,8 +74,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("actionBarHeadline1")]
 		public string ActionBarHeadline1
 		{
-			get { return this.GetPropertyValue<string>("actionBarHeadline1"); }
+			get { return GetActionBarHeadline1(this); }
 		}
+
+		/// <summary>Static getter for ActionBarHeadline1</summary>
+		public static string GetActionBarHeadline1(IActionBar that) { return that.GetPropertyValue<string>("actionBarHeadline1"); }
 
 		///<summary>
 		/// ActionBarHeadline2
@@ -60,8 +86,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("actionBarHeadline2")]
 		public string ActionBarHeadline2
 		{
-			get { return this.GetPropertyValue<string>("actionBarHeadline2"); }
+			get { return GetActionBarHeadline2(this); }
 		}
+
+		/// <summary>Static getter for ActionBarHeadline2</summary>
+		public static string GetActionBarHeadline2(IActionBar that) { return that.GetPropertyValue<string>("actionBarHeadline2"); }
 
 		///<summary>
 		/// ActionBarHeadline3
@@ -69,8 +98,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("actionBarHeadline3")]
 		public string ActionBarHeadline3
 		{
-			get { return this.GetPropertyValue<string>("actionBarHeadline3"); }
+			get { return GetActionBarHeadline3(this); }
 		}
+
+		/// <summary>Static getter for ActionBarHeadline3</summary>
+		public static string GetActionBarHeadline3(IActionBar that) { return that.GetPropertyValue<string>("actionBarHeadline3"); }
 
 		///<summary>
 		/// ActionBarParagraph1
@@ -78,8 +110,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("actionBarParagraph1")]
 		public string ActionBarParagraph1
 		{
-			get { return this.GetPropertyValue<string>("actionBarParagraph1"); }
+			get { return GetActionBarParagraph1(this); }
 		}
+
+		/// <summary>Static getter for ActionBarParagraph1</summary>
+		public static string GetActionBarParagraph1(IActionBar that) { return that.GetPropertyValue<string>("actionBarParagraph1"); }
 
 		///<summary>
 		/// ActionBarParagraph2
@@ -87,8 +122,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("actionBarParagraph2")]
 		public string ActionBarParagraph2
 		{
-			get { return this.GetPropertyValue<string>("actionBarParagraph2"); }
+			get { return GetActionBarParagraph2(this); }
 		}
+
+		/// <summary>Static getter for ActionBarParagraph2</summary>
+		public static string GetActionBarParagraph2(IActionBar that) { return that.GetPropertyValue<string>("actionBarParagraph2"); }
 
 		///<summary>
 		/// ActionBarParagraph3
@@ -96,7 +134,10 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("actionBarParagraph3")]
 		public string ActionBarParagraph3
 		{
-			get { return this.GetPropertyValue<string>("actionBarParagraph3"); }
+			get { return GetActionBarParagraph3(this); }
 		}
+
+		/// <summary>Static getter for ActionBarParagraph3</summary>
+		public static string GetActionBarParagraph3(IActionBar that) { return that.GetPropertyValue<string>("actionBarParagraph3"); }
 	}
 }
