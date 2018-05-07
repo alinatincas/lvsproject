@@ -14,6 +14,12 @@
         e.preventDefault()
         $('.list-group').find('a').removeClass('active').addClass('text-dark');
         $(this).removeClass('text-dark').addClass('active');
+        $("#Centertxt").html('Test');
+        $.ajax({
+            url: "~/Shelter", success: function (result) {
+                $("#Centertxt").html(result);
+            }
+        });
     });
     // squareboxes();
 });
