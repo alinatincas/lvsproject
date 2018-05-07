@@ -2,6 +2,8 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "_Master.cshtml";
+    var shelters = Model.Content.Children<Shelter>();
+
 }
 <section>
     <div class="hero-image hero-image" style="background-image: url('@Model.Content.HeroImage.Url')">
@@ -75,50 +77,41 @@
         </div>
     </section>
 
-    <section class="results-list">
+    <section>
         <div class="row no-gutters clearance-bottom">
             <div class="col-4">
-                <div id="result-container" class="list-group">
-
-                    <script>
-                        var active = ' active';
-                        var txt = "";
-                        for (var i = 0; i < 5; i++) {
-                            txt = txt + '<a href="#" class="list-group-item' + active + '"> <h5 class="list-group-item-heading" > <i class="fas fa-map-marker-alt"></i> Regnbuen</h4 ><p class="list-group-item-text">Adresse: Riberdyb 10, 6000 Kolding <br />Tlf: 79 79 76 00 <br />Mail:vr@kolding.dk</p></a>';
-                            active = ' text-dark';
-                        }
-                        document.getElementById("result-container").innerHTML += txt;
-                    </script>
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    @{ string activeClass = "active";}
+                    @foreach (Shelter s in shelters)
+                    {
+                        <a class="nav-link @activeClass" id="v-pills-@s.Id-tab" data-toggle="pill" href="#v-pills-@s.Id" role="tab" aria-controls="v-pills-@s.Id" aria-selected="true">
+                            <h5> <i class="fas fa-map-marker-alt"></i> @s.CenterName</h5 >
+                            <p class="m-0">Address: @s.Address</p>
+                            <p class="m-0">Tlf: @s.PhoneNumber</p>
+                            <p class="m-0">Mail: @s.Mail</p>
+                        </a>
+                        activeClass = "";
+                    }
                 </div>
             </div>
-
             <div class="col-8">
-                <div class="">
-                    <img class="vaestedImage" src="assets/img/house.png" alt="Værested" />
-                    <div class="p-2 text-muted">
-                        <p>
-                            Værestedet Regnbuen er et uvisiteret og anonymt tilbud til borgere over 18 år med et mangeårigt aktivt stofmisbrug.
-                            Vi tilbyder socialt samvær og aktiviteter, omsorg og muligheden for at møde andre ligestillede.
-                        </p>
-                        <p>
-                            Du kan også få en kop kaffe, et måltid mad, socialt samvær og varme. Ligesom der er mulighed for at deltage i brugermøderne hver anden uge, madlavning, rengøring eller blot at være en del af fællesskabet.
-                        </p>
-                        <p>
-                            Regnbuens personale består af en sygeplejerske og en socialrådgiver og er desuden praktiksted for pædagogisk assistent-elever og socialrådgiverstuderende.
-                        </p>
-                        <p>
-                            Regnbuens tilbud består af:<br />
-                            - Kontakt/samtale med en medarbejder<br />
-                            - Støtte til at skabe et socialt netværk<br />
-                            - Mulighed for gratis morgenmad og middagsmad mod betaling<br />
-                            - Deltagelse i forskellige aktiviteter<br />
-                        </p>
-                    </div>
+
+                <div class="tab-content" id="v-pills-tabContent">
+                    @{ string shownActive = "show active";}
+                    @foreach (Shelter s in shelters)
+                    {
+                        <div class="tab-pane fade @shownActive" id="v-pills-@s.Id" role="tabpanel" aria-labelledby="v-pills-@s.Id-tab">
+                            <img class="vaestedImage" src="assets/img/house.png" alt="Værested" />
+                            <div id="Centertxt" class="p-2 text-muted">
+                                @s.CenterText
+                            </div>
+                        </div>
+                        shownActive = "";
+                    }
                 </div>
             </div>
         </div>
     </section>
-</div>
 <!-- END SECTION RESULTS -->
 <!-- START SECTION REGISTRATION -->
 <div class="container-fluid">
