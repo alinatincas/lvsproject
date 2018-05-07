@@ -498,6 +498,7 @@
     <Content Include="Views\Publikationer.cshtml" />
     <Content Include="Views\Vaeresteder.cshtml" />
     <Content Include="Views\VaerestederList.cshtml" />
+    <Content Include="Views\Shelter.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

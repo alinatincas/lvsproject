@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Om IDVI</summary>
 	[PublishedContentModel("omIDVI")]
-	public partial class OmIdvi : OmLvs
+	public partial class OmIdvi : OmLvs, IImageText
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "omIDVI";
@@ -43,6 +43,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<OmIdvi, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Headline
+		///</summary>
+		[ImplementPropertyType("headline")]
+		public string Headline
+		{
+			get { return Umbraco.Web.PublishedContentModels.ImageText.GetHeadline(this); }
+		}
+
+		///<summary>
+		/// Image
+		///</summary>
+		[ImplementPropertyType("image")]
+		public IPublishedContent Image
+		{
+			get { return Umbraco.Web.PublishedContentModels.ImageText.GetImage(this); }
 		}
 	}
 }
