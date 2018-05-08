@@ -20,9 +20,9 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Publikationer</summary>
+	/// <summary>Udgivelser</summary>
 	[PublishedContentModel("publikationer")]
-	public partial class Publikationer : PublishedContentModel
+	public partial class Publikationer : PublishedContentModel, IBaseContent, IHeroHeader
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "publikationer";
@@ -46,30 +46,39 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// contentHeadline
+		/// Content
 		///</summary>
-		[ImplementPropertyType("contentHeadline")]
-		public string ContentHeadline
+		[ImplementPropertyType("content")]
+		public Newtonsoft.Json.Linq.JToken Content
 		{
-			get { return this.GetPropertyValue<string>("contentHeadline"); }
+			get { return Umbraco.Web.PublishedContentModels.BaseContent.GetContent(this); }
 		}
 
 		///<summary>
-		/// contentLeft
+		/// Headline
 		///</summary>
-		[ImplementPropertyType("contentLeft")]
-		public string ContentLeft
+		[ImplementPropertyType("headline")]
+		public string Headline
 		{
-			get { return this.GetPropertyValue<string>("contentLeft"); }
+			get { return Umbraco.Web.PublishedContentModels.BaseContent.GetHeadline(this); }
 		}
 
 		///<summary>
-		/// contentRight
+		/// HeroHeadline
 		///</summary>
-		[ImplementPropertyType("contentRight")]
-		public string ContentRight
+		[ImplementPropertyType("heroHeadline")]
+		public string HeroHeadline
 		{
-			get { return this.GetPropertyValue<string>("contentRight"); }
+			get { return Umbraco.Web.PublishedContentModels.HeroHeader.GetHeroHeadline(this); }
+		}
+
+		///<summary>
+		/// HeroImage
+		///</summary>
+		[ImplementPropertyType("heroImage")]
+		public IPublishedContent HeroImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.HeroHeader.GetHeroImage(this); }
 		}
 	}
 }

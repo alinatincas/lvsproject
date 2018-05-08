@@ -20,9 +20,23 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
+	// Mixin content Type 1158 with alias "person"
+	/// <summary>person</summary>
+	public partial interface IPerson : IPublishedContent
+	{
+		/// <summary>Email</summary>
+		string PersonEmail { get; }
+
+		/// <summary>Name</summary>
+		string PersonName { get; }
+
+		/// <summary>Phone</summary>
+		string PersonPhone { get; }
+	}
+
 	/// <summary>person</summary>
 	[PublishedContentModel("person")]
-	public partial class Person : PublishedContentModel
+	public partial class Person : PublishedContentModel, IPerson
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "person";
@@ -51,8 +65,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("personEmail")]
 		public string PersonEmail
 		{
-			get { return this.GetPropertyValue<string>("personEmail"); }
+			get { return GetPersonEmail(this); }
 		}
+
+		/// <summary>Static getter for Email</summary>
+		public static string GetPersonEmail(IPerson that) { return that.GetPropertyValue<string>("personEmail"); }
 
 		///<summary>
 		/// Name
@@ -60,8 +77,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("personName")]
 		public string PersonName
 		{
-			get { return this.GetPropertyValue<string>("personName"); }
+			get { return GetPersonName(this); }
 		}
+
+		/// <summary>Static getter for Name</summary>
+		public static string GetPersonName(IPerson that) { return that.GetPropertyValue<string>("personName"); }
 
 		///<summary>
 		/// Phone
@@ -69,7 +89,10 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("personPhone")]
 		public string PersonPhone
 		{
-			get { return this.GetPropertyValue<string>("personPhone"); }
+			get { return GetPersonPhone(this); }
 		}
+
+		/// <summary>Static getter for Phone</summary>
+		public static string GetPersonPhone(IPerson that) { return that.GetPropertyValue<string>("personPhone"); }
 	}
 }

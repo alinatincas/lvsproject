@@ -8,7 +8,7 @@
 <section>
     <div class="hero-image hero-image" style="background-image: url('@Model.Content.HeroImage.Url')">
         <div class="overlay d-flex align-items-center justify-content-center">
-            <h1 class="header-title-white">@Model.Content.HeroImageHeadline</h1>
+            <h1 class="header-title-white">@Model.Content.HeroHeadline</h1>
         </div>
 
         <div class="action-bar">
@@ -43,17 +43,16 @@
 <section class="container-fluid bg-light post-action-bar">
     <div class="container">
         <div class="row d-flex justify-content-center">
-            <div class="post-action-bar-headline">MEST BESØGTE VÆRESTEDER</div>
+            <div class="post-action-bar-headline">@Model.Content.MostVisitedHeadline</div>
             <div class="col-md-12">
                 <div class="row carousel-sponsor d-flex align-items-center">
-                    <div class="mx-auto py-3 px-2 img-grayscale"><a target="_blank" href="http://stormspakhus.dk"><img src="assets/img/vaeresteder/outsideren.png" alt="Storms Pakhus logo"></a></div>
-                    <div class="mx-auto py-3 px-2 img-grayscale"><a target="_blank" href="http://kmd.dk"><img src="assets/img/vaeresteder/plexus.png" alt="KMD logo"></a></div>
-                    <div class="mx-auto py-3 px-2 img-grayscale"><a target="_blank" href="http://www.bikubenfonden.dk/kronprinsparrets-priser-2010"><img src="assets/img/vaeresteder/muhabet.png" alt="Kronsprinsparrets Pris logo"></a></div>
-                    <div class="mx-auto py-3 px-2 img-grayscale"><a target="_blank" href="http://odense.dk"><img src="assets/img/vaeresteder/paraplyen.png" alt="Odense Kommune logo"></a></div>
-                    <div class="mx-auto py-3 px-2 img-grayscale"><a target="_blank" href="http://ob.dk" target="_blank"><img src="assets/img/vaeresteder/stoppestedet.png" alt="Odense Boldklub logo"></a></div>
+                    @foreach (Featured f in Model.Content.MostVisistedList)
+                    {
+                        <div class="mx-auto py-3 px-2 img-grayscale"><a target="_blank" href="@f.FeaturedLink"><img src="@f.FeaturedImage.Url" alt="@f.FeaturedName logo"></a></div>
+
+                    }
                 </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -73,7 +72,7 @@
     <section class="row clearance">
         <div class="col-md-12 text-center">
             <h2>@Model.Content.Headline</h2>
-            <p>@Model.Content.BodyText</p>
+            @Html.GetGridHtml(Model.Content, "content")
         </div>
     </section>
 
@@ -85,10 +84,10 @@
                     @foreach (Shelter s in shelters)
                     {
                         <a class="nav-link @activeClass" id="v-pills-@s.Id-tab" data-toggle="pill" href="#v-pills-@s.Id" role="tab" aria-controls="v-pills-@s.Id" aria-selected="true">
-                            <h5> <i class="fas fa-map-marker-alt"></i> @s.CenterName</h5 >
+                            <h5> <i class="fas fa-map-marker-alt"></i> @s.ShelterName</h5>
                             <p class="m-0">Address: @s.Address</p>
-                            <p class="m-0">Tlf: @s.PhoneNumber</p>
-                            <p class="m-0">Mail: @s.Mail</p>
+                            <p class="m-0">Tlf: @s.ShelterPhone</p>
+                            <p class="m-0">Mail: @s.ShelterEmail</p>
                         </a>
                         activeClass = "";
                     }
@@ -101,9 +100,9 @@
                     @foreach (Shelter s in shelters)
                     {
                         <div class="tab-pane fade @shownActive" id="v-pills-@s.Id" role="tabpanel" aria-labelledby="v-pills-@s.Id-tab">
-                            <img class="vaestedImage" src="assets/img/house.png" alt="Værested" />
+                            <img class="vaestedImage" src="@s.Image.Url?width=700" alt="Værested" />
                             <div id="Centertxt" class="p-2 text-muted">
-                                @s.CenterText
+                                @Html.Raw(s.Description)
                             </div>
                         </div>
                         shownActive = "";
@@ -112,66 +111,66 @@
             </div>
         </div>
     </section>
-<!-- END SECTION RESULTS -->
-<!-- START SECTION REGISTRATION -->
-<div class="container-fluid">
-    <div class="container clearance-bottom">
-        <div class="row">
+    <!-- END SECTION RESULTS -->
+    <!-- START SECTION REGISTRATION -->
+    <div class="container-fluid">
+        <div class="container clearance-bottom">
+            <div class="row">
 
-            <section class="col-md-12 text-center">
-                <h2>ØNSKER DU AT VÆRE EN DEL AF LVS-FÆLLESSKABET?</h2>
-                <p>Tilmeld dig dit husly her</p>
-            </section>
+                <section class="col-md-12 text-center">
+                    <h2>ØNSKER DU AT VÆRE EN DEL AF LVS-FÆLLESSKABET?</h2>
+                    <p>Tilmeld dig dit husly her</p>
+                </section>
 
-            <!-- START VÆRESTED REGISTRATION FORM -->
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <form>
-                        <fieldset class="col-6-md">
-                            <div class="form-group row">
-                                <div class="col-md-4">
-                                    <label> Væresteds navn: </label>
-                                </div>
-                                <div class="col-md-8 form-field">
-                                    <input type="text" class="form-control">
+                <!-- START VÆRESTED REGISTRATION FORM -->
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <form>
+                            <fieldset class="col-6-md">
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <label> Væresteds navn: </label>
+                                    </div>
+                                    <div class="col-md-8 form-field">
+                                        <input type="text" class="form-control">
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label> Kontakt person: </label>
+                                    </div>
+                                    <div class="col-md-8 form-field">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label> Email: </label>
+                                    </div>
+                                    <div class="col-md-8 form-field">
+                                        <input type="email" class="form-control">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label> Telefon: </label>
+                                    </div>
+                                    <div class="col-md-8 form-field">
+                                        <input type="number" class="form-control">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label> Mobil: </label>
+                                    </div>
+                                    <div class="col-md-8 form-field">
+                                        <input type="number" class="form-control">
+                                    </div>
+                                    <div class="col-md-12 d-flex justify-content-end">
+                                        <input type="submit" class="submit-button" value="Submit">
+                                    </div>
                                 </div>
 
-                                <div class="col-md-4">
-                                    <label> Kontakt person: </label>
-                                </div>
-                                <div class="col-md-8 form-field">
-                                    <input type="text" class="form-control">
-                                </div>
-                                <div class="col-md-4">
-                                    <label> Email: </label>
-                                </div>
-                                <div class="col-md-8 form-field">
-                                    <input type="email" class="form-control">
-                                </div>
-                                <div class="col-md-4">
-                                    <label> Telefon: </label>
-                                </div>
-                                <div class="col-md-8 form-field">
-                                    <input type="number" class="form-control">
-                                </div>
-                                <div class="col-md-4">
-                                    <label> Mobil: </label>
-                                </div>
-                                <div class="col-md-8 form-field">
-                                    <input type="number" class="form-control">
-                                </div>
-                                <div class="col-md-12 d-flex justify-content-end">
-                                    <input type="submit" class="submit-button" value="Submit">
-                                </div>
-                            </div>
 
+                            </fieldset>
 
-                        </fieldset>
-
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- END VÆRESTED REGISTRATION FORM -->
+    <!-- END VÆRESTED REGISTRATION FORM -->

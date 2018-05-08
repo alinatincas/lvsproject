@@ -20,9 +20,26 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
+	// Mixin content Type 1159 with alias "location"
+	/// <summary>location</summary>
+	public partial interface ILocation : IPublishedContent
+	{
+		/// <summary>Address</summary>
+		string Address { get; }
+
+		/// <summary>City</summary>
+		string City { get; }
+
+		/// <summary>GPScoordinates</summary>
+		string GPscoordinates { get; }
+
+		/// <summary>PostCode</summary>
+		int PostCode { get; }
+	}
+
 	/// <summary>location</summary>
 	[PublishedContentModel("location")]
-	public partial class Location : PublishedContentModel
+	public partial class Location : PublishedContentModel, ILocation
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "location";
@@ -51,8 +68,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("address")]
 		public string Address
 		{
-			get { return this.GetPropertyValue<string>("address"); }
+			get { return GetAddress(this); }
 		}
+
+		/// <summary>Static getter for Address</summary>
+		public static string GetAddress(ILocation that) { return that.GetPropertyValue<string>("address"); }
 
 		///<summary>
 		/// City
@@ -60,8 +80,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("city")]
 		public string City
 		{
-			get { return this.GetPropertyValue<string>("city"); }
+			get { return GetCity(this); }
 		}
+
+		/// <summary>Static getter for City</summary>
+		public static string GetCity(ILocation that) { return that.GetPropertyValue<string>("city"); }
 
 		///<summary>
 		/// GPScoordinates
@@ -69,8 +92,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("gPScoordinates")]
 		public string GPscoordinates
 		{
-			get { return this.GetPropertyValue<string>("gPScoordinates"); }
+			get { return GetGPscoordinates(this); }
 		}
+
+		/// <summary>Static getter for GPScoordinates</summary>
+		public static string GetGPscoordinates(ILocation that) { return that.GetPropertyValue<string>("gPScoordinates"); }
 
 		///<summary>
 		/// PostCode
@@ -78,7 +104,10 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("postCode")]
 		public int PostCode
 		{
-			get { return this.GetPropertyValue<int>("postCode"); }
+			get { return GetPostCode(this); }
 		}
+
+		/// <summary>Static getter for PostCode</summary>
+		public static int GetPostCode(ILocation that) { return that.GetPropertyValue<int>("postCode"); }
 	}
 }

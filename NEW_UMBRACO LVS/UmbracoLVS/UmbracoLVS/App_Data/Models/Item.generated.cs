@@ -20,9 +20,20 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
+	// Mixin content Type 1157 with alias "item"
+	/// <summary>item</summary>
+	public partial interface IItem : IPublishedContent
+	{
+		/// <summary>Description</summary>
+		IHtmlString Description { get; }
+
+		/// <summary>Image</summary>
+		IPublishedContent Image { get; }
+	}
+
 	/// <summary>item</summary>
 	[PublishedContentModel("item")]
-	public partial class Item : PublishedContentModel
+	public partial class Item : PublishedContentModel, IItem
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "item";
@@ -49,10 +60,13 @@ namespace Umbraco.Web.PublishedContentModels
 		/// Description
 		///</summary>
 		[ImplementPropertyType("description")]
-		public string Description
+		public IHtmlString Description
 		{
-			get { return this.GetPropertyValue<string>("description"); }
+			get { return GetDescription(this); }
 		}
+
+		/// <summary>Static getter for Description</summary>
+		public static IHtmlString GetDescription(IItem that) { return that.GetPropertyValue<IHtmlString>("description"); }
 
 		///<summary>
 		/// Image
@@ -60,7 +74,10 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("image")]
 		public IPublishedContent Image
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("image"); }
+			get { return GetImage(this); }
 		}
+
+		/// <summary>Static getter for Image</summary>
+		public static IPublishedContent GetImage(IItem that) { return that.GetPropertyValue<IPublishedContent>("image"); }
 	}
 }

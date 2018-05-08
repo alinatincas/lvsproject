@@ -20,9 +20,20 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
+	// Mixin content Type 1176 with alias "heroHeader"
+	/// <summary>heroHeader</summary>
+	public partial interface IHeroHeader : IPublishedContent
+	{
+		/// <summary>HeroHeadline</summary>
+		string HeroHeadline { get; }
+
+		/// <summary>HeroImage</summary>
+		IPublishedContent HeroImage { get; }
+	}
+
 	/// <summary>heroHeader</summary>
 	[PublishedContentModel("heroHeader")]
-	public partial class HeroHeader : PublishedContentModel
+	public partial class HeroHeader : PublishedContentModel, IHeroHeader
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "heroHeader";
@@ -51,8 +62,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("heroHeadline")]
 		public string HeroHeadline
 		{
-			get { return this.GetPropertyValue<string>("heroHeadline"); }
+			get { return GetHeroHeadline(this); }
 		}
+
+		/// <summary>Static getter for HeroHeadline</summary>
+		public static string GetHeroHeadline(IHeroHeader that) { return that.GetPropertyValue<string>("heroHeadline"); }
 
 		///<summary>
 		/// HeroImage
@@ -60,7 +74,10 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("heroImage")]
 		public IPublishedContent HeroImage
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("heroImage"); }
+			get { return GetHeroImage(this); }
 		}
+
+		/// <summary>Static getter for HeroImage</summary>
+		public static IPublishedContent GetHeroImage(IHeroHeader that) { return that.GetPropertyValue<IPublishedContent>("heroImage"); }
 	}
 }
