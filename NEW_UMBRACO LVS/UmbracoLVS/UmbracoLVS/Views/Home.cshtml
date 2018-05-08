@@ -1,0 +1,245 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Home>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "_Master.cshtml";
+}
+
+<div class="hero-image hero-image-tall" style="background-image: url('')">
+    <div class="overlay d-flex align-items-center justify-content-center">
+        <h1 class="header-title-white">
+            @*@Html.Raw(Model.Content.HeroImageHeadline)*@
+        </h1>
+    </div>
+    @*<div class="action-bar">
+        <div class="row no-gutters">
+            <div class="action-bar-container col-4 d-flex align-items-center justify-content-center">
+                <span>
+                    <p class="action-bar-text">@Model.Content.ActionBarHeadline1</p>
+                    <br>
+                    <p class="action-bar-caption">@Model.Content.ActionBarParagraph1</p>
+                </span>
+            </div>
+            <div class="action-bar-container col-4 d-flex align-items-center justify-content-center action-bar-separators">
+                <span>
+                    <p class="action-bar-text">@Model.Content.ActionBarHeadline2</p>
+                    <br>
+                    <p class="action-bar-caption">@Model.Content.ActionBarParagraph1</p>
+                </span>
+            </div>
+            <div class="action-bar-container col-4 d-flex justify-content-center align-items-center">
+                <span>
+                    <p class="action-bar-text">@Model.Content.ActionBarHeadline3</p>
+                    <br>
+                    <p class="action-bar-caption">@Model.Content.ActionBarParagraph1</p>
+                </span>
+            </div>
+        </div>
+    </div>*@
+</div>
+<!-- START SPONSOR CAROUSEL -->
+<section class="container-fluid bg-light post-action-bar">
+    <div class="container">
+        <div class="row pb-5 d-flex justify-content-center">
+            <div class="post-action-bar-headline">STØTTET AF</div>
+            <div class="col-md-12">
+                <div class="row carousel-sponsor d-flex align-items-center">
+                    <div class="mx-auto"><a target="_blank" href="http://stormspakhus.dk"><img src="assets/img/sponsors/Screen Shot 2018-03-06 at 19.19.20.png" alt="Storms Pakhus logo"></a></div>
+                    <div class="mx-auto"><a target="_blank" href="http://kmd.dk"><img src="assets/img/sponsors/kmd logo svg svg-01.png" alt="KMD logo"></a></div>
+                    <div class="mx-auto"><a target="_blank" href="http://www.bikubenfonden.dk/kronprinsparrets-priser-2010"><img src="assets/img/sponsors/kronsprins.png" alt="Kronsprinsparrets Pris logo"></a></div>
+                    <div class="mx-auto"><a target="_blank" href="http://odense.dk"><img src="assets/img/sponsors/kommunelogo2014sort.png" alt="Odense Kommune logo"></a></div>
+                    <div class="mx-auto"><a target="_blank" href="http://ob.dk" target="_blank"><img src="assets/img/sponsors/Odense_Boldklub.svg.png" alt="Odense Boldklub logo"></a></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- END SPONSOR CAROUSEL -->
+<!-- START FEATURE-GRID -->
+<section class="container-fluid clearance">
+    <div class="row">
+        <div class="tile-group quadro">
+            <div class="tile double double-vertical" style="background-image: url('assets/img/hjem/sommerlejer.png')">
+                <div class="overlay overlay-green">
+                    <h2 class="tile-text-headline">
+                        summercamp 2018
+                    </h2>
+                    <p class="tile-text">
+                        er lige på trapperne, skal du være med i årets fedeste event?
+                    </p>
+                </div>
+
+            </div>
+            <div class="tile double" style="background-image: url('assets/img/hjem/sommerhus.png')">
+                <div class="overlay overlay-orange">
+                    <h2 class="tile-text-headline">
+                        væresteder
+                    </h2>
+                    <p class="tile-text">
+                        Leder du efter det nærmeste værested, eller vil du læse mere om dine muligheder?
+                    </p>
+                </div>
+            </div>
+            <div class="tile" style="background-image: url('assets/img/hjem/guitar.png')">
+                <div class="overlay overlay-blue">
+                    <h2 class="tile-text-headline">
+                        frivillig
+                    </h2>
+                    <p class="tile-text">
+                        Hele grundstenen er de frivillige, har du lyst til at hjælpe?
+                    </p>
+                </div>
+            </div>
+            <div class="tile" style="background-image: url('assets/img/hjem/bueskydning.png')">
+                <div class="overlay overlay-red">
+                    <h2 class="tile-text-headline">
+                        Aktiviteter
+                    </h2>
+                    <p class="tile-text">
+                        Se listen over kommende aktiviteter og hvordan du tilmelder dig
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END FEATURE-GRID -->
+<!-- START LVS DESCRIPTION -->
+@*<section class="container clearance">
+    <h3 class="text-center">@Model.Content.Headline</h3>
+    <div class="row">
+        <div class="col-md-6">
+            <p>@Model.Content.BodyText</p>
+        </div>
+        <div class="col-md-6">
+            <p>@Model.Content.BodyText</p>
+        </div>
+    </div>
+</section>*@
+<!-- END LVS DESCRIPTION -->
+<!-- START MEMBER QUOTE -->
+<section class="container-fluid bg-light ">
+    <div class="container clearance-grey carousel slide" data-ride="carousel" id="carousel-quotes">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#carousel-quotes" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-quotes" data-slide-to="1"></li>
+            <li data-target="#carousel-quotes" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="row justify-content-center card-member-padding carousel-item active">
+                <div class="col-sm-12 col-md-12">
+                    <div class="card p-4">
+                        <div class="row align-items-center blockquote">
+                            <div class="col-md-6">
+                                <img class="card-img-top img-fluid rounded-circle card-img-padding" src="assets/img/hjem/avatar_dennis.JPG" alt="Card image">
+                            </div>
+                            <div class="col-md-6 hjem-quote">
+                                <div class="text-card card-body blockquote">
+                                    <h4 class="card-title pt-4">
+                                        <b>Dennis, 41 år</b>
+                                    </h4>
+                                    <p class="card-quote">
+                                        <i>"Jeg fokuserer på de små skridt, og er meget opmærksom på lysten til overspringshandlinger."</i>
+                                        <br>
+                                        <br>
+                                    </p>
+                                    <p class="card-text pt-4">
+                                        Jeg har været clean i tre og et halvt år nu og har langt 25 års misbrug bag mig,
+                                        heraf de 20 år på hårde stoffer.
+                                    </p>
+                                    <br>
+                                    <br>
+                                    <a href="http://www.dengodehistorie.net/indsendte-historier?PID=11240&M=NewsV2&Action=1&NewsId=38" target="_blank">
+                                        <button type="button" class="btn btn-readmore float-right">Læs mere</button>
+                                    </a>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center card-member-padding carousel-item">
+                <div class="col-sm-12 col-md-12">
+                    <div class="card p-4">
+                        <div class="row align-items-center blockquote">
+                            <div class="col-md-6">
+                                <img class="card-img-top img-fluid rounded-circle card-img-padding" src="assets/img/hjem/avatar_michael.JPG" alt="Card image">
+                            </div>
+                            <div class="col-md-6 hjem-quote">
+                                <div class="text-card card-body blockquote">
+                                    <h4 class="card-title pt-4">
+                                        <b>Michael, 43 år</b>
+                                    </h4>
+                                    <p class="card-quote">
+                                        <i>"Mit valg var egentligt ret enkelt: Vil du leve eller vil du dø?"</i>
+                                        <br>
+                                        <br>
+                                    </p>
+                                    <p class="card-text pt-4">
+                                        Tredje gang blev lykkens gang. For mit vedkommende. Jeg har været i to døgnbehandlingsforløb
+                                        før, men i april 2000 lykkedes det endelig at blive mit stofmisbrug kvit.
+                                        Jeg har været i clean i 16 år nu.
+                                    </p>
+                                    <br>
+                                    <br>
+                                    <a href="http://www.dengodehistorie.net/indsendte-historier?PID=11240&M=NewsV2&Action=1&NewsId=48" target="_blank">
+                                        <button type="button" class="btn btn-readmore float-right">Læs mere</button>
+                                    </a>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center card-member-padding carousel-item">
+                <div class="col-sm-12 col-md-12">
+                    <div class="card p-4">
+                        <div class="row align-items-center blockquote">
+                            <div class="col-md-6">
+                                <img class="card-img-top img-fluid rounded-circle card-img-padding" src="assets/img/hjem/avatar_carsten.JPG" alt="Card image">
+                            </div>
+                            <div class="col-md-6 hjem-quote">
+                                <div class="text-card card-body blockquote">
+                                    <h4 class="card-title pt-4">
+                                        <b>Carsten, 54 år</b>
+                                    </h4>
+                                    <p class="card-quote">
+                                        <i>"Jeg vil gerne være et eksempel på, at det kan lykkes."</i>
+                                        <br>
+                                        <br>
+                                    </p>
+                                    <p class="card-text pt-4">
+                                        Jeg er stoppet med mit misbrug af stoffer og alkohol og har været clean siden
+                                        d. 22. april 2008. På det tidspunkt var jeg 45 år. Døgnbehandlingen og mødet
+                                        med 12-trinsprogrammet blev mit vendepunkt.
+                                    </p>
+                                    <br>
+                                    <br>
+                                    <a href="http://www.dengodehistorie.net/indsendte-historier?PID=11240&M=NewsV2&Action=1&NewsId=36" target="_blank">
+                                        <button type="button" class="btn btn-readmore float-right">Læs mere</button>
+                                    </a>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END MEMBER QUOTE -->
+<!-- START CTA -->
+<section class="container clearance">
+    <div class="row justify-content-center">
+        <h1 class="text-uppercase">Bliv en del af fælleskabet</h1>
+    </div>
+    <div class="row justify-content-center">
+        <button type="button" class="btn btn-primary btn-lg mr-3">Støt</button>
+        <button type="button" class="btn btn-secondary btn-lg">Find værested</button>
+    </div>
+</section>
+<!-- END CTA -->

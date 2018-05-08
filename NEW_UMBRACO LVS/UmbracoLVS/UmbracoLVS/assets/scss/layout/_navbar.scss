@@ -1,0 +1,21 @@
+.logo {
+    height: 60px;
+}
+
+.nav-link {
+    padding: 0.6em 0.8em !important;
+}
+
+.nav-item.active .nav-link {
+    font-weight: 500;
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        height: 3px;
+        background: $darkGreen;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
