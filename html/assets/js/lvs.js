@@ -7,7 +7,12 @@
     //$("#\\/").addClass('active_nav');
 
 
-    
+    $("#search-icon").click(function (e) {
+        $(".searchform").addClass("show");
+        console.log("search began");
+
+    });
+
 
     $("div[data-includeHTML]").each(function () {
         $(this).load($(this).attr("data-includeHTML"));
