@@ -130,30 +130,14 @@
         crossorigin="anonymous"></script>
     <script src="assets/js/moment.js"></script>
     <script src="assets/js/fullcalendar.min.js"></script>
+    <script src="assets/js/locale/da.js"></script>
     <script src="assets/js/lvs.js"></script>
     <script>
         $('#calendar').fullCalendar({
 
             nowIndicator: true,
             themeSystem: 'bootstrap4',
-            timeFormat: 'H:mm',
-            firstDay: 1,
-            monthNames: ['Januar', 'Feburar', 'Marts', 'April', 'Maj', 'Juni', 'Juli',
-                'August', 'September', 'October', 'November', 'December'
-            ],
-            dayNames: ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag',
-                'Torsdag', 'Fredag', 'Lørdag'
-            ],
-            dayNamesShort: ['Søn', 'Man', 'Tir', 'Ons', 'Tor', 'Fre', 'Lør'],
-            weekNumbers: true,
             eventLimit: true,
-            buttonText: {
-                today: 'I dag',
-                month: 'Måned',
-                week: 'Uge',
-                day: 'Dag',
-                list: 'Liste'
-            },
             noEventsMessage: "Ingen akriviteter at vise",
 
             header: {
