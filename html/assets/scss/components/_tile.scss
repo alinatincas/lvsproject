@@ -49,10 +49,29 @@
     &.half {
         width: 132px;
         height: 132px;
+        .tile-text-headline {
+            font-size: 1rem !important;
+            width: 50% !important;
+        }
+        .tile-text {
+            font-size: 1rem !important;
+            width: 50% !important;
+        }
     }
     &.half-double {
         width: 275px;
         height: 132px;
+    }
+    &.third {
+        width: 180px;
+        .tile-text-headline {
+            font-size: 1.1rem !important;
+            width: 100% !important;
+        }
+        .tile-text {
+            font-size: 0.8rem !important;
+            width: 100% !important;
+        }
     }
     &.double-vertical {
         height: 560px;
