@@ -52,6 +52,7 @@
     background-color: $action-bar-border;
     margin: 2%;
     margin-bottom: 100px;
+    box-shadow: inset 0px -1px 0px 1px rgba(0, 0, 0, 0.15);
 }
 
 .carousel-indicators .active {
@@ -68,6 +69,6 @@
 
 .carousel-item.active,
 .carousel-item-next,
-.carousel-item-pr{
+.carousel-item-pr {
     display: inline-flex;
 }
