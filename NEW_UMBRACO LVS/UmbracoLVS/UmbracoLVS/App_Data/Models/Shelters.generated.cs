@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Shelters</summary>
 	[PublishedContentModel("shelters")]
-	public partial class Shelters : PublishedContentModel
+	public partial class Shelters : PublishedContentModel, IBaseContent, IHeroHeader
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "shelters";
@@ -43,6 +43,60 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Shelters, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Most Visisted List
+		///</summary>
+		[ImplementPropertyType("mostVisistedList")]
+		public IEnumerable<IPublishedContent> MostVisistedList
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("mostVisistedList"); }
+		}
+
+		///<summary>
+		/// Most visited headline
+		///</summary>
+		[ImplementPropertyType("mostVisitedHeadline")]
+		public string MostVisitedHeadline
+		{
+			get { return this.GetPropertyValue<string>("mostVisitedHeadline"); }
+		}
+
+		///<summary>
+		/// Content
+		///</summary>
+		[ImplementPropertyType("content")]
+		public Newtonsoft.Json.Linq.JToken Content
+		{
+			get { return Umbraco.Web.PublishedContentModels.BaseContent.GetContent(this); }
+		}
+
+		///<summary>
+		/// Headline
+		///</summary>
+		[ImplementPropertyType("headline")]
+		public string Headline
+		{
+			get { return Umbraco.Web.PublishedContentModels.BaseContent.GetHeadline(this); }
+		}
+
+		///<summary>
+		/// HeroHeadline
+		///</summary>
+		[ImplementPropertyType("heroHeadline")]
+		public string HeroHeadline
+		{
+			get { return Umbraco.Web.PublishedContentModels.HeroHeader.GetHeroHeadline(this); }
+		}
+
+		///<summary>
+		/// HeroImage
+		///</summary>
+		[ImplementPropertyType("heroImage")]
+		public IPublishedContent HeroImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.HeroHeader.GetHeroImage(this); }
 		}
 	}
 }

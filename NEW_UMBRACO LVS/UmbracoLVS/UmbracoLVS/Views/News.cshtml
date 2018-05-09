@@ -1,0 +1,68 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.News>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "_Master.cshtml";
+    var newslist = Model.Content.Children<Article>();
+}
+<div class="hero-image hero-image" style="background-image: url('assets/img/frontpage-header.png')">
+    <div class="overlay d-flex align-items-center justify-content-center">
+        <h1 class="header-title-white">NYHEDER</h1>
+    </div>
+
+    <div class="action-bar">
+        <div class="row no-gutters">
+            <div class="action-bar-container col-4 d-flex align-items-center justify-content-center">
+                <span>
+                    <p class="action-bar-text">Sundhed</p>
+                    <br>
+                    <p class="action-bar-caption">Kategori</p>
+                </span>
+            </div>
+            <div class="action-bar-container col-4 d-flex align-items-center justify-content-center action-bar-separators">
+                <span>
+                    <p class="action-bar-text">April</p>
+                    <br>
+                    <p class="action-bar-caption">Måned</p>
+                </span>
+            </div>
+            <div class="action-bar-container col-4 d-flex justify-content-center align-items-center">
+                <span>
+                    <p class="action-bar-text">2018</p>
+                    <br>
+                    <p class="action-bar-caption">År</p>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="container-fluid bg-light clearance-grey">
+    <div class="row">
+
+    </div>
+</section>
+
+<div class="container">
+    <div class="row clearance">
+        <h2>Seneste nyheder</h2>
+        @foreach (Article a in newslist)
+        {
+            <div class="container">
+                <div class="row">
+                    <a href="@a.Url">
+                        <div class="col-md-3">
+                            <img src="@a.Image.Url?width=150" alt="@a.Name" />
+                        </div>
+                        <div class="col-md-9">
+                            <h3>@a.Headline</h3>
+                            <div class="text-muted">
+                                @a.CreateDate
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

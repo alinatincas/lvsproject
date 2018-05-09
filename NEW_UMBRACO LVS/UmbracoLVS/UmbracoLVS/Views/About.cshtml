@@ -1,0 +1,64 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.About>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "_Master.cshtml";
+}
+<div class="hero-image hero-image" style="background-image: url('@Model.Content.HeroImage.Url')">
+    <div class="overlay d-flex align-items-center justify-content-center">
+        <h1 class="header-title-white">@Model.Content.Headline</h1>
+    </div>
+</div>
+
+<!-- START TAGLINE -->
+<section class="container-fluid bg-light clearance-grey">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="post-action-bar-headline"><h2>@Model.Content.PageTitel</h2></div>
+        </div>
+    </div>
+</section>
+<!-- END TAGLINE -->
+<!-- START WHITE SECTION -->
+<section class="container feature-grid clearance">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="~/om-lvs">
+                <div class="card">
+                    <img class="card-img img-fluid" src="~/assets/img/om/om-lvs/card-nav-om1.png" alt="">
+                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                        <p class="om-title-white">OM LVS</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="~/om-lvs/om-idvi">
+                <div class="card">
+                    <img class="card-img img-fluid" src="~/assets/img/om/om-lvs/card-nav-om2.png" alt="">
+                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                        <p class="om-title-white">IDVI</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="~/om-lvs/om-medarbejdere">
+                <div class="card">
+                    <img class="card-img img-fluid" src="~/assets/img/om/om-lvs/card-nav-om3.png" alt="img-medarbejdere">
+                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                        <p class="om-title-white">MEDARBEJDERE</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- END SECTION  -->
+<!-- START GREY SECTION -->
+<section class="container-fluid bg-light ">
+    <div class="container clearance-grey">
+        <h3>@Model.Content.Headline</h3>
+        @Html.GetGridHtml(Model.Content, "content")
+    </div>
+</section>
+<!-- END GREY SECTION -->

@@ -484,21 +484,19 @@
     <Content Include="Views\_Master.cshtml" />
     <Content Include="Views\Partials\Utils\_navigation.cshtml" />
     <Content Include="Views\Partials\Utils\_footer.cshtml" />
-    <Content Include="Views\ActivitiesList.cshtml" />
-    <Content Include="Views\Aktiviteter.cshtml" />
-    <Content Include="Views\GoodStoryQuotes.cshtml" />
     <Content Include="Views\Home.cshtml" />
-    <Content Include="Views\Kontakt.cshtml" />
-    <Content Include="Views\NewsFeed.cshtml" />
-    <Content Include="Views\Nyheder.cshtml" />
-    <Content Include="Views\OmIDVI.cshtml" />
-    <Content Include="Views\OmLVS.cshtml" />
-    <Content Include="Views\OmMedarbejdere.cshtml" />
-    <Content Include="Views\Publications.cshtml" />
     <Content Include="Views\Publikationer.cshtml" />
-    <Content Include="Views\Vaeresteder.cshtml" />
-    <Content Include="Views\VaerestederList.cshtml" />
-    <Content Include="Views\Shelter.cshtml" />
+    <Content Include="Views\shelters.cshtml" />
+    <Content Include="Views\Activity.cshtml" />
+    <Content Include="Views\Activities.cshtml" />
+    <Content Include="Views\Project.cshtml" />
+    <Content Include="Views\Publication.cshtml" />
+    <Content Include="Views\Report.cshtml" />
+    <Content Include="Views\News.cshtml" />
+    <Content Include="Views\Article.cshtml" />
+    <Content Include="Views\About.cshtml" />
+    <Content Include="Views\Contact.cshtml" />
+    <Content Include="Views\Employee.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

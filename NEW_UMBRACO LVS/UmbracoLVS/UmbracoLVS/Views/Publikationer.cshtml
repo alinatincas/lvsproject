@@ -2,10 +2,11 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "_Master.cshtml";
+    var publications = Model.Content.Children<Publication>().OrderBy(p=> p.CreateDate).ToList();
 }
-<div class="hero-image hero-image" style="background-image: url('@Model.Content.Image.Url')">
+<div class="hero-image hero-image" style="background-image: url('@Model.Content.HeroImage.Url')">
     <div class="overlay d-flex align-items-center justify-content-center">
-        <h1 class="header-title-white">@Html.Raw(Model.Content.Headline)</h1>
+        <h1 class="header-title-white">@Html.Raw(Model.Content.HeroHeadline)</h1>
     </div>
     <div class="action-bar">
         <div class="row no-gutters">
@@ -13,7 +14,7 @@
                 <span>
                     <p class="action-bar-text">Publikationer</p>
                     <br>
-                    <p class="action-bar-caption">21</p> w
+                    <p class="action-bar-caption">21</p>
                 </span>
             </div>
             <div class="action-bar-container col-4 d-flex align-items-center justify-content-center action-bar-separators">
@@ -37,24 +38,28 @@
 <section class="container-fluid bg-light post-action-bar">
     <!-- STAR DESCRIPTION -->
     <section class="container clearance-grey">
-        <h3 class="text-center">@Model.Content.ContentHeadline</h3>
-        <div class="row">
-            <div class="col-md-6">
-                <p>
-                    @Model.Content.ContentLeft
-                </p><br>
-            </div>
-            <div class="col-md-6">
-                <p>
-                    @Model.Content.ContentRight
-                </p><br>
-            </div>
-        </div>
+        <h3 class="text-center">@Model.Content.Headline</h3>
+        @Html.GetGridHtml(Model.Content, "content")
     </section>
 </section>
 
 <section class="container clearance">
     <h3 class="text-center">KLIK PÅ BILLEDET, AT LÆS OM EN OFFENTLIGGØRELSE</h3>
     <h1 style="background-color:palevioletred">ADD GRID HERE!</h1>
+    <br />
+    @foreach (Publication p in publications)
+    {
+    <div class="row">
+        <div class="col-md-5">
+            <a href="@p.Url">
+                <img src="@p.Image.Url?width=400" alt="@p.Headline" />
+            </a>
+        </div>
+        <div class="col-md-7">
+            <h3>@p.Headline</h3>
+            <p>@p.Description</p>
+        </div>
+    </div>
+    }
 </section>
 <br>

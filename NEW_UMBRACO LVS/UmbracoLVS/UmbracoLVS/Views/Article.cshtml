@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Article>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "_Master.cshtml";
+}
+<section class="container-fluid bg-light">
+    <!-- STAR DESCRIPTION -->
+    <section class="container clearance-grey">
+        <h3 class="text-center">@Model.Content.Headline</h3>
+        <p class="text-muted text-center">@Model.Content.CreateDate</p>
+        <br />
+            @Html.GetGridHtml(Model.Content, "content")
+    </section>
+    <!-- END DESCRIPTION -->
+</section>
