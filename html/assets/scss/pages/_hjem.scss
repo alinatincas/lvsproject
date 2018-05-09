@@ -21,16 +21,21 @@
 }
 
 .card-member-padding {
-    padding: 100px;
+    background-color: white;
+    padding: 5%;
+}
+
+.carousel-card-padding {
+    padding: 10%;
 }
 
 .card-img-padding {
-    padding: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .card {
     .card-body {
-        flex-direction: row;
         .card-quote {
             font-size: 0.9rem;
         }
@@ -41,12 +46,28 @@
 }
 
 .carousel-indicators li {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 100%;
     background-color: $action-bar-border;
-    margin: 5%;
+    margin: 2%;
     margin-bottom: 100px;
 }
 
+.carousel-indicators .active {
+    background-color: black;
+}
 
+.card-title {
+    font-size: 1.2rem;
+}
+
+.text-card {
+    font-size: 1rem;
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-pr{
+    display: inline-flex;
+}
