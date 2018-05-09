@@ -8,6 +8,13 @@
 .nav-pills .nav-link {
     color: #707070;
     max-height: 170px;
+    border-radius: 5px;
+}
+
+.tab-content>.active {
+    background-color: #F5F5F5 !important;
+    min-height: 914px;
+    border-radius: 5px;
 }
 
 .backgroundcolordiv {
