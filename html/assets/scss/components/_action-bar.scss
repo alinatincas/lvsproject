@@ -1,4 +1,5 @@
 /*---ACTION BAR---*/
+
 .action-bar {
     z-index: 30;
     position: absolute;
@@ -6,7 +7,7 @@
     border-radius: 2px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-    width: 960px;
+    width: 850px;
     height: 160px;
     bottom: -80px;
     left: 50%;
@@ -38,8 +39,8 @@
     border-left: 1px solid $action-bar-border;
 }
 
-
 /*---POST ACTIONBAR---*/
+
 .post-action-bar {
     padding-top: 150px;
     &-headline {

@@ -1,4 +1,5 @@
 ﻿/*---VAERESTEDER---*/
+
 .backgroundcolordiv {
     background-color: $offWhite;
 }
@@ -27,7 +28,6 @@
 p {
     font-family: $font-body;
     font-size: 1em;
-    display: inline
 }
 
 .vaestedName {
@@ -50,16 +50,27 @@ p {
     height: 54px;
     display: inline-block;
 }
-.input_vaersted{
+
+.input_vaersted {
     width: 100%;
 }
 
 @media all and (min-width: 900px) {
-    .results-list {display: flex};
-    .results-list-accordeon {display:none;}
+    .results-list {
+        display: flex
+    }
+    ;
+    .results-list-accordeon {
+        display: none;
+    }
 }
+
 @media all and (max-width: 899px) {
-    .results-list {display:none};
-    .results-list-accordeon {display:block;}
-    
+    .results-list {
+        display: none
+    }
+    ;
+    .results-list-accordeon {
+        display: block;
+    }
 }
