@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AKTIVITETER</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/fullcalendar.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
     <link href="assets/css/style.css" rel="stylesheet">
 
@@ -19,8 +19,10 @@
         <div data-includeHTML="partials/_header-aktiviteter.html"></div>
     </header>
     <main>
-        <section class="container-fluid bg-light clearance-grey">
-            <div data-includeHTML="partials/_cal-aktivitet.html"></div>
+        <section class="container clearance-grey">
+            <!-- <div data-includeHTML="partials/_cal-aktivitet.html"></div> -->
+
+            <div id='calendar'></div>
         </section>
 
         <section class="container clearance">
@@ -56,49 +58,59 @@
                         <p>IDVI opfordrer til, at man altid søger idrættens positive værdier. Ved arrangementer, som IDVI er
                             medarrangør af, kan lokale regler være gældende. </p>
                     </div>
-                </div><br>
+                </div>
+                <br>
                 <div class="collapse" id="retningslinjer">
                     <div class="row equal">
                         <div class="col-md-6">
                             <p>
-                                <b>1.</b> Enhver, der deltager i eller bidrager til afvikling af IDVI's idrætsarrangementer, forpligter sig
-                                til en adfærd, som tilgodeser både det sociale samvær og sikkerheden omkring idrætsudøvelsen.
+                                <b>1.</b> Enhver, der deltager i eller bidrager til afvikling af IDVI's idrætsarrangementer,
+                                forpligter sig til en adfærd, som tilgodeser både det sociale samvær og sikkerheden omkring
+                                idrætsudøvelsen.
                             </p>
-                            <br><br>
+                            <br>
+                            <br>
                             <p>
-                                <b>2.</b> Konkurrenceelementet er vigtigt, men må aldrig overskygge idrættens øvrige positive værdier. IDVI
-                                henstiller derfor til, at man i sin omgang med de øvrige deltagere, officials, publikum og andre fremstår
-                                som et godt eksempel og ambassadør for udsatteidrætten.
+                                <b>2.</b> Konkurrenceelementet er vigtigt, men må aldrig overskygge idrættens øvrige positive
+                                værdier. IDVI henstiller derfor til, at man i sin omgang med de øvrige deltagere, officials,
+                                publikum og andre fremstår som et godt eksempel og ambassadør for udsatteidrætten.
                             </p>
-                            <br><br>
+                            <br>
+                            <br>
                             <p>
-                                <b>3.</b> Anvisninger fra arrangøren, officials og holdledere skal efterleves. Sanktioner som følge af overtrædelse
-                                af retningslinjerne (for eksempel bortvisning) kan dog kun iværksættes af IDVI's faste personale.
+                                <b>3.</b> Anvisninger fra arrangøren, officials og holdledere skal efterleves. Sanktioner som
+                                følge af overtrædelse af retningslinjerne (for eksempel bortvisning) kan dog kun iværksættes
+                                af IDVI's faste personale.
                             </p>
-                            <br><br>
+                            <br>
+                            <br>
                         </div>
                         <div class="col-md-6">
                             <p>
-                                <b>4.</b> IDVI skelner ikke mellem forskellige typer væresteder. Men vi opererer med to forskellige rusmiddelpolitikker.
-                                Hvilken af de to, der gælder for et givet arrangement, vil fremgå af indbydelsen. <br>
+                                <b>4.</b> IDVI skelner ikke mellem forskellige typer væresteder. Men vi opererer med to forskellige
+                                rusmiddelpolitikker. Hvilken af de to, der gælder for et givet arrangement, vil fremgå af
+                                indbydelsen.
+                                <br>
                                 <ul>
-                                    <li>IDVI anerkender behovet for idrætsarrangementer, hvor det for deltagerne er tilladt at være påvirket i en grad, der svarer
-                                    til ”lavest mulige funktionspromille”. Dog må indtagelse af rusmidler ikke finde sted på de fællesarealer, sportsarenaer,
-                                    lejrpladser og festarealer, hvor på arrangementet afvikles.</li>
-                                    <li>Alle former for doping/rusmiddelindtagelse er forbudt under arrangementets forløb. Lægeordineret medicin/medikament er tilladt.</li>
+                                    <li>IDVI anerkender behovet for idrætsarrangementer, hvor det for deltagerne er tilladt at
+                                        være påvirket i en grad, der svarer til ”lavest mulige funktionspromille”. Dog må
+                                        indtagelse af rusmidler ikke finde sted på de fællesarealer, sportsarenaer, lejrpladser
+                                        og festarealer, hvor på arrangementet afvikles.</li>
+                                    <li>Alle former for doping/rusmiddelindtagelse er forbudt under arrangementets forløb. Lægeordineret
+                                        medicin/medikament er tilladt.</li>
                                 </ul>
-                            </p>         
+                            </p>
                             <p>
-                                <b>5.</b> Ovenstående retningslinjer gøres gældende for hele det tidsrum, arrangementer varer, - og ikke kun
-                                under selve idrætsudøvelsen.
+                                <b>5.</b> Ovenstående retningslinjer gøres gældende for hele det tidsrum, arrangementer varer,
+                                - og ikke kun under selve idrætsudøvelsen.
                             </p>
                         </div>
                     </div>
-                </div> 
-                
+                </div>
+
                 <button type="button" class="btn btn-readmore mt-3 mr-5 float-right bg-success text-white" data-toggle="collapse" data-target="#retningslinjer">Læs mere</button>
             </article>
-            
+
         </section>
 
 
@@ -116,7 +128,44 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script src="assets/js/moment.js"></script>
+    <script src="assets/js/fullcalendar.min.js"></script>
     <script src="assets/js/lvs.js"></script>
+    <script>
+        $('#calendar').fullCalendar({
+
+            nowIndicator: true,
+            themeSystem: 'bootstrap4',
+            timeFormat: 'H:mm',
+            firstDay: 1,
+            monthNames: ['Januar', 'Feburar', 'Marts', 'April', 'Maj', 'Juni', 'Juli',
+                'August', 'September', 'October', 'November', 'December'
+            ],
+            dayNames: ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag',
+                'Torsdag', 'Fredag', 'Lørdag'
+            ],
+            dayNamesShort: ['Søn', 'Man', 'Tir', 'Ons', 'Tor', 'Fre', 'Lør'],
+            weekNumbers: true,
+            eventLimit: true,
+            buttonText: {
+                today: 'I dag',
+                month: 'Måned',
+                week: 'Uge',
+                day: 'Dag',
+                list: 'Liste'
+            },
+            noEventsMessage: "Ingen akriviteter at vise",
+
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay,listMonth'
+
+
+            },
+            events: 'https://fullcalendar.io/demo-events.json'
+        });
+    </script>
 </body>
 
 </html>
