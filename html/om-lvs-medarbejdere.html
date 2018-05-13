@@ -69,13 +69,15 @@
         <!-- START GREY SECTION -->
         <section class="container-fluid bg-light ">
             <div class="container clearance-grey">
-                <div class="row">
+                <div class="row equal">
                     <div class="col-md-6">
                         <h3><b>LVS' bestyrelse</b></h3>
-                        <p>Niels Rasmussen, Formand <br> Torben I. Hansen, Solstrålen,  Fredericia Hanne Christensen, Multihuset, Brøndby Uri Tzabari, Brydehuset,
-                        Ballerup Inga Skjærris Nielsen Suzan Crawford, Terminal 1, København (suppleant) Steen Møller Pedersen,
-                        Kontakten, Fredericia (suppleant)
-</p>
+                        <p>Niels Rasmussen, Formand <br>
+                             Torben I. Hansen, Solstrålen,  Fredericia <br>
+                             Hanne Christensen, Multihuset, Brøndby <br>
+                             Uri Tzabari, Brydehuset,Ballerup <br>
+                             Inga Skjærris Nielsen
+                        </p>
                     </div>
                     <div class="col-md-6">
                         <h3><b>Rådgivning</b></h3>
@@ -83,11 +85,35 @@
                              LVS konsulenter yder rådgivning til værestederne. Rådgivningen er i høj grad erfaringsbåret og baseret på konsulenternes
                             kendskab til andre væresteders særlige kompetencer og svar på udfordringer i forhold til brugerinddragelse, drift, hjælp
                             til ansøgninger, brobygning og samarbejde med kommunen.
-
-                        </p><br>
-                        <button type="button" class="btn btn-readmore mt-3 mr-5 float-right">Læs mere</button>
+                        </p>
                     </div>
                 </div>
+                <div class="collapse" id="retningslinjer">
+                    <div class="row equal">
+                        <div class="col-md-6">
+                            <p>
+                                 Erik Knudsen, rektor, UCL <br>
+                                 Ole Pass, tidl. chef for Socialchefforeningen <br>
+                                 Suzan Crawford, Terminal 1, København (suppleant)<br>
+                                Steen Møller Pedersen, Kontakten, Fredericia (suppleant)
+                            </p>
+                            <br>
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                             Rådgivningen ydes inden for rammerne af Værestedstanken og De små skridts metode og i den største respekt for værestedernes
+                            forskelligheder.
+                            </p>
+                            <p>
+                             Rådgivningen kan gives telefonisk, men vi lægger vægt på relationerne til værestederne og vil gerne ud på værestederne og
+                            møde medarbejdere og brugere i deres vante rammer.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn btn-readmore mt-3 mr-5 float-right bg-success text-white" data-toggle="collapse" data-target="#retningslinjer">Læs mere</button>
             </div>
         </section>
         <!-- END GREY SECTION -->
@@ -98,169 +124,131 @@
                     <h2>Læs mere om LVS medarbejdere her under</h2>
                 </div>
             </section>
-            <section class="results-list">
-                <div class="row clearance-bottom">
-                    <div class="col-4">
-                        <div class="list-group">
-                            <a href="#" class="list-group-item active">
-                                <h4 class="list-group-item-heading">
-                                    <i class="fas fa-map-marker-alt"></i> Regnbuen</h4>
-                                <p class="list-group-item-text">Adresse: Riberdyb 10, 6000 Kolding
-                                    <br />Tlf: 79 79 76 00
-                                    <br />Mail:vr@kolding.dk</p>
-
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading">
-                                        <i class="fas fa-map-marker-alt"></i> Regnbuen</h4>
-                                    <p class="list-group-item-text">Adresse: Riberdyb 10, 6000 Kolding
-                                        <br />Tlf: 79 79 76 00
-                                        <br />Mail:vr@kolding.dk</p>
-                                </a>
-
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading">
-                                        <i class="fas fa-map-marker-alt"></i> Regnbuen</h4>
-                                    <p class="list-group-item-text">Adresse: Riberdyb 10, 6000 Kolding
-                                        <br />Tlf: 79 79 76 00
-                                        <br />Mail:vr@kolding.dk</p>
-                                </a>
-
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading">
-                                        <i class="fas fa-map-marker-alt"></i> Regnbuen</h4>
-                                    <p class="list-group-item-text">Adresse: Riberdyb 10, 6000 Kolding
-                                        <br />Tlf: 79 79 76 00
-                                        <br />Mail:vr@kolding.dk</p>
-                                </a>
-
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading">
-                                        <i class="fas fa-map-marker-alt"></i> Regnbuen</h4>
-                                    <p class="list-group-item-text">Adresse: Riberdyb 10, 6000 Kolding
-                                        <br />Tlf: 79 79 76 00
-                                        <br />Mail:vr@kolding.dk</p>
-                                </a>
+            <section>
+                <div class="row  clearance-bottom">
+                    <div class="col-5 pr-2">
+                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            
+                            <a class="nav-link active z-depth-1 mb-3" id="v-pills-vare-tab" data-toggle="pill" href="#v-pills-vare" role="tab" aria-controls="v-pills-vare"
+                                aria-selected="true">
+                                <div class="row">
+                                    <div class="col-md-2 pl-4 pt-4">
+                                        <img src="assets/img/vaeresteder/mapmarker.svg" alt="">
+                                    </div>
+                                    <div class="col-md-9 pt-4">
+                                        <h5 class="mb-3"> Regnbuen</h5>
+                                        <p class="m-0">Address: Seebladsgade</p>
+                                        <p class="m-0">Tlf: 123123123</p>
+                                        <p class="m-0">Mail: jesper@easdasd.dk</p>
+                                    </div>
+                                </div>
+            
+                            </a>
+                            <a class="nav-link z-depth-1 mb-3" id="v-pills-vare-tab" data-toggle="pill" href="#v-pills-vare" role="tab" aria-controls="v-pills-vare"
+                                aria-selected="true">
+                                <div class="row">
+                                    <div class="col-md-2 pl-4 pt-4">
+                                        <img src="assets/img/vaeresteder/mapmarker.svg" alt="">
+                                    </div>
+                                    <div class="col-md-9 pt-4">
+                                        <h5 class="mb-3"> Regnbuen</h5>
+                                        <p class="m-0">Address: Seebladsgade</p>
+                                        <p class="m-0">Tlf: 123123123</p>
+                                        <p class="m-0">Mail: jesper@easdasd.dk</p>
+                                    </div>
+                                </div>
+            
+                            </a>
+            
+                            <a class="nav-link z-depth-1 mb-3" id="v-pills-vare-tab" data-toggle="pill" href="#v-pills-vare" role="tab" aria-controls="v-pills-vare"
+                                aria-selected="true">
+                                <div class="row">
+                                    <div class="col-md-2 pl-4 pt-4">
+                                        <img src="assets/img/vaeresteder/mapmarker.svg" alt="">
+                                    </div>
+                                    <div class="col-md-9 pt-4">
+                                        <h5 class="mb-3"> Regnbuen</h5>
+                                        <p class="m-0">Address: Seebladsgade</p>
+                                        <p class="m-0">Tlf: 123123123</p>
+                                        <p class="m-0">Mail: jesper@easdasd.dk</p>
+                                    </div>
+                                </div>
+            
+                            </a>
+            
+                            <a class="nav-link z-depth-1 mb-3" id="v-pills-vare-tab" data-toggle="pill" href="#v-pills-vare" role="tab" aria-controls="v-pills-vare"
+                                aria-selected="true">
+                                <div class="row">
+                                    <div class="col-md-2 pl-4 pt-4">
+                                        <img src="assets/img/vaeresteder/mapmarker.svg" alt="">
+                                    </div>
+                                    <div class="col-md-9 pt-4">
+                                        <h5 class="mb-3"> Regnbuen</h5>
+                                        <p class="m-0">Address: Seebladsgade</p>
+                                        <p class="m-0">Tlf: 123123123</p>
+                                        <p class="m-0">Mail: jesper@easdasd.dk</p>
+                                    </div>
+                                </div>
+            
+                            </a>
+            
+                            <a class="nav-link z-depth-1 mb-4" id="v-pills-vare-tab" data-toggle="pill" href="#v-pills-vare" role="tab" aria-controls="v-pills-vare"
+                                aria-selected="true">
+                                <div class="row">
+                                    <div class="col-md-2 pl-4 pt-4">
+                                        <img src="assets/img/vaeresteder/mapmarker.svg" alt="">
+                                    </div>
+                                    <div class="col-md-9 pt-4">
+                                        <h5 class="mb-3"> Regnbuen</h5>
+                                        <p class="m-0">Address: Seebladsgade</p>
+                                        <p class="m-0">Tlf: 123123123</p>
+                                        <p class="m-0">Mail: jesper@easdasd.dk</p>
+                                    </div>
+                                </div>
+            
+                            </a>
                         </div>
                     </div>
-
-                    <div class="col-8">
-                        <div class="card card-result-bg">
-                            <img class="vaestedImage" src="assets/img/house.png" alt="Værested" />
-                            <div class="vaestedTxt2">
-                                <p>
-                                    Værestedet Regnbuen er et uvisiteret og anonymt tilbud til borgere over 18 år med et mangeårigt aktivt stofmisbrug. Vi tilbyder
-                                    socialt samvær og aktiviteter, omsorg og muligheden for at møde andre ligestillede.
-                                </p>
-                                <p>
-                                    Du kan også få en kop kaffe, et måltid mad, socialt samvær og varme. Ligesom der er mulighed for at deltage i brugermøderne
-                                    hver anden uge, madlavning, rengøring eller blot at være en del af fællesskabet.
-                                </p>
-                                <p>
-                                    Regnbuens personale består af en sygeplejerske og en socialrådgiver og er desuden praktiksted for pædagogisk assistent-elever
-                                    og socialrådgiverstuderende.
-                                </p>
-                                <p>
-                                    Regnbuens tilbud består af:
-                                    <br /> - Kontakt/samtale med en medarbejder
-                                    <br /> - Støtte til at skabe et socialt netværk
-                                    <br /> - Mulighed for gratis morgenmad og middagsmad mod betaling
-                                    <br /> - Deltagelse i forskellige aktiviteter
-                                    <br />
-                                </p>
+                    <div class="col-7 pl-2">
+            
+                        <div class="tab-content" id="v-pills-tabContent">
+            
+                            <div class="tab-pane fade z-depth-1 show active" id="v-pills-vare" role="tabpanel" aria-labelledby="v-pills-vare-tab">
+                                <div class="varested-img" style="background-image: url('assets/img/house.png')">
+            
+                                </div>
+                                <div class="centertxt text-muted">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, exercitationem culpa. Ea possimus
+                                        ipsum consectetur autem nesciunt accusamus saepe earum aliquid ad laudantium, deleniti facilis,
+                                        ex maxime itaque ullam vitae.</p>
+            
+                                    <h3>Kontakt Regnbuen</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, exercitationem culpa. Ea possimus ipsum consectetur autem
+                                        nesciunt accusamus saepe earum aliquid ad laudantium, deleniti facilis, ex maxime itaque ullam
+                                        vitae.
+                                    </p>
+                                </div>
+                                <div class="centertxt text-muted">
+            
+                                    <a href="#" class="btn btn-primary">Læs mere</a>
+                                </div>
+            
                             </div>
+            
                         </div>
                     </div>
                 </div>
             </section>
             <!-- START ACCORDEON FOR MOBILE -->
-            <section class="row">
-                <div class="results-list-accordeon">
-                    <div id="accordion">
-                        <div class="card">
-                            <div class="card-header" id="headingOne">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Collapsible Group Item #1
-                                    </button>
-                                </h5>
-                            </div>
 
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
-                                    3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                                    shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                                    accusamus labore sustainable VHS.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Collapsible Group Item #2
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
-                                    3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                                    shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                                    accusamus labore sustainable VHS.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingThree">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        Collapsible Group Item #3
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
-                                    3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                                    shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                                    accusamus labore sustainable VHS.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END ACCORDEON FOR MOBILE -->
-
-
-            </section>
+        </section>
 
     </main>
 
     <footer id="footer" class="container-fluid p-0 bg-light">
         <div data-includeHTML="partials/_footer.html"></div>
     </footer>
-
-
-
-    <!-- PAGE INDIVIDUAL SCRIPTS -->
-    <!--  <script type="text/javascript">
-        $('.carousel-sponsors').slick({
-                slidesToShow: 5,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 2000,
-            });        
-    </script> -->
 
     <!-- GENERAL JS SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
