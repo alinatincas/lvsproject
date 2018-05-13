@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Contact</summary>
 	[PublishedContentModel("contact")]
-	public partial class Contact : PublishedContentModel, IBaseContent, IHeroHeader, IStaff
+	public partial class Contact : PublishedContentModel, IBaseContent, IHeroHeader
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "contact";
@@ -64,7 +64,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// HeroHeadline
+		/// Headline
 		///</summary>
 		[ImplementPropertyType("heroHeadline")]
 		public string HeroHeadline
@@ -73,7 +73,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// HeroImage
+		/// Background Image
 		///</summary>
 		[ImplementPropertyType("heroImage")]
 		public IPublishedContent HeroImage

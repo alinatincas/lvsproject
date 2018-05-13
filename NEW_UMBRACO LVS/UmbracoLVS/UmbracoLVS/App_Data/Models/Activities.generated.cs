@@ -100,7 +100,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// HeroHeadline
+		/// Headline
 		///</summary>
 		[ImplementPropertyType("heroHeadline")]
 		public string HeroHeadline
@@ -109,7 +109,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// HeroImage
+		/// Background Image
 		///</summary>
 		[ImplementPropertyType("heroImage")]
 		public IPublishedContent HeroImage
