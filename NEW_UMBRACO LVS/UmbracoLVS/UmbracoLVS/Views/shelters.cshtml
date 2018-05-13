@@ -77,36 +77,51 @@
     </section>
 
     <section>
-        <div class="row no-gutters clearance-bottom">
-            <div class="col-4">
+        <div class="row  clearance-bottom">
+            <div class="col-5 pr-2">
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     @{ string activeClass = "active";}
                     @foreach (Shelter s in shelters)
-                    {
-                        <a class="nav-link @activeClass" id="v-pills-@s.Id-tab" data-toggle="pill" href="#v-pills-@s.Id" role="tab" aria-controls="v-pills-@s.Id" aria-selected="true">
-                            <h5> <i class="fas fa-map-marker-alt"></i> @s.ShelterName</h5>
+            {
+                <a class="nav-link @activeClass z-depth-1 mb-3" id="v-pills-@s.Id-tab-tab" data-toggle="pill" href="#v-pills-@s.Id-tab" role="tab" aria-controls="v-pills-@s.Id-tab"
+                   aria-selected="true">
+                    <div class="row">
+                        <div class="col-md-2 pl-4 pt-4">
+                            <img src="~/assets/img/vaeresteder/mapmarker.svg" alt="">
+                        </div>
+                        <div class="col-md-9 pt-4">
+                            <h5 class="mb-3">@s.ShelterName</h5>
                             <p class="m-0">Address: @s.Address</p>
                             <p class="m-0">Tlf: @s.ShelterPhone</p>
                             <p class="m-0">Mail: @s.ShelterEmail</p>
-                        </a>
-                        activeClass = "";
-                    }
+                        </div>
+                    </div>
+
+                </a>
+        activeClass = "";
+    }
                 </div>
             </div>
-            <div class="col-8">
+            <div class="col-7 pl-2">
 
                 <div class="tab-content" id="v-pills-tabContent">
                     @{ string shownActive = "show active";}
                     @foreach (Shelter s in shelters)
-                    {
-                        <div class="tab-pane fade @shownActive" id="v-pills-@s.Id" role="tabpanel" aria-labelledby="v-pills-@s.Id-tab">
-                            <img class="vaestedImage" src="@s.Image.Url?width=700" alt="Værested" />
-                            <div id="Centertxt" class="p-2 text-muted">
-                                @Html.Raw(s.Description)
-                            </div>
-                        </div>
-                        shownActive = "";
-                    }
+            {
+                <div class="tab-pane fade z-depth-1 @shownActive" id="v-pills-@s.Id" role="tabpanel" aria-labelledby="v-pills-@s.Id-tab">
+                    <div class="varested-img" style="background-image: url('@s.Image.Url?width=700')">
+
+                    </div>
+                    <div class="centertxt text-muted">
+                        @Html.Raw(s.Description)
+                    </div>
+                    <div class="centertxt text-muted">
+                        <a href="@s.Url" class="btn btn-primary">Læs mere</a>
+                    </div>
+
+                </div>
+        shownActive = "";
+    }
                 </div>
             </div>
         </div>
