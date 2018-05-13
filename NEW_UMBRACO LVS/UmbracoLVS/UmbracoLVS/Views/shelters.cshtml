@@ -7,7 +7,7 @@
 }
 <section>
     <div class="hero-image hero-image" style="background-image: url('@Model.Content.HeroImage.Url')">
-        <div class="overlay d-flex align-items-center justify-content-center">
+        <div class="overlay d-flex align-items-center justify-content-center overlay-red">
             <h1 class="header-title-white">@Model.Content.HeroHeadline</h1>
         </div>
 
@@ -15,22 +15,19 @@
             <div class="row no-gutters">
                 <div class="action-bar-container col-4 d-flex align-items-center justify-content-center">
                     <span>
-                        <p class="action-bar-text">Fyn</p>
-                        <br>
+                        <p class="action-bar-text dropdown-toggle">Fyn</p>
                         <p class="action-bar-caption">Region</p>
                     </span>
                 </div>
                 <div class="action-bar-container col-4 d-flex align-items-center justify-content-center action-bar-separators">
                     <span>
-                        <p class="action-bar-text">5000</p>
-                        <br>
+                        <p class="action-bar-text dropdown-toggle">5000</p>
                         <p class="action-bar-caption">Postnr.</p>
                     </span>
                 </div>
                 <div class="action-bar-container col-4 d-flex justify-content-center align-items-center">
                     <span>
-                        <p class="action-bar-text">5 steder</p>
-                        <br>
+                        <p class="action-bar-text dropdown-toggle">5 steder</p>
                         <p class="action-bar-caption">Fundet</p>
                     </span>
                 </div>
@@ -82,24 +79,24 @@
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     @{ string activeClass = "active";}
                     @foreach (Shelter s in shelters)
-            {
-                <a class="nav-link @activeClass z-depth-1 mb-3" id="v-pills-@s.Id-tab-tab" data-toggle="pill" href="#v-pills-@s.Id-tab" role="tab" aria-controls="v-pills-@s.Id-tab"
-                   aria-selected="true">
-                    <div class="row">
-                        <div class="col-md-2 pl-4 pt-4">
-                            <img src="~/assets/img/vaeresteder/mapmarker.svg" alt="">
-                        </div>
-                        <div class="col-md-9 pt-4">
-                            <h5 class="mb-3">@s.ShelterName</h5>
-                            <p class="m-0">Address: @s.Address</p>
-                            <p class="m-0">Tlf: @s.ShelterPhone</p>
-                            <p class="m-0">Mail: @s.ShelterEmail</p>
-                        </div>
-                    </div>
+                    {
+                        <a class="nav-link @activeClass z-depth-1 mb-3" id="v-pills-@s.Id-tab-tab" data-toggle="pill" href="#v-pills-@s.Id-tab" role="tab" aria-controls="v-pills-@s.Id-tab"
+                           aria-selected="true">
+                            <div class="row">
+                                <div class="col-md-2 pl-4 pt-4">
+                                    <img src="~/assets/img/vaeresteder/mapmarker.svg" alt="">
+                                </div>
+                                <div class="col-md-9 pt-4">
+                                    <h5 class="mb-3">@s.ShelterName</h5>
+                                    <p class="m-0">Address: @s.Address</p>
+                                    <p class="m-0">Tlf: @s.ShelterPhone</p>
+                                    <p class="m-0">Mail: @s.ShelterEmail</p>
+                                </div>
+                            </div>
 
-                </a>
-        activeClass = "";
-    }
+                        </a>
+                        activeClass = "";
+                    }
                 </div>
             </div>
             <div class="col-7 pl-2">
@@ -107,21 +104,21 @@
                 <div class="tab-content" id="v-pills-tabContent">
                     @{ string shownActive = "show active";}
                     @foreach (Shelter s in shelters)
-            {
-                <div class="tab-pane fade z-depth-1 @shownActive" id="v-pills-@s.Id" role="tabpanel" aria-labelledby="v-pills-@s.Id-tab">
-                    <div class="varested-img" style="background-image: url('@s.Image.Url?width=700')">
+                    {
+                        <div class="tab-pane fade z-depth-1 @shownActive" id="v-pills-@s.Id" role="tabpanel" aria-labelledby="v-pills-@s.Id-tab">
+                            <div class="varested-img" style="background-image: url('@s.Image.Url?width=700')">
 
-                    </div>
-                    <div class="centertxt text-muted">
-                        @Html.Raw(s.Description)
-                    </div>
-                    <div class="centertxt text-muted">
-                        <a href="@s.Url" class="btn btn-primary">Læs mere</a>
-                    </div>
+                            </div>
+                            <div class="centertxt text-muted">
+                                @Html.Raw(s.Description)
+                            </div>
+                            <div class="centertxt text-muted">
+                                <a href="@s.Url" class="btn btn-primary">Læs mere</a>
+                            </div>
 
-                </div>
-        shownActive = "";
-    }
+                        </div>
+                        shownActive = "";
+                    }
                 </div>
             </div>
         </div>
@@ -173,6 +170,18 @@
                                     </div>
                                     <div class="col-md-8 form-field">
                                         <input type="number" class="form-control">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label> Website: </label>
+                                    </div>
+                                    <div class="col-md-8 form-field">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label> Adresse: </label>
+                                    </div>
+                                    <div class="col-md-8 form-field">
+                                        <input type="text" class="form-control">
                                     </div>
                                     <div class="col-md-12 d-flex justify-content-end">
                                         <input type="submit" class="submit-button" value="Submit">

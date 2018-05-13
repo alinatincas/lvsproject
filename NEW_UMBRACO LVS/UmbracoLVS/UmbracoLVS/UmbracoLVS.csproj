@@ -310,7 +310,10 @@
     <Content Include="assets\img\vaeresteder\paraplyen.png" />
     <Content Include="assets\img\vaeresteder\plexus.png" />
     <Content Include="assets\img\vaeresteder\stoppestedet.png" />
+    <Content Include="assets\js\fullcalendar.min.js" />
+    <Content Include="assets\js\locale\da.js" />
     <Content Include="assets\js\lvs.js" />
+    <Content Include="assets\js\moment.js" />
     <Content Include="assets\webfonts\fa-brands-400.svg" />
     <Content Include="assets\webfonts\fa-light-300.svg" />
     <Content Include="assets\webfonts\fa-regular-400.svg" />

@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Home</summary>
 	[PublishedContentModel("home")]
-	public partial class Home : PublishedContentModel, IBaseContent, IHeroHeader
+	public partial class Home : PublishedContentModel, IBaseContent, IHeroHeader, IScripts, ISeo
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "home";
@@ -91,7 +91,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// HeroHeadline
+		/// Headline
 		///</summary>
 		[ImplementPropertyType("heroHeadline")]
 		public string HeroHeadline
@@ -100,12 +100,48 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// HeroImage
+		/// Background Image
 		///</summary>
 		[ImplementPropertyType("heroImage")]
 		public IPublishedContent HeroImage
 		{
 			get { return Umbraco.Web.PublishedContentModels.HeroHeader.GetHeroImage(this); }
+		}
+
+		///<summary>
+		/// Footer
+		///</summary>
+		[ImplementPropertyType("scriptsFooter")]
+		public IEnumerable<string> ScriptsFooter
+		{
+			get { return Umbraco.Web.PublishedContentModels.Scripts.GetScriptsFooter(this); }
+		}
+
+		///<summary>
+		/// Header
+		///</summary>
+		[ImplementPropertyType("scriptsHeader")]
+		public IEnumerable<string> ScriptsHeader
+		{
+			get { return Umbraco.Web.PublishedContentModels.Scripts.GetScriptsHeader(this); }
+		}
+
+		///<summary>
+		/// Meta description: Keep it within 160 characters, and write it to catch the user's attention. Sell the page.  Identical or similar descriptions on every page of a site aren't helpful for ranking.  (advice from Google)
+		///</summary>
+		[ImplementPropertyType("metaDescription")]
+		public string MetaDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.Seo.GetMetaDescription(this); }
+		}
+
+		///<summary>
+		/// Meta robots: Must be set to  INDEX,FOLLOW as a minimum.
+		///</summary>
+		[ImplementPropertyType("metaRobots")]
+		public object MetaRobots
+		{
+			get { return Umbraco.Web.PublishedContentModels.Seo.GetMetaRobots(this); }
 		}
 	}
 }

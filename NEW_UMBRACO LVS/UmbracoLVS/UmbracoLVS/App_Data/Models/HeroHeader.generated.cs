@@ -24,10 +24,10 @@ namespace Umbraco.Web.PublishedContentModels
 	/// <summary>heroHeader</summary>
 	public partial interface IHeroHeader : IPublishedContent
 	{
-		/// <summary>HeroHeadline</summary>
+		/// <summary>Headline</summary>
 		string HeroHeadline { get; }
 
-		/// <summary>HeroImage</summary>
+		/// <summary>Background Image</summary>
 		IPublishedContent HeroImage { get; }
 	}
 
@@ -57,7 +57,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// HeroHeadline
+		/// Headline
 		///</summary>
 		[ImplementPropertyType("heroHeadline")]
 		public string HeroHeadline
@@ -65,11 +65,11 @@ namespace Umbraco.Web.PublishedContentModels
 			get { return GetHeroHeadline(this); }
 		}
 
-		/// <summary>Static getter for HeroHeadline</summary>
+		/// <summary>Static getter for Headline</summary>
 		public static string GetHeroHeadline(IHeroHeader that) { return that.GetPropertyValue<string>("heroHeadline"); }
 
 		///<summary>
-		/// HeroImage
+		/// Background Image
 		///</summary>
 		[ImplementPropertyType("heroImage")]
 		public IPublishedContent HeroImage
@@ -77,7 +77,7 @@ namespace Umbraco.Web.PublishedContentModels
 			get { return GetHeroImage(this); }
 		}
 
-		/// <summary>Static getter for HeroImage</summary>
+		/// <summary>Static getter for Background Image</summary>
 		public static IPublishedContent GetHeroImage(IHeroHeader that) { return that.GetPropertyValue<IPublishedContent>("heroImage"); }
 	}
 }

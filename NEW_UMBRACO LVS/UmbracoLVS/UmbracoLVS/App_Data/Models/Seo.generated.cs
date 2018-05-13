@@ -20,9 +20,20 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
+	// Mixin content Type 1181 with alias "seo"
+	/// <summary>seo</summary>
+	public partial interface ISeo : IPublishedContent
+	{
+		/// <summary>Meta description</summary>
+		string MetaDescription { get; }
+
+		/// <summary>Meta robots</summary>
+		object MetaRobots { get; }
+	}
+
 	/// <summary>seo</summary>
 	[PublishedContentModel("seo")]
-	public partial class Seo : PublishedContentModel
+	public partial class Seo : PublishedContentModel, ISeo
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "seo";
@@ -46,39 +57,27 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Keywords
-		///</summary>
-		[ImplementPropertyType("keywords")]
-		public string Keywords
-		{
-			get { return this.GetPropertyValue<string>("keywords"); }
-		}
-
-		///<summary>
-		/// Meta Description
+		/// Meta description: Keep it within 160 characters, and write it to catch the user's attention. Sell the page.  Identical or similar descriptions on every page of a site aren't helpful for ranking.  (advice from Google)
 		///</summary>
 		[ImplementPropertyType("metaDescription")]
 		public string MetaDescription
 		{
-			get { return this.GetPropertyValue<string>("metaDescription"); }
+			get { return GetMetaDescription(this); }
 		}
 
-		///<summary>
-		/// Meta tags
-		///</summary>
-		[ImplementPropertyType("metaTags")]
-		public string MetaTags
-		{
-			get { return this.GetPropertyValue<string>("metaTags"); }
-		}
+		/// <summary>Static getter for Meta description</summary>
+		public static string GetMetaDescription(ISeo that) { return that.GetPropertyValue<string>("metaDescription"); }
 
 		///<summary>
-		/// NoIndex
+		/// Meta robots: Must be set to  INDEX,FOLLOW as a minimum.
 		///</summary>
-		[ImplementPropertyType("noIndex")]
-		public bool NoIndex
+		[ImplementPropertyType("metaRobots")]
+		public object MetaRobots
 		{
-			get { return this.GetPropertyValue<bool>("noIndex"); }
+			get { return GetMetaRobots(this); }
 		}
+
+		/// <summary>Static getter for Meta robots</summary>
+		public static object GetMetaRobots(ISeo that) { return that.GetPropertyValue("metaRobots"); }
 	}
 }
