@@ -37,10 +37,10 @@
 <section class="container-fluid bg-light post-action-bar">
     <div class="container">
         <div class="row pb-5 d-flex justify-content-center">
-            <div class="post-action-bar-headline">@Model.Content.SponserHeadline</div>
+            <div class="post-action-bar-headline">@Model.Content.FeaturedHeadline</div>
             <div class="col-md-12">
                 <div class="row carousel-sponsor d-flex align-items-center">
-                    @foreach (Featured f in Model.Content.SponsorList)
+                    @foreach (FeaturedItem f in Model.Content.FeaturedList)
                     {
                         <div class="mx-auto"><a target="_blank" href="@f.FeaturedLink"><img src="@f.FeaturedImage.Url" alt="@f.FeaturedName logo"></a></div>
 

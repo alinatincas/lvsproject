@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Activities</summary>
 	[PublishedContentModel("activities")]
-	public partial class Activities : PublishedContentModel, IBaseContent, IHeroHeader
+	public partial class Activities : PublishedContentModel, IBaseContent, IFeaturedContent, IHeroHeader
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "activities";
@@ -55,24 +55,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Popular activities list
-		///</summary>
-		[ImplementPropertyType("popularActivitiesList")]
-		public IEnumerable<IPublishedContent> PopularActivitiesList
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("popularActivitiesList"); }
-		}
-
-		///<summary>
-		/// Popular headline
-		///</summary>
-		[ImplementPropertyType("popularHeadline")]
-		public string PopularHeadline
-		{
-			get { return this.GetPropertyValue<string>("popularHeadline"); }
-		}
-
-		///<summary>
 		/// Shown content
 		///</summary>
 		[ImplementPropertyType("shownContent")]
@@ -97,6 +79,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public string Headline
 		{
 			get { return Umbraco.Web.PublishedContentModels.BaseContent.GetHeadline(this); }
+		}
+
+		///<summary>
+		/// Headline
+		///</summary>
+		[ImplementPropertyType("featuredHeadline")]
+		public string FeaturedHeadline
+		{
+			get { return Umbraco.Web.PublishedContentModels.FeaturedContent.GetFeaturedHeadline(this); }
+		}
+
+		///<summary>
+		/// List
+		///</summary>
+		[ImplementPropertyType("featuredList")]
+		public IEnumerable<IPublishedContent> FeaturedList
+		{
+			get { return Umbraco.Web.PublishedContentModels.FeaturedContent.GetFeaturedList(this); }
 		}
 
 		///<summary>

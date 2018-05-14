@@ -20,9 +20,20 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
+	// Mixin content Type 1173 with alias "featuredContent"
+	/// <summary>featuredContent</summary>
+	public partial interface IFeaturedContent : IPublishedContent
+	{
+		/// <summary>Headline</summary>
+		string FeaturedHeadline { get; }
+
+		/// <summary>List</summary>
+		IEnumerable<IPublishedContent> FeaturedList { get; }
+	}
+
 	/// <summary>featuredContent</summary>
 	[PublishedContentModel("featuredContent")]
-	public partial class FeaturedContent : PublishedContentModel
+	public partial class FeaturedContent : PublishedContentModel, IFeaturedContent
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "featuredContent";
@@ -46,21 +57,27 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Featuredheadline
+		/// Headline
 		///</summary>
-		[ImplementPropertyType("featuredheadline")]
-		public string Featuredheadline
+		[ImplementPropertyType("featuredHeadline")]
+		public string FeaturedHeadline
 		{
-			get { return this.GetPropertyValue<string>("featuredheadline"); }
+			get { return GetFeaturedHeadline(this); }
 		}
 
+		/// <summary>Static getter for Headline</summary>
+		public static string GetFeaturedHeadline(IFeaturedContent that) { return that.GetPropertyValue<string>("featuredHeadline"); }
+
 		///<summary>
-		/// FeaturedImages
+		/// List
 		///</summary>
-		[ImplementPropertyType("featuredImages")]
-		public IEnumerable<IPublishedContent> FeaturedImages
+		[ImplementPropertyType("featuredList")]
+		public IEnumerable<IPublishedContent> FeaturedList
 		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("featuredImages"); }
+			get { return GetFeaturedList(this); }
 		}
+
+		/// <summary>Static getter for List</summary>
+		public static IEnumerable<IPublishedContent> GetFeaturedList(IFeaturedContent that) { return that.GetPropertyValue<IEnumerable<IPublishedContent>>("featuredList"); }
 	}
 }
