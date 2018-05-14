@@ -65,131 +65,133 @@
 </section>
 <!-- END RESULTS MAPS -->
 <!-- START SECTION RESULTS -->
-<section class="row clearance">
-    <div class="col-md-12 text-center">
-        <h2>@Model.Content.Headline</h2>
-        @Html.GetGridHtml(Model.Content, "content")
-    </div>
-</section>
+<div class="container">
+    <section class="row clearance">
+        <div class="col-md-12 text-center">
+            <h2>@Model.Content.Headline</h2>
+            @Html.GetGridHtml(Model.Content, "content")
+        </div>
+    </section>
 
-<section>
-    <div class="row  clearance-bottom">
-        <div class="col-5 pr-2">
-            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                @{ string activeClass = "active";}
-                @foreach (Shelter s in shelters)
-                {
-                    <a class="nav-link @activeClass z-depth-1 mb-3" id="v-pills-@s.Id-tab" data-toggle="pill" href="#v-pills-@s.Id" role="tab" aria-controls="v-pills-@s.Id-tab"
-                       aria-selected="true">
-                        <div class="row">
-                            <div class="col-md-2 pl-4 pt-4">
-                                <img src="~/assets/img/vaeresteder/mapmarker.svg" alt="">
+    <section>
+        <div class="row  clearance-bottom">
+            <div class="col-5 pr-2">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    @{ string activeClass = "active";}
+                    @foreach (Shelter s in shelters)
+                    {
+                        <a class="nav-link @activeClass z-depth-1 mb-3" id="v-pills-@s.Id-tab" data-toggle="pill" href="#v-pills-@s.Id" role="tab" aria-controls="v-pills-@s.Id-tab"
+                           aria-selected="true">
+                            <div class="row">
+                                <div class="col-md-2 pl-4 pt-4">
+                                    <img src="~/assets/img/vaeresteder/mapmarker.svg" alt="">
+                                </div>
+                                <div class="col-md-9 pt-4">
+                                    <h5 class="mb-3">@s.ShelterName</h5>
+                                    <p class="m-0">Address: @s.Address</p>
+                                    <p class="m-0">Tlf: @s.ShelterPhone</p>
+                                    <p class="m-0">Mail: @s.ShelterEmail</p>
+                                </div>
                             </div>
-                            <div class="col-md-9 pt-4">
-                                <h5 class="mb-3">@s.ShelterName</h5>
-                                <p class="m-0">Address: @s.Address</p>
-                                <p class="m-0">Tlf: @s.ShelterPhone</p>
-                                <p class="m-0">Mail: @s.ShelterEmail</p>
+
+                        </a>
+                        activeClass = "";
+                    }
+                </div>
+            </div>
+            <div class="col-7 pl-2">
+                <div class="tab-content" id="v-pills-tabContent">
+                    @{ string shownActive = "show active";}
+                    @foreach (Shelter s in shelters)
+                    {
+                        <div class="tab-pane fade z-depth-1 @shownActive" id="v-pills-@s.Id" role="tabpanel" aria-labelledby="v-pills-@s.Id-tab">
+                            <div class="varested-img" style="background-image: url('@s.Image.Url?width=700')">
+
                             </div>
+                            <div class="centertxt text-muted">
+                                @Html.Raw(s.Description)
+                            </div>
+                            <div class="centertxt text-muted">
+                                <a href="@s.Url" class="btn btn-primary">Læs mere</a>
+                            </div>
+
                         </div>
-
-                    </a>
-                    activeClass = "";
-                }
+                        shownActive = "";
+                    }
+                </div>
             </div>
         </div>
-        <div class="col-7 pl-2">
-            <div class="tab-content" id="v-pills-tabContent">
-                @{ string shownActive = "show active";}
-                @foreach (Shelter s in shelters)
-                {
-                    <div class="tab-pane fade z-depth-1 @shownActive" id="v-pills-@s.Id" role="tabpanel" aria-labelledby="v-pills-@s.Id-tab">
-                        <div class="varested-img" style="background-image: url('@s.Image.Url?width=700')">
+    </section>
+    <!-- END SECTION RESULTS -->
+    <!-- START SECTION REGISTRATION -->
+    <div class="container-fluid">
+        <div class="container clearance-bottom">
+            <div class="row">
 
-                        </div>
-                        <div class="centertxt text-muted">
-                            @Html.Raw(s.Description)
-                        </div>
-                        <div class="centertxt text-muted">
-                            <a href="@s.Url" class="btn btn-primary">Læs mere</a>
-                        </div>
+                <section class="col-md-12 text-center">
+                    <h2>ØNSKER DU AT VÆRE EN DEL AF LVS-FÆLLESSKABET?</h2>
+                    <p>Tilmeld dig dit husly her</p>
+                </section>
 
+                <!-- START VÆRESTED REGISTRATION FORM -->
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <form>
+                            <fieldset class="col-6-md">
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <label> Væresteds navn: </label>
+                                    </div>
+                                    <div class="col-md-8 form-field">
+                                        <input type="text" class="form-control">
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label> Kontakt person: </label>
+                                    </div>
+                                    <div class="col-md-8 form-field">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label> Email: </label>
+                                    </div>
+                                    <div class="col-md-8 form-field">
+                                        <input type="email" class="form-control">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label> Telefon: </label>
+                                    </div>
+                                    <div class="col-md-8 form-field">
+                                        <input type="number" class="form-control">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label> Mobil: </label>
+                                    </div>
+                                    <div class="col-md-8 form-field">
+                                        <input type="number" class="form-control">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label> Website: </label>
+                                    </div>
+                                    <div class="col-md-8 form-field">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label> Adresse: </label>
+                                    </div>
+                                    <div class="col-md-8 form-field">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-12 d-flex justify-content-end">
+                                        <input type="submit" class="submit-button" value="Submit">
+                                    </div>
+                                </div>
+
+
+                            </fieldset>
+
+                        </form>
                     </div>
-                    shownActive = "";
-                }
-            </div>
-        </div>
-    </div>
-</section>
-<!-- END SECTION RESULTS -->
-<!-- START SECTION REGISTRATION -->
-<div class="container-fluid">
-    <div class="container clearance-bottom">
-        <div class="row">
-
-            <section class="col-md-12 text-center">
-                <h2>ØNSKER DU AT VÆRE EN DEL AF LVS-FÆLLESSKABET?</h2>
-                <p>Tilmeld dig dit husly her</p>
-            </section>
-
-            <!-- START VÆRESTED REGISTRATION FORM -->
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <form>
-                        <fieldset class="col-6-md">
-                            <div class="form-group row">
-                                <div class="col-md-4">
-                                    <label> Væresteds navn: </label>
-                                </div>
-                                <div class="col-md-8 form-field">
-                                    <input type="text" class="form-control">
-                                </div>
-
-                                <div class="col-md-4">
-                                    <label> Kontakt person: </label>
-                                </div>
-                                <div class="col-md-8 form-field">
-                                    <input type="text" class="form-control">
-                                </div>
-                                <div class="col-md-4">
-                                    <label> Email: </label>
-                                </div>
-                                <div class="col-md-8 form-field">
-                                    <input type="email" class="form-control">
-                                </div>
-                                <div class="col-md-4">
-                                    <label> Telefon: </label>
-                                </div>
-                                <div class="col-md-8 form-field">
-                                    <input type="number" class="form-control">
-                                </div>
-                                <div class="col-md-4">
-                                    <label> Mobil: </label>
-                                </div>
-                                <div class="col-md-8 form-field">
-                                    <input type="number" class="form-control">
-                                </div>
-                                <div class="col-md-4">
-                                    <label> Website: </label>
-                                </div>
-                                <div class="col-md-8 form-field">
-                                    <input type="text" class="form-control">
-                                </div>
-                                <div class="col-md-4">
-                                    <label> Adresse: </label>
-                                </div>
-                                <div class="col-md-8 form-field">
-                                    <input type="text" class="form-control">
-                                </div>
-                                <div class="col-md-12 d-flex justify-content-end">
-                                    <input type="submit" class="submit-button" value="Submit">
-                                </div>
-                            </div>
-
-
-                        </fieldset>
-
-                    </form>
                 </div>
             </div>
         </div>
