@@ -118,6 +118,10 @@ gulp.task('watch', ['browserSync', 'scss'], function () {
 
 })
 
+gulp.task('prod', ['minify', 'miniboot'], function () {
+    console.log('Files generated');
+})
+
 gulp.task('default', ['minify', 'watch', 'browserSync'], function () {
     //console.log('Running Gulp ...');
 })
