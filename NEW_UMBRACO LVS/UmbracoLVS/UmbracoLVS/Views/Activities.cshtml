@@ -40,11 +40,11 @@
 <!-- START MOST VISITED PLACES -->
 <section class="container-fluid bg-light post-action-bar">
     <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="post-action-bar-headline">@Model.Content.PopularHeadline</div>
+        <div class="row pb-5 d-flex justify-content-center">
+            <div class="post-action-bar-headline"><h4>@Model.Content.FeaturedHeadline</h4></div>
             <div class="col-md-12">
                 <div class="row carousel-sponsor d-flex align-items-center">
-                    @foreach (Featured f in Model.Content.PopularActivitiesList)
+                    @foreach (FeaturedItem f in Model.Content.FeaturedList)
                     {
                         <div class="mx-auto py-3 px-2 img-grayscale"><img src="@f.FeaturedImage.Url" alt="@f.FeaturedName logo"></div>
 
