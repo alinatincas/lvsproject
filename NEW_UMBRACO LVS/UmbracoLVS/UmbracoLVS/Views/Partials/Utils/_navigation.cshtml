@@ -46,7 +46,14 @@
                         }
                     }
                     <li class="nav-item d-flex align-items-center">
-                        <i class="fal fa-search"></i>
+                        <button type="button" class="btn btn-link" id="search-icon">
+                            <i class="fal fa-search"></i>
+                        </button>
+
+                        <form id="searchbar" class="form-inline my-2 my-lg-0 searchform">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Søg..." aria-label="Search">
+                            <button class="btn btn-primary m-0" type="submit">Søg</button>
+                        </form>
                     </li>
                 </ul>
             </div>
