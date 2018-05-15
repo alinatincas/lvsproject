@@ -42,27 +42,79 @@
 
     </div>
 </section>
+@*<section>
+        <div class="container">
+            <div class="row clearance">
+                <h2>Seneste nyheder</h2>
+                @foreach (Article a in newslist)
+                {
+                    <div class="container">
+                        <div class="row">
+                            <a href="@a.Url">
+                                <div class="col-md-3">
+                                    <img src="@a.Image.Url?width=150" alt="@a.Name" />
+                                </div>
+                                <div class="col-md-9">
+                                    <h3>@a.Headline</h3>
+                                    <div class="text-muted">
+                                        @a.CreateDate
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>*@
+<section>
+    <div class="container">
 
-<div class="container">
-    <div class="row clearance">
-        <h2>Seneste nyheder</h2>
-        @foreach (Article a in newslist)
-        {
-            <div class="container">
-                <div class="row">
-                    <a href="@a.Url">
-                        <div class="col-md-3">
-                            <img src="@a.Image.Url?width=150" alt="@a.Name" />
-                        </div>
-                        <div class="col-md-9">
-                            <h3>@a.Headline</h3>
-                            <div class="text-muted">
-                                @a.CreateDate
+        <div class="row  clearance-bottom">
+            <div class="col-1"></div>
+            <div class="col-4 pr-2">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    @{ string activeClass = "active";}
+                    @foreach (Article a in newslist)
+                    {
+                        <a class="nav-link @activeClass z-depth-1 mb-3" id="v-pills-@a.Id-tab" data-toggle="pill" href="#v-pills-@a.Id" role="tab" aria-controls="v-pills-@a.Id-tab"
+                           aria-selected="true">
+                            <div class="row">
+                                <div class="col-md-2 pl-4 pt-4">
+                                    <img src="~/assets/img/vaeresteder/mapmarker.svg" alt="">
+                                </div>
+                                <div class="col-md-9 pt-4">
+                                    <h5 class="mb-3">@a.Headline</h5>
+                                    <p class="m-0 text-muted">@a.CreationDate.ToString("dd/MM-yyyy")</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                        activeClass = "";
+                    }
                 </div>
             </div>
-        }
+            <div class="col-6 pl-2">
+                <div class="tab-content" id="v-pills-tabContent">
+                    @{ string shownActive = "show active";}
+                    @foreach (Article a in newslist)
+                    {
+                        <div class="tab-pane fade z-depth-1 @shownActive" id="v-pills-@a.Id" role="tabpanel" aria-labelledby="v-pills-@a.Id-tab">
+                            <div class="varested-img" style="background-image: url('@a.Image.Url?width=700')">
+                            </div>
+                            <div class="centertxt text-muted">
+                                @Html.GetGridHtml(a, "content")
+                            </div>
+                            <div class="centertxt text-muted">
+                                <a href="@a.Url" class="btn btn-primary">Læs mere</a>
+                            </div>
+                            <p class="m-0 text-muted">@a.CreationDate.ToString("dd/MM-yyyy")</p>
+                        </div>
+                        shownActive = "";
+                    }
+                </div>
+            </div>
+            <div class="col-1"></div>
+
+        </div>
     </div>
-</div>
+</section>
