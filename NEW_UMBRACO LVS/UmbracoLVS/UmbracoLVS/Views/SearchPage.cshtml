@@ -1,0 +1,42 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.SearchPage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "_Master.cshtml";
+}
+
+
+<section class="container-fluid clearance-grey  bg-light">
+    <div class="container ">
+        <div class="row d-flex justify-content-center">
+            <h4>Lav en ny søgning her</h4>
+        </div>
+        <div class="row pb-1 d-flex justify-content-center">
+            <form id="" class="form-inline my-2 my-lg-0 " action="/soeg/" method="post">
+                <input class="form-control mr-sm-2" name="q" type="search" placeholder="Søg..." aria-label="Search">
+                <button class="btn btn-primary m-0" type="submit">Søg</button>
+            </form>
+        </div>
+    </div>
+</section>
+<section class="">
+    <div class="container pb-5">
+        @if (IsPost)
+        {
+            //get the search term
+            var q = Request["q"].ToString();
+            //search inside our content, using Umbraco API
+            var results = Umbraco.TypedSearch(q);
+
+            <div class="row p-1 d-flex">
+                <h2>Din søgning efter <strong>@q</strong> gav @results.Count() resultater</h2> <br />
+            </div>
+
+            foreach (var page in results)
+            {
+                <div class="row p-1 d-flex"> <a href="@page.Url">@page.Name</a> <br /></div>
+            }
+
+        }
+    </div>
+</section>
+

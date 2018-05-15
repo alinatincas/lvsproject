@@ -500,6 +500,7 @@
     <Content Include="Views\About.cshtml" />
     <Content Include="Views\Contact.cshtml" />
     <Content Include="Views\Employee.cshtml" />
+    <Content Include="Views\SearchPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

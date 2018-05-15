@@ -40,6 +40,10 @@
                     @{
                         foreach (var page in root.Children.Where("Visible"))
                         {
+                            if (@page.Url == "/soeg/")
+                            {
+                                continue;
+                            }
                             <li class="nav-item @(page.IsAncestorOrSelf(CurrentPage) ? "active" : null)">
                                 <a class="nav-link" href="@page.Url">@page.Name</a>
                             </li>
@@ -50,8 +54,8 @@
                             <i class="fal fa-search"></i>
                         </button>
 
-                        <form id="searchbar" class="form-inline my-2 my-lg-0 searchform">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Søg..." aria-label="Search">
+                        <form id="searchbar" class="form-inline my-2 my-lg-0 searchform" action="/soeg/" method="post">
+                            <input class="form-control mr-sm-2" name="q" type="search" placeholder="Søg..." aria-label="Search">
                             <button class="btn btn-primary m-0" type="submit">Søg</button>
                         </form>
                     </li>
