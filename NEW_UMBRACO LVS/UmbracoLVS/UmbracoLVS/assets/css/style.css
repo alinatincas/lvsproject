@@ -134,6 +134,9 @@ a.overlay {
   text-align: center;
   text-transform: uppercase; }
 
+.navbar {
+  padding: 1.25rem 1rem !important; }
+
 .logo {
   height: 60px; }
 
