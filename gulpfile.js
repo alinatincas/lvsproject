@@ -11,7 +11,7 @@ var browserSync = require('browser-sync').create();
 // compaile scss
 gulp.task('scss', function () {
     // load files
-    return gulp.src('html/assets/scss/style.scss')
+    return gulp.src('NEW_UMBRACO LVS/UmbracoLVS/UmbracoLVS/assets/scss/style.scss')
         // compailer    
         .pipe(sass())
         .on('error', onError)
@@ -22,17 +22,14 @@ gulp.task('scss', function () {
         }))
 
         // saving
-        .pipe(gulp.dest('html/assets/css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
+        .pipe(gulp.dest('NEW_UMBRACO LVS/UmbracoLVS/UmbracoLVS/assets/css'))
 
 });
 
 // compaile bootstrap scss
 gulp.task('bootstrap', function () {
     // load files
-    return gulp.src('html/assets/scss/bootstrap/bootstrap.scss')
+    return gulp.src('NEW_UMBRACO LVS/UmbracoLVS/UmbracoLVS/assets/scss/bootstrap/bootstrap.scss')
         // compailer    
         .pipe(sass())
         .on('error', onError)
@@ -44,10 +41,7 @@ gulp.task('bootstrap', function () {
         }))
 
         // saving
-        .pipe(gulp.dest('html/assets/css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
+        .pipe(gulp.dest('NEW_UMBRACO LVS/UmbracoLVS/UmbracoLVS/assets/css'))
 
 });
 
@@ -56,11 +50,11 @@ gulp.task('bootstrap', function () {
 gulp.task('minify', ['scss'], function () {
 
     //load and delete the old style.min.css
-    del(['html/assets/css/style.css', '!html/assets/css/style.css']).then(paths => {
+    del(['NEW_UMBRACO LVS/UmbracoLVS/UmbracoLVS/assets/css/style.css', '!NEW_UMBRACO LVS/UmbracoLVS/UmbracoLVS/assets/css/style.css']).then(paths => {
         //console.log('Deleted files and folders:\n', paths.join('\n'));
     });
     // load file
-    gulp.src('html/assets/css/**/style.css')
+    gulp.src('NEW_UMBRACO LVS/UmbracoLVS/UmbracoLVS/assets/css/**/style.css')
         //minify    
         .pipe(minifyCSS())
         //auto prefix
@@ -75,17 +69,17 @@ gulp.task('minify', ['scss'], function () {
         //create map
         .pipe(sourcemaps.write())
         //create save file
-        .pipe(gulp.dest('html/assets/css'))
+        .pipe(gulp.dest('NEW_UMBRACO LVS/UmbracoLVS/UmbracoLVS/assets/css'))
 });
 
 gulp.task('miniboot', ['bootstrap'], function () {
 
     //load and delete the old style.min.css
-    del(['html/assets/css/bootstrap.css', '!html/assets/css/bootstrap.css']).then(paths => {
+    del(['NEW_UMBRACO LVS/UmbracoLVS/UmbracoLVS/assets/css/bootstrap.css', '!NEW_UMBRACO LVS/UmbracoLVS/UmbracoLVS/assets/css/bootstrap.css']).then(paths => {
         //console.log('Deleted files and folders:\n', paths.join('\n'));
     });
     // load file
-    gulp.src('html/assets/css/**/bootstrap.css')
+    gulp.src('NEW_UMBRACO LVS/UmbracoLVS/UmbracoLVS/assets/css/**/bootstrap.css')
         //minify    
         .pipe(minifyCSS())
         //auto prefix
@@ -100,7 +94,7 @@ gulp.task('miniboot', ['bootstrap'], function () {
         //create map
         .pipe(sourcemaps.write())
         //create save file
-        .pipe(gulp.dest('html/assets/css'))
+        .pipe(gulp.dest('NEW_UMBRACO LVS/UmbracoLVS/UmbracoLVS/assets/css'))
 });
 
 gulp.task('browserSync', function () {
@@ -111,10 +105,8 @@ gulp.task('browserSync', function () {
     })
 })
 
-gulp.task('watch', ['browserSync', 'scss'], function () {
-    gulp.watch('html/assets/scss/**/*.scss', ['scss']);
-    gulp.watch('html/*.html', browserSync.reload);
-    gulp.watch('html/assets/js/**/*.js', browserSync.reload);
+gulp.task('watch', ['scss'], function () {
+    gulp.watch('NEW_UMBRACO LVS/UmbracoLVS/UmbracoLVS/assets/scss/**/*.scss', ['scss']);
 
 })
 
