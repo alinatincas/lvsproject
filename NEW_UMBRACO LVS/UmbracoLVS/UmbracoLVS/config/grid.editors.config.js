@@ -34,6 +34,36 @@
         }
     },
     {
+        "name": "Headline2",
+        "alias": "headline2",
+        "view": "textstring",
+        "icon": "icon-coin",
+        "config": {
+            "style": "",
+            "markup": "<h2>#value#</h2>"
+        }
+    },
+    {
+        "name": "Headline3",
+        "alias": "headline3",
+        "view": "textstring",
+        "icon": "icon-coin",
+        "config": {
+            "style": "",
+            "markup": "<h3>#value#</h3>"
+        }
+    },
+    {
+        "name": "Headline4",
+        "alias": "headline4",
+        "view": "textstring",
+        "icon": "icon-coin",
+        "config": {
+            "style": "",
+            "markup": "<h4>#value#</h4>"
+        }
+    },
+    {
         "name": "Quote",
         "alias": "quote",
         "view": "textstring",
