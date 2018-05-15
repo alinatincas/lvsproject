@@ -17,40 +17,89 @@
 </section>
 <!-- END LVS CONTACT INFO -->
 <!-- START EMPLOYEE CARD -->
-<section class="container-fluid bg-light">
-    <div class="container clearance-grey">
-        <div class="row justify-content-center">
-            <div class="row justify-content-center card-member-padding">
-                <div class="col-md-12">
-                    <div class="card p-4">
-                        @foreach (Employee e in employees)
-                        {
-                            <div class="row align-items-center blockquote">
-                                <div class="col-md-6">
-                                    <img class="card-img-top img-fluid rounded-circle card-img-padding" src="@e.ProfileImage.Url" alt="Card image">
-                                </div>
-                                <div class="col-md-6 hjem-quote">
-                                    <div class="text-card card-body blockquote">
-                                        <h4 class="card-title pt-4">
-                                            <b>@e.PersonName</b>
-                                        </h4>
-                                        <p class="card-quote">
-                                            <i>@e.JobTitle</i>
+@*<section class="container-fluid bg-light">
+        <div class="container clearance-grey">
+            <div class="row justify-content-center">
+                <div class="row justify-content-center card-member-padding">
+                    <div class="col-md-12">
+                        <div class="card p-4">
+                            @foreach (Employee e in employees)
+                            {
+                                <div class="row align-items-center blockquote">
+                                    <div class="col-md-6">
+                                        <img class="card-img-top img-fluid rounded-circle card-img-padding" src="@e.ProfileImage.Url" alt="Card image">
+                                    </div>
+                                    <div class="col-md-6 hjem-quote">
+                                        <div class="text-card card-body blockquote">
+                                            <h4 class="card-title pt-4">
+                                                <b>@e.PersonName</b>
+                                            </h4>
+                                            <p class="card-quote">
+                                                <i>@e.JobTitle</i>
+                                                <br>
+                                                <br>
+                                            </p>
+                                            <p class="card-text pt-4">
+                                                Telefon : @e.PersonPhone <br><br>
+                                                Email : @e.PersonEmail
+                                            </p>
                                             <br>
-                                            <br>
-                                        </p>
-                                        <p class="card-text pt-4">
-                                            Telefon : @e.PersonPhone <br><br>
-                                            Email : @e.PersonEmail
-                                        </p>
-                                        <br>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        }
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>*@
+<section>
+    <div class="container">
+
+        <div class="row  clearance-bottom">
+            <div class="col-1"></div>
+            <div class="col-4 pr-2">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    @{ string activeClass = "active";}
+                    @foreach (Employee e in employees)
+                    {
+                        <a class="nav-link @activeClass z-depth-1 mb-3" id="v-pills-@e.Id-tab" data-toggle="pill" href="#v-pills-@e.Id" role="tab" aria-controls="v-pills-@e.Id-tab"
+                           aria-selected="true">
+                            <div class="row">
+                                <div class="col-md-2 pl-4 pt-4">
+                                    <img src="@e.ProfileImage.Url?width=35" alt="@e.PersonName">
+                                </div>
+                                <div class="col-md-9 pt-4">
+                                    <h5 class="mb-3">@e.PersonName</h5>
+                                </div>
+                            </div>
+                        </a>
+                        activeClass = "";
+                    }
+                </div>
+            </div>
+            <div class="col-6 pl-2">
+                <div class="tab-content" id="v-pills-tabContent">
+                    @{ string shownActive = "show active";}
+                    @foreach (Employee e in employees)
+                    {
+                        <div class="tab-pane fade z-depth-1 @shownActive" id="v-pills-@e.Id" role="tabpanel" aria-labelledby="v-pills-@e.Id-tab">
+                            <img src="@e.ProfileImage.Url" alt="@e.PersonName">
+                            <div class="centertxt text-muted">
+                                <p><b>@e.PersonName</b><br/>
+                                @e.Department<br />
+                                @e.JobTitle<br />
+                                @e.PersonPhone<br />
+                                @e.PersonEmail
+                            </div>
+                        </div>
+                        shownActive = "";
+                    }
+                </div>
+            </div>
+            <div class="col-1"></div>
+
         </div>
     </div>
 </section>
