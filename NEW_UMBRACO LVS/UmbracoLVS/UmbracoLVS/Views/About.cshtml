@@ -67,8 +67,52 @@
 <!-- START GREY SECTION -->
 <section class="container-fluid bg-light ">
     <div class="container clearance-grey">
-        <h3>@Model.Content.Headline</h3>
-        @Html.GetGridHtml(Model.Content, "content")
+        <h3>HVAD ER LVS?</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <p>
+                    LVS er værestedernes værested. I LVS kan værestederne finde et fællesskab og en fagligt funderet opbakning til at udvikle
+                    det, de er bedst til: at hjælpe socialt udsatte mennesker til et bedre liv.
+                </p>
+                <br>
+                <p>
+                    Sekretariatet bistår værestederne med rådgivning, hjælp til projektudvikling og kurser. Socialt udsatte menneskers liv er
+                    præget af problemer og af en udpræget mangel på reelle handlemuligheder. Eksempelvis er social
+                    ulighed i sundhed både et spørgsmål om ringere sundhedstilstand og om ulighed i adgangen til
+                    hjælp eller sagt på en anden måde mangelen på muligheden for umiddelbart at tage vare på sig
+                    selv.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p>
+                    LVS tilbyder derfor også aktiviteter for værestedsbrugerne. Idrætsorganisationen Dansk Væresteds Idræt eller kulturprojektet
+                    Krealariet er eksempler herpå. Den succes vi har opnået med idrætten er også et eksempel på,
+                    at rigtig mange socialt udsatte ønsker et bedre liv, og at de rent faktisk griber mulighederne,
+                    når de er tilpasset brugernes behov.
+
+                </p>
+                <p>
+                    For LVS er idræt blot et blandt mange redskaber i det sociale arbejde. Ved at tilbyde aktiviteter som for eksempel idræt
+                    på værestederne opnår man flere fordele. For det første kommer socialt udsatte mennesker i gang
+                    med at dyrke motion. For det andet høster man de sociale og sundhedsmæssige gevinster i form
+                    af øget lyst til forandring og styrket livsmod, og for det tredje bliver værestedet et mere attraktivt
+                    sted at komme også for nye brugere.
+                </p>
+            </div>
+        </div>
     </div>
 </section>
 <!-- END GREY SECTION -->
+<!-- START SECTION RESULTS -->
+<div class="container">
+    <section class="row clearance">
+        <div class="col-md-12 text-center">
+            <h2>@Model.Content.Headline</h2>
+            @Html.GetGridHtml(Model.Content, "content")
+        </div>
+    </section>
+</div>
+
+
+    <!-- END SECTION RESULTS -->
+
