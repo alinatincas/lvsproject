@@ -2,3 +2,35 @@
     color: $color-primary;
     border-color: $color-primary;
 }
+
+.btn-nobr {
+    border-radius: 0 !important;
+}
+
+.btn {
+    font-family: $font-body;
+}
+
+.button-stot {
+    font-family: $font-body;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #064F76;
+    border: none;
+    border-radius: none;
+    padding: 5px 40px 5px 40px;
+    margin: 2rem;
+}
+
+.button-find {
+    font-family: $font-body;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #00833D;
+    border: none;
+    border-radius: none;
+    padding: 5px 40px 5px 40px;
+    margin: 2rem;
+}

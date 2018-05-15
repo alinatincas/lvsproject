@@ -12,6 +12,23 @@
     }
 }
 
+.searchform {
+    position: absolute;
+    right: 0;
+    background: #fff;
+    top: 60px;
+    z-index: 1000;
+    padding: 20px;
+    opacity: 0;
+    transition: 0.2s all ease-in-out;
+    >.form-control {
+        width: 230px;
+    }
+    &.show {
+        opacity: 1;
+    }
+}
+
 /*---HERO IMAGE---*/
 
 .hero-image {
@@ -37,6 +54,10 @@
     &-yellow {
         background: transparentize(yellow, 0.7) !important;
     }
+}
+
+a.overlay{
+    text-decoration: none;
 }
 
 /*---TITLE---*/

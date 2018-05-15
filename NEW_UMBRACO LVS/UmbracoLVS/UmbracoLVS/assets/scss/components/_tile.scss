@@ -16,6 +16,10 @@
     background-size: cover;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
     &:hover {
+        background: transparentize(#000000, 0.8) !important;
+        .tile-text-headline-publikationer {
+            opacity: 1;
+        }
         .tile-text {
             opacity: 1;
         }
@@ -27,6 +31,16 @@
         width: 70%;
         display: block;
         font-weight: bold;
+    }
+    .tile-text-headline-publikationer {
+        opacity: 0;
+        margin: 40px 0 0 20px;
+        color: #ffffff !important;
+        z-index: 100;
+        width: 70%;
+        display: block;
+        font-weight: bold;
+        transition: all 0.3s;
     }
     .tile-text {
         opacity: 0;
@@ -49,10 +63,29 @@
     &.half {
         width: 132px;
         height: 132px;
+        .tile-text-headline {
+            font-size: 1rem !important;
+            width: 50% !important;
+        }
+        .tile-text {
+            font-size: 1rem !important;
+            width: 50% !important;
+        }
     }
     &.half-double {
         width: 275px;
         height: 132px;
+    }
+    &.third {
+        width: 180px;
+        .tile-text-headline {
+            font-size: 1.1rem !important;
+            width: 100% !important;
+        }
+        .tile-text {
+            font-size: 0.8rem !important;
+            width: 100% !important;
+        }
     }
     &.double-vertical {
         height: 560px;
