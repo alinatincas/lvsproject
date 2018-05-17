@@ -52,3 +52,7 @@ Compaile bootstrap
 ## How to work with umbraco
 Be sure to get the newest database from the DB folder, and move it into APP_DATA whenever you pull.
 Before you push, make a copy of the db and zip it. Follow the naming of 'DB Y-m-d H.i' and be sure the date and time is correct. Move the zipped file to the DB folder and push your changes. If you have only maded changes to view files (templates) this step i not necessary.
+
+## Instagram test account
+username: lvs@cronen.dk
+password: adminlvs
