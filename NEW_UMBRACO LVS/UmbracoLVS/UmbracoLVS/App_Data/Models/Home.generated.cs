@@ -55,6 +55,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Grid list
+		///</summary>
+		[ImplementPropertyType("gridList")]
+		public IEnumerable<IPublishedContent> GridList
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("gridList"); }
+		}
+
+		///<summary>
 		/// Content
 		///</summary>
 		[ImplementPropertyType("content")]

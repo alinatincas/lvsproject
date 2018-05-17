@@ -2,6 +2,11 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "_Master.cshtml";
+    List<GridItem> GIlist = new List<GridItem>();
+    foreach (GridItem gi in Model.Content.GridList)
+    {
+        GIlist.Add(gi);
+    }
 }
 
 <div class="hero-image hero-image-tall" style="background-image: url('@Model.Content.HeroImage.Url')">
@@ -56,46 +61,55 @@
 <section class="container-fluid clearance">
     <div class="row">
         <div class="tile-group quadro">
-            <div class="tile double double-vertical" style="background-image: url('assets/img/hjem/sommerlejer.png')">
-                <div class="overlay overlay-green">
-                    <h2 class="tile-text-headline">
-                        summercamp 2018
-                    </h2>
-                    <p class="tile-text">
-                        er lige på trapperne, skal du være med i årets fedeste event?
-                    </p>
-                </div>
+            <div class="tile double double-vertical" style="background-image: url('@GIlist[0].GridImage.Url')">
+                <a href="@GIlist[0].GridLink.Url">
+                    <div class="overlay overlay-green">
+                        <h2 class="tile-text-headline">
+                            @GIlist[0].GridHeadline
+                        </h2>
+                        <p class="tile-text">
+                            @GIlist[0].GridText
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="tile double" style="background-image: url('@GIlist[1].GridImage.Url')">
+                <a href="@GIlist[1].GridLink.Url">
+                    <div class="overlay overlay-orange">
+                        <h2 class="tile-text-headline">
+                            @GIlist[1].GridHeadline
+                        </h2>
+                        <p class="tile-text">
+                            @GIlist[1].GridText
+                        </p>
+                    </div>
+                </a>
 
             </div>
-            <div class="tile double" style="background-image: url('assets/img/hjem/sommerhus.png')">
-                <div class="overlay overlay-orange">
-                    <h2 class="tile-text-headline">
-                        væresteder
-                    </h2>
-                    <p class="tile-text">
-                        Leder du efter det nærmeste værested, eller vil du læse mere om dine muligheder?
-                    </p>
-                </div>
+            <div class="tile" style="background-image: url('@GIlist[2].GridImage.Url')">
+                <a href="@GIlist[2].GridLink.Url">
+                    <div class="overlay overlay-blue">
+                        <h2 class="tile-text-headline">
+                            @GIlist[2].GridHeadline
+                        </h2>
+                        <p class="tile-text">
+                            @GIlist[2].GridText
+                        </p>
+                    </div>
+                </a>
+
             </div>
-            <div class="tile" style="background-image: url('assets/img/hjem/guitar.png')">
-                <div class="overlay overlay-blue">
-                    <h2 class="tile-text-headline">
-                        frivillig
-                    </h2>
-                    <p class="tile-text">
-                        Hele grundstenen er de frivillige, har du lyst til at hjælpe?
-                    </p>
-                </div>
-            </div>
-            <div class="tile" style="background-image: url('assets/img/hjem/bueskydning.png')">
-                <div class="overlay overlay-red">
-                    <h2 class="tile-text-headline">
-                        Aktiviteter
-                    </h2>
-                    <p class="tile-text">
-                        Se listen over kommende aktiviteter og hvordan du tilmelder dig
-                    </p>
-                </div>
+            <div class="tile" style="background-image: url('@GIlist[3].GridImage.Url')">
+                <a href="@GIlist[3].GridLink.Url">
+                    <div class="overlay overlay-red">
+                        <h2 class="tile-text-headline">
+                            @GIlist[3].GridHeadline
+                        </h2>
+                        <p class="tile-text">
+                            @GIlist[3].GridText
+                        </p>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
