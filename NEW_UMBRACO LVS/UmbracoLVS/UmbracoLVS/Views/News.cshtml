@@ -67,14 +67,15 @@
     </section>*@
 <section>
     <div class="container clearance">
-        <h1 class="mb-4">Nyheder</h1>
+        
         <div class="row">
 
             <div class="col-md-8">
+                <h1 class="mb-4">Nyheder</h1>
                 @foreach (Article a in newslist)
                 {
 
-                    <div class="col-md-12 mb-4 news-container">
+                    <div class="col-md-12 news-container">
                         <div class="row no-gutters">
                             <div class="col-md-4 news-image squarebox" style="background-image:url('@a.Image.Url');">
                             </div>
@@ -94,6 +95,7 @@
             </div>
 
             <div class="col-md-4">
+                <h1 class="mb-4">Facebook</h1>
                 <script src="//www.powr.io/powr.js?external-type=html"></script>
                 <div class="powr-facebook-feed" id="49301a21_1526744900"></div>
             </div>
