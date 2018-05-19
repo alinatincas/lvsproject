@@ -1,1 +1,16 @@
 /*---NYHEDER---*/
+
+.news-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.news-container {
+    padding: 2em;
+    border-bottom: 2px solid #dadada;
+}
+
+.powrMarkHighlight, .powrMark {
+    display: none !important;
+}

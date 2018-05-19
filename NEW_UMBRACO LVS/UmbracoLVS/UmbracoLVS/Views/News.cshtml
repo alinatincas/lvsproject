@@ -36,10 +36,8 @@
     </div>
 </div>
 
-
 <section class="container-fluid bg-light clearance-grey">
     <div class="row">
-
     </div>
 </section>
 @*<section>
@@ -68,53 +66,37 @@
         </div>
     </section>*@
 <section>
-    <div class="container">
+    <div class="container clearance">
+        <h1 class="mb-4">Nyheder</h1>
+        <div class="row">
 
-        <div class="row  clearance-bottom">
-            <div class="col-1"></div>
-            <div class="col-4 pr-2">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    @{ string activeClass = "active";}
-                    @foreach (Article a in newslist)
-                    {
-                        <a class="nav-link @activeClass z-depth-1 mb-3" id="v-pills-@a.Id-tab" data-toggle="pill" href="#v-pills-@a.Id" role="tab" aria-controls="v-pills-@a.Id-tab"
-                           aria-selected="true">
-                            <div class="row">
-                                <div class="col-md-2 pl-4 pt-4">
-                                    <img src="~/assets/img/vaeresteder/mapmarker.svg" alt="">
-                                </div>
-                                <div class="col-md-9 pt-4">
-                                    <h5 class="mb-3">@a.Headline</h5>
-                                    <p class="m-0 text-muted">@a.CreationDate.ToString("dd/MM-yyyy")</p>
-                                </div>
+            <div class="col-md-8">
+                @foreach (Article a in newslist)
+                {
+
+                    <div class="col-md-12 mb-4 news-container">
+                        <div class="row no-gutters">
+                            <div class="col-md-4 news-image squarebox" style="background-image:url('@a.Image.Url');">
                             </div>
-                        </a>
-                        activeClass = "";
-                    }
-                </div>
-            </div>
-            <div class="col-6 pl-2">
-                <div class="tab-content" id="v-pills-tabContent">
-                    @{ string shownActive = "show active";}
-                    @foreach (Article a in newslist)
-                    {
-                        <div class="tab-pane fade z-depth-1 @shownActive" id="v-pills-@a.Id" role="tabpanel" aria-labelledby="v-pills-@a.Id-tab">
-                            <div class="varested-img" style="background-image: url('@a.Image.Url?width=700')">
+                            <div class="col-md-8 pl-3 d-flex align-items-center">
+                                <span>
+                                    <h2>@a.Headline</h2>
+
+                                    <p>@a.CreateDate.Day/@a.CreateDate.Month - @a.CreateDate.Year </p>
+
+                                    <a href="@a.Url" class="pl-0 ml-0 btn btn-link">Læs mere..</a>
+                                </span>
                             </div>
-                            <div class="centertxt text-muted">
-                                @Html.GetGridHtml(a, "content")
-                            </div>
-                            <div class="centertxt text-muted">
-                                <a href="@a.Url" class="btn btn-primary">Læs mere</a>
-                            </div>
-                            <p class="m-0 text-muted">@a.CreationDate.ToString("dd/MM-yyyy")</p>
                         </div>
-                        shownActive = "";
-                    }
-                </div>
-            </div>
-            <div class="col-1"></div>
+                    </div>
 
+                }
+            </div>
+
+            <div class="col-md-4">
+                <script src="//www.powr.io/powr.js?external-type=html"></script>
+                <div class="powr-facebook-feed" id="49301a21_1526744900"></div>
+            </div>
         </div>
     </div>
 </section>
