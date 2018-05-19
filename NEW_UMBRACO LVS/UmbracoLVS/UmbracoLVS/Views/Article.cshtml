@@ -3,16 +3,21 @@
 @{
     Layout = "_Master.cshtml";
 }
+
 <section class="container-fluid bg-light">
+    
     <!-- STAR DESCRIPTION -->
+    
     <div class="container p-4">
         <h3 class="text-center">@Model.Content.Headline</h3>
-        <p class="text-muted text-center">@Model.Content.CreateDate</p>
+        <p class="text-muted text-center">@Model.Content.CreateDate.Day/@Model.Content.CreateDate.Month - @Model.Content.CreateDate.Year</p>
     </div>
+
     <!-- END DESCRIPTION -->
+
 </section>
 <section class="container p-4">
 
-        @Html.GetGridHtml(Model.Content, "content")
+    @Html.GetGridHtml(Model.Content, "content")
 
 </section>
