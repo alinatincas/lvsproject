@@ -2,6 +2,12 @@
     .action-bar {
         width: 90%;
     }
+    .navbar-nav {
+        margin-top: 30px;
+    }
+    .navbar-toggler{
+        border: 0;
+    }
     .logo-description {
         display: none;
     }
@@ -19,4 +25,14 @@
     .carousel-indicators li {
         margin-bottom: 0;
     }
-}
+
+    .footer-h {
+        font-size: 1.5em;
+
+    }
+
+    .map-marker {
+        width: 100%;
+    }
+
+    }

@@ -368,9 +368,7 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); }
   .tile:hover {
-    opacity: 0.7;
-    background-color: Black;
-    z-index: 10; }
+    background: rgba(0, 0, 0, 0.2) !important; }
     .tile:hover .tile-text-headline-publikationer {
       opacity: 1; }
     .tile:hover .tile-text {
@@ -519,6 +517,11 @@ input[type=number]::-webkit-outer-spin-button {
   display: -ms-inline-flexbox;
   display: inline-flex; }
 
+.fa-bars {
+  font-size: 1.6em;
+  color: #383838;
+  outline: none !important; }
+
 /*---VAERESTEDER---*/
 .nav-pills .nav-link.active {
   color: #707070;
@@ -526,7 +529,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .nav-pills .nav-link {
   color: #707070;
-  max-height: 170px;
+  /*max-height: 170px;*/
   border-radius: 5px; }
 
 .tab-content > .active {
@@ -646,6 +649,18 @@ p.spacing {
 
 /*---PUBLIKATIONER---*/
 /*---NYHEDER---*/
+.news-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.news-container {
+  padding: 2em 0;
+  border-bottom: 2px solid #dadada; }
+
+.powrMarkHighlight, .powrMark {
+  display: none !important; }
+
 /*---OM-LVS---*/
 /*---TITLE---*/
 .om-title-white {
@@ -672,9 +687,19 @@ p.spacing {
 .kontakt-card {
   padding-bottom: 0%; }
 
+@media only screen and (max-width: 768px) {
+  .hide-mobile {
+    display: none; }
+  .card-img-padding {
+    padding: 50px; } }
+
 @media only screen and (max-width: 992px) {
   .action-bar {
     width: 90%; }
+  .navbar-nav {
+    margin-top: 30px; }
+  .navbar-toggler {
+    border: 0; }
   .logo-description {
     display: none; }
   .hjem-quote .card {
@@ -685,6 +710,10 @@ p.spacing {
   .card-member-padding {
     padding: 0; }
   .card-img-padding {
-    padding: 0; }
+    padding: 30px; }
   .carousel-indicators li {
-    margin-bottom: 0; } }
+    margin-bottom: 0; }
+  .footer-h {
+    font-size: 1.5em; }
+  .map-marker {
+    width: 100%; } }
