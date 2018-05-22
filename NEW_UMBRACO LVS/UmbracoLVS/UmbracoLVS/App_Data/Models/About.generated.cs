@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>About</summary>
 	[PublishedContentModel("about")]
-	public partial class About : PublishedContentModel, IBaseContent, IHeroHeader, ITest
+	public partial class About : PublishedContentModel, IBaseContent, IHeroHeader
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "about";
@@ -88,24 +88,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public IPublishedContent HeroImage
 		{
 			get { return Umbraco.Web.PublishedContentModels.HeroHeader.GetHeroImage(this); }
-		}
-
-		///<summary>
-		/// description
-		///</summary>
-		[ImplementPropertyType("descriptionUnderretning")]
-		public IEnumerable<IPublishedContent> DescriptionUnderretning
-		{
-			get { return Umbraco.Web.PublishedContentModels.Test.GetDescriptionUnderretning(this); }
-		}
-
-		///<summary>
-		/// headline
-		///</summary>
-		[ImplementPropertyType("headlineUnderretning")]
-		public IEnumerable<IPublishedContent> HeadlineUnderretning
-		{
-			get { return Umbraco.Web.PublishedContentModels.Test.GetHeadlineUnderretning(this); }
 		}
 	}
 }

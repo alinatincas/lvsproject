@@ -20,7 +20,7 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Underretning IDVI</summary>
+	/// <summary>Underretning</summary>
 	[PublishedContentModel("underretningIDVI")]
 	public partial class UnderretningIdvi : PublishedContentModel, IItem
 	{

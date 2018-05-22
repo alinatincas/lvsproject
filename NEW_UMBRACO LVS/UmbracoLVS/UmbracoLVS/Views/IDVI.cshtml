@@ -77,8 +77,7 @@
 <div class="container">
     <section class="row clearance">
         <div class="col-md-12 text-center">
-            <h2>@Model.Content.Headline</h2>
-            @Html.GetGridHtml(Model.Content, "content")
+            <h2></h2>
         </div>
     </section>
 
@@ -92,10 +91,7 @@
                         <a class="nav-link @activeClass z-depth-1 mb-3" id="v-pills-@s.Id-tab" data-toggle="pill" href="#v-pills-@s.Id" role="tab" aria-controls="v-pills-@s.Id-tab"
                            aria-selected="true">
                             <div class="row">
-                                <div class="col-md-2 pl-md-4 pt-md-4" class="map-marker-container">
-                                    <img src="~/assets/img/vaeresteder/mapmarker.svg" alt="" class="map-marker">
-                                </div>
-                                <div class="col-md-9 pt-md-4">
+                                <div class="col-md-9 pt-md-4 mt-6 mb-5">
                                     <h5 class="mb-3">@s.Headline</h5>
                                 </div>
                             </div>
@@ -117,10 +113,6 @@
                             <div class="centertxt text-muted">
                                 @Html.Raw(s.Description)
                             </div>
-                            <div class="centertxt text-muted">
-                                <a href="@s.Url" class="btn btn-primary">Læs mere</a>
-                            </div>
-
                         </div>
                         shownActive = "";
                     }
