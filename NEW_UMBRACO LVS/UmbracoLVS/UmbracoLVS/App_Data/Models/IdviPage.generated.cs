@@ -21,15 +21,15 @@ using Umbraco.ModelsBuilder.Umbraco;
 namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>IDVI</summary>
-	[PublishedContentModel("iDVI")]
-	public partial class IDvi : PublishedContentModel, IBaseContent, IHeroHeader
+	[PublishedContentModel("idviPage")]
+	public partial class IdviPage : PublishedContentModel, IBaseContent, IHeroHeader
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "iDVI";
+		public new const string ModelTypeAlias = "idviPage";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public IDvi(IPublishedContent content)
+		public IdviPage(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,7 +40,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<IDvi, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<IdviPage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
