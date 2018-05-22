@@ -9,6 +9,8 @@
     {
         GIlist.Add(gi);
     }
+    var employeeInfo = Model.Content.Children<Employee>();
+
 }
 <div class="hero-image hero-image" style="background-image: url('@Model.Content.HeroImage.Url')">
     <div class="overlay d-flex align-items-center justify-content-center overlay-green">
@@ -75,4 +77,68 @@
 </section>
 <!-- END GREY SECTION -->
 <!-- START SECTION RESULTS -->
-<!-- END SECTION RESULTS -->
+<div class="container">
+    <section class="row clearance">
+        <div class="col-md-12 text-center">
+            <h2>@Model.Content.Headline</h2>
+            @Html.GetGridHtml(Model.Content, "content")
+        </div>
+    </section>
+
+    <section>
+        <div class="row  clearance-bottom">
+            <div class="col-5 pr-2">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    @{ string temp = ""; }
+                    @{ string activeClass = "active";}
+                    @foreach (Employee s in employeeInfo)
+                    {
+                       if(temp != s.Department )
+                        {
+                                                       <a class="nav-link @activeClass z-depth-1 mb-3" id="v-pills-@s.Id-tab" data-toggle="pill" href="#v-pills-@s.Id" role="tab" aria-controls="v-pills-@s.Id-tab"
+                           aria-selected="true">
+                            <div class="row">
+                                <div class="col-md-2 pl-md-4 pt-md-4" class="map-marker-container">
+                                    <img src="~/assets/img/vaeresteder/mapmarker.svg" alt="" class="map-marker">
+                                </div>
+                                <div class="col-md-9 pt-md-4">
+                                    <h5 class="mb-3">@s.Department</h5>
+                                </div>
+                            </div>
+
+                        </a>
+                        activeClass = "";
+                        temp = s.Department;
+                        }
+
+                    }
+                </div>
+            </div>
+            <div class="col-7 pl-2">
+                <div class="tab-content" id="v-pills-tabContent">
+                    @{ string shownActive = "show active";}
+                    @foreach (Employee s in employeeInfo)
+                    {
+                        <div class="tab-pane fade z-depth-1 @shownActive" id="v-pills-@s.Id" role="tabpanel" aria-labelledby="v-pills-@s.Id-tab">
+                            <div class="varested-img" style="background-image: url('@s.Url?width=700')">
+
+                            </div>
+                            <div class="centertxt text-muted">
+                                @Html.Raw(s.PersonName)
+                                @Html.Raw(s.JobTitle)
+                                @Html.Raw(s.PersonEmail)
+                                @Html.Raw(s.PersonPhone)
+                                <img src="@s.ProfileImage.Url" alt="Alternate Text" style=""/>
+                            </div>
+                            <div class="centertxt text-muted">
+                                <a href="@s.Url" class="btn btn-primary">Læs mere</a>
+                            </div>
+
+                        </div>
+                        shownActive = "";
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END SECTION RESULTS -->

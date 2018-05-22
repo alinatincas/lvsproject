@@ -20,7 +20,7 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Employee</summary>
+	/// <summary>Arbejdsgiver</summary>
 	[PublishedContentModel("employee")]
 	public partial class Employee : PublishedContentModel, IPerson
 	{
