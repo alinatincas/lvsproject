@@ -46,15 +46,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Department
-		///</summary>
-		[ImplementPropertyType("department")]
-		public string Department
-		{
-			get { return this.GetPropertyValue<string>("department"); }
-		}
-
-		///<summary>
 		/// Job title
 		///</summary>
 		[ImplementPropertyType("jobTitle")]
