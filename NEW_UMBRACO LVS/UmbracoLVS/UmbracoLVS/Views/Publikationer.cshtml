@@ -2,7 +2,7 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "_Master.cshtml";
-    var publications = Model.Content.Children<Publication>().OrderBy(p=> p.CreateDate).ToList();
+    List<Publication> publications = Model.Content.Children<Publication>().OrderBy(p => p.CreateDate).ToList();
 }
 <div class="hero-image hero-image" style="background-image: url('@Model.Content.HeroImage.Url')">
     <div class="overlay d-flex align-items-center justify-content-center overlay-orange">
@@ -34,140 +34,154 @@
 
 <section class="container-fluid bg-light post-action-bar">
     <!-- STAR DESCRIPTION -->
-    <section class="container clearance-grey">
         <h3 class="text-center">@Model.Content.Headline</h3>
         @Html.GetGridHtml(Model.Content, "content")
-    </section>
 </section>
 <section class="container clearance">
-            <h3 class="text-center">KLIK PÅ BILDET, AT LÆS OM EN OFFENTLIGGØRELSE</h3>
-            <div class="row">
-                <div class="tile-group quadro">
-                    <div class="tile double double-vertical" style="background-image: url('/assets/img/publikationer/grid-images/10-DeSmåMetode.PNG')">
-                        <div class="overlay overlay-orange">
-                            <h2 class="tile-text-headline-publikationer">
-                                De Små Metode
-                            </h2>
-                            <p class="tile-text">
-                                Publikation
-                            </p>
-                        </div>
+    @*
+        <h3 class="text-center">KLIK PÅ BILDET, AT LÆS OM EN OFFENTLIGGØRELSE</h3>
+        <div class="row">
+            <div class="tile-group quadro">
+                <div class="tile double double-vertical" style="background-image: url('/assets/img/publikationer/grid-images/10-DeSmåMetode.PNG')">
+                    <div class="overlay overlay-orange">
+                        <h2 class="tile-text-headline-publikationer">
+                            De Små Metode
+                        </h2>
+                        <p class="tile-text">
+                            Publikation
+                        </p>
                     </div>
-                    <div class="tile double" style="background-image: url('/assets/img/publikationer/grid-images/2-DenGodeHistorie.jpg')">
-                        <div class="overlay overlay-blue">
-                            <h2 class="tile-text-headline-publikationer">
-                                Den Gode Histoire
-                            </h2>
-                            <p class="tile-text">
-                                Publikation
-                            </p>
-                        </div>
+                </div>
+                <div class="tile double" style="background-image: url('/assets/img/publikationer/grid-images/2-DenGodeHistorie.jpg')">
+                    <div class="overlay overlay-blue">
+                        <h2 class="tile-text-headline-publikationer">
+                            Den Gode Histoire
+                        </h2>
+                        <p class="tile-text">
+                            Publikation
+                        </p>
                     </div>
-                    <div class="tile" style="background-image: url('/assets/img/publikationer/grid-images/1-Vendepunkter.jpg')">
-                        <div class="overlay overlay-red">
-                            <h2 class="tile-text-headline-publikationer">
-                                Vendepunkter
-                            </h2>
-                            <p class="tile-text">
-                                Publikation
-                            </p>
-                        </div>
+                </div>
+                <div class="tile" style="background-image: url('/assets/img/publikationer/grid-images/1-Vendepunkter.jpg')">
+                    <div class="overlay overlay-red">
+                        <h2 class="tile-text-headline-publikationer">
+                            Vendepunkter
+                        </h2>
+                        <p class="tile-text">
+                            Publikation
+                        </p>
                     </div>
-                    <div class="tile" style="background-image: url('/assets/img/publikationer/grid-images/9-BestPractice.jpg')">
-                        <div class="overlay overlay-blue">
-                            <h2 class="tile-text-headline-publikationer">
-                                Best Practice
-                            </h2>
-                            <p class="tile-text">
-                                Publikation
-                            </p>
-                        </div>
+                </div>
+                <div class="tile" style="background-image: url('/assets/img/publikationer/grid-images/9-BestPractice.jpg')">
+                    <div class="overlay overlay-blue">
+                        <h2 class="tile-text-headline-publikationer">
+                            Best Practice
+                        </h2>
+                        <p class="tile-text">
+                            Publikation
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="row">
-                <div class="tile-group quadro">
-                    <div class="tile double" style="background-image: url('/assets/img/publikationer/grid-images/6-akut_krisecenter.JPG')">
-                        <div class="overlay overlay-red">
-                            <h2 class="tile-text-headline-publikationer">
-                                Akut Krisecenter
-                            </h2>
-                            <p class="tile-text">
-                                Projekter
-                            </p>
-                        </div>
+        <div class="row">
+            <div class="tile-group quadro">
+                <div class="tile double" style="background-image: url('/assets/img/publikationer/grid-images/6-akut_krisecenter.JPG')">
+                    <div class="overlay overlay-red">
+                        <h2 class="tile-text-headline-publikationer">
+                            Akut Krisecenter
+                        </h2>
+                        <p class="tile-text">
+                            Projekter
+                        </p>
                     </div>
-                    <div class="tile double" style="background-image: url('/assets/img/publikationer/grid-images/7-Kunsten-er-at-gribe-livet_forside.png')">
-                        <div class="overlay overlay-blue">
-                            <h2 class="tile-text-headline-publikationer">
-                                Kunsten er at gribe livet
-                            </h2>
-                            <p class="tile-text">
-                                Publikation
-                            </p>
-                        </div>
+                </div>
+                <div class="tile double" style="background-image: url('/assets/img/publikationer/grid-images/7-Kunsten-er-at-gribe-livet_forside.png')">
+                    <div class="overlay overlay-blue">
+                        <h2 class="tile-text-headline-publikationer">
+                            Kunsten er at gribe livet
+                        </h2>
+                        <p class="tile-text">
+                            Publikation
+                        </p>
                     </div>
-                    <div class="tile third" style="background-image: url('/assets/img/publikationer/grid-images/3-LVS_Aarsrap2015.jpg')">
-                        <div class="overlay overlay-green">
-                            <h2 class="tile-text-headline-publikationer">
-                                LVS År rapporter
-                            </h2>
-                            <p class="tile-text">
-                                Rapport
-                            </p>
-                        </div>
+                </div>
+                <div class="tile third" style="background-image: url('/assets/img/publikationer/grid-images/3-LVS_Aarsrap2015.jpg')">
+                    <div class="overlay overlay-green">
+                        <h2 class="tile-text-headline-publikationer">
+                            LVS År rapporter
+                        </h2>
+                        <p class="tile-text">
+                            Rapport
+                        </p>
                     </div>
-                    <div class="tile third" style="background-image: url('/assets/img/publikationer/grid-images/4-DeSmåSkridts.PNG')">
-                        <div class="overlay overlay-orange">
-                            <h2 class="tile-text-headline-publikationer">
-                                De Små Skridts
-                            </h2>
-                            <p class="tile-text">
-                                Projekt
-                            </p>
-                        </div>
+                </div>
+                <div class="tile third" style="background-image: url('/assets/img/publikationer/grid-images/4-DeSmåSkridts.PNG')">
+                    <div class="overlay overlay-orange">
+                        <h2 class="tile-text-headline-publikationer">
+                            De Små Skridts
+                        </h2>
+                        <p class="tile-text">
+                            Projekt
+                        </p>
                     </div>
-                    <div class="tile third" style="background-image: url('/assets/img/publikationer/grid-images/5-FS-digitalisering.png')">
-                        <div class="overlay overlay-blue">
-                            <h2 class="tile-text-headline-publikationer">
-                                FS digitaliser
-                            </h2>
-                            <p class="tile-text">
-                                Publikation
-                            </p>
-                        </div>
+                </div>
+                <div class="tile third" style="background-image: url('/assets/img/publikationer/grid-images/5-FS-digitalisering.png')">
+                    <div class="overlay overlay-blue">
+                        <h2 class="tile-text-headline-publikationer">
+                            FS digitaliser
+                        </h2>
+                        <p class="tile-text">
+                            Publikation
+                        </p>
                     </div>
-                    <div class="tile double" style="background-image: url('/assets/img/publikationer/grid-images/8-Ælling.png')">
-                        <div class="overlay overlay-orange">
-                            <h2 class="tile-text-headline-publikationer">
-                                Ælling
-                            </h2>
-                            <p class="tile-text">
-                                Publikation
-                            </p>
-                        </div>
+                </div>
+                <div class="tile double" style="background-image: url('/assets/img/publikationer/grid-images/8-Ælling.png')">
+                    <div class="overlay overlay-orange">
+                        <h2 class="tile-text-headline-publikationer">
+                            Ælling
+                        </h2>
+                        <p class="tile-text">
+                            Publikation
+                        </p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    *@
+</section>
 
 <section class="container clearance">
-    
-    
-    @foreach (Publication p in publications)
-    {
-    <div class="row">
-        <div class="col-md-5">
-            <a href="@p.Url">
-                <img src="@p.Image.Url?width=400" alt="@p.Headline" />
-            </a>
+    <h3 class="text-center">klik på billedet for at læse mere om offentliggørelsen</h3>
+    <div class="row img-grid">
+        <div id="column0" class="column gridcolumn ">
         </div>
-        <div class="col-md-7">
-            <h3>@p.Headline</h3>
-            <p>@p.Description</p>
+        <div id="column1" class="column gridcolumn ">
+        </div>
+        <div id="column2" class="column gridcolumn ">
         </div>
     </div>
-    }
 </section>
 <br>
+@section scripts{
+    <script type="text/javascript">
+    @for (int i = 0; i < publications.Count; i = +3)
+    {
+        try
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                Publication p = publications[i + j];
+                <text>
+                     $("#column@(j)").append('<div class="gridimg-wrapper"><a href="@p.Url" ><img src="@p.Image.Url" alt="@p.Headline" /><div class="text-container"><h2>@p.Headline</h2 ><p class="tile-text">@p.Description</p></div></a></div><br/>');
+                </text>
+            }
+        }
+        catch (Exception)
+        {
+            break;
+        }
+    }
+    </script>
+}
