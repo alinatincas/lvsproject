@@ -9,9 +9,7 @@
     {
         GIlist.Add(gi);
     }
-    /*var employeeInfo = Model.Content.Children<Employee>();
-    List<Employee> employees = employeeInfo.GroupBy(d => d.Department);*/
-
+    var employeeList = Model.Content.Children<Employee>();
 }
 <div class="hero-image hero-image" style="background-image: url('@Model.Content.HeroImage.Url')">
     <div class="overlay d-flex align-items-center justify-content-center overlay-green">
@@ -78,5 +76,48 @@
 </section>
 <!-- END GREY SECTION -->
 <!-- START SECTION RESULTS -->
+<div class="container pb-5">
+    <section class="row clearance">
+        <div class="col-md-12 text-center">
+            <h2></h2>
+        </div>
+    </section>
 
-<!-- END GREY SECTION -->
+    <section>
+        <div class="row  clearance-bottom">
+            <div class="col-5 pr-2">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    @{ string activeClass = "active";}
+                    @foreach (Employee s in employeeList)
+                    {
+                        <a class="nav-link @activeClass z-depth-1 mb-3" id="v-pills-@s.Id-tab" data-toggle="pill" href="#v-pills-@s.Id" role="tab" aria-controls="v-pills-@s.Id-tab"
+                           aria-selected="true">
+                            <div class="row">
+                                <div class="col-md-9 pt-md-4 mt-6 mb-5">
+                                    <h5 class="mb-3">@s.Name</h5>
+                                </div>
+                            </div>
+
+                        </a>
+                        activeClass = "";
+                    }
+                </div>
+            </div>
+            <div class="col-7 pl-2">
+                <div class="tab-content" id="v-pills-tabContent">
+                    @{ string shownActive = "show active";}
+                    @foreach (Employee s in employeeList)
+                    {
+                        <div class="tab-pane fade z-depth-1 @shownActive" id="v-pills-@s.Id" role="tabpanel" aria-labelledby="v-pills-@s.Id-tab">
+                            
+                            <div class="centertxt text-muted">
+                                @Html.Raw(s.Name)
+                            </div>
+                        </div>
+                        shownActive = "";
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END SECTION RESULTS -->

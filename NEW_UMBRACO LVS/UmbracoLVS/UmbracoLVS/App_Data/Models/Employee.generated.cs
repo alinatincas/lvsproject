@@ -49,9 +49,9 @@ namespace Umbraco.Web.PublishedContentModels
 		/// Department
 		///</summary>
 		[ImplementPropertyType("department")]
-		public IPublishedContent Department
+		public string Department
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("department"); }
+			get { return this.GetPropertyValue<string>("department"); }
 		}
 
 		///<summary>

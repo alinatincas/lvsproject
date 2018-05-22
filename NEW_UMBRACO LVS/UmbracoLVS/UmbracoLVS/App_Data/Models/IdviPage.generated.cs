@@ -55,6 +55,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// headline2
+		///</summary>
+		[ImplementPropertyType("headline2")]
+		public string Headline2
+		{
+			get { return this.GetPropertyValue<string>("headline2"); }
+		}
+
+		///<summary>
 		/// Content
 		///</summary>
 		[ImplementPropertyType("content")]
