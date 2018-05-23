@@ -1,4 +1,13 @@
-﻿<div class="container footer">
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    //var allPages = Model.Content.Site().Descendants();
+    var root = CurrentPage.AncestorOrSelf(1);
+    var home = Umbraco.TypedContentAtRoot().OfType<Home>().Single();
+
+
+
+}
+<div class="container footer">
     <div class="row">
         <div class="col-md-4 pt-md-3 pt-lg-5 pr-lg-5">
             <h3 class="footer-h">Kontakt</h3>
@@ -21,18 +30,16 @@
             <div class="shortcuts">
                 <a href="/">Forside</a>
                 <br />
-                <a href="/Vaeresteder">Væresteder</a>
-                <br />
-                <a href="/Aktiviteter">Aktiviteter</a>
-                <br />
-                <a href="/Publikationer">Publikationer</a>
-                <br />
-                <a href="/Om LVS">Om LVS</a>
-                <br />
-                <a href="/Nyheder">Nyheder</a>
-                <br />
-                <a href="/Kontakt">Kontakt</a>
-                <br />
+                @{
+                    foreach (var page in root.Children.Where("Visible"))
+                    {
+                        if (@page.Url == "/soeg/")
+                        {
+                            continue;
+                        }
+                            <a href="@page.Url">@page.Name</a> <br/>
+                    }
+                }
             </div>
         </div>
         <div class="col-md-4 pt-md-3 pt-lg-5 pl-lg-5">

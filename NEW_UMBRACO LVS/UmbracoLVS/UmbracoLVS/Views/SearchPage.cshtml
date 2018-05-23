@@ -18,25 +18,22 @@
         </div>
     </div>
 </section>
-<section class="">
-    <div class="container pb-5">
-        @if (IsPost)
+<section class="container clearance">
+    @if (IsPost)
+    {
+        //get the search term
+        var q = Request["q"].ToString();
+        //search inside our content, using Umbraco API
+        var results = Umbraco.TypedSearch(q);
+
+        <h2>Din søgning efter " <strong>@q</strong> " gav @results.Count() resultater</h2> <br />
+
+        foreach (var page in results)
         {
-            //get the search term
-            var q = Request["q"].ToString();
-            //search inside our content, using Umbraco API
-            var results = Umbraco.TypedSearch(q);
-
-            <div class="row p-1 d-flex">
-                <h2>Din søgning efter <strong>@q</strong> gav @results.Count() resultater</h2> <br />
-            </div>
-
-            foreach (var page in results)
-            {
-                <div class="row p-1 d-flex"> <a href="@page.Url">@page.Name</a> <br /></div>
-            }
+            <a class="btn btn-link" href="@page.Url">@page.Name</a><br />
 
         }
-    </div>
+
+    }
 </section>
 
