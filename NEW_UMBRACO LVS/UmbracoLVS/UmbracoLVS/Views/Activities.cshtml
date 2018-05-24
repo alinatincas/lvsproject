@@ -10,44 +10,17 @@
     <div class="overlay d-flex align-items-center justify-content-center overlay-blue">
         <h1 class="header-title-white">@Model.Content.HeroHeadline</h1>
     </div>
-
-    <div class="action-bar">
-        <div class="row no-gutters">
-            <div class="action-bar-container col-4 d-flex align-items-center justify-content-center">
-                <span>
-                    <p class="action-bar-text dropdown-toggle">Alle</p>
-                    
-                    <p class="action-bar-caption">Kategori</p>
-                </span>
-            </div>
-            <div class="action-bar-container col-4 d-flex align-items-center justify-content-center action-bar-separators">
-                <span>
-                    <p class="action-bar-text dropdown-toggle">5000</p>
-                    
-                    <p class="action-bar-caption">Postnr.</p>
-                </span>
-            </div>
-            <div class="action-bar-container col-4 d-flex justify-content-center align-items-center">
-                <span>
-                    <p class="action-bar-text dropdown-toggle">April</p>
-                    
-                    <p class="action-bar-caption">Måned</p>
-                </span>
-            </div>
-        </div>
-    </div>
 </div>
 <!-- START MOST VISITED PLACES -->
-<section class="container-fluid bg-light post-action-bar">
+<section class="container-fluid bg-light clearance-grey">
     <div class="container">
-        <div class="row pb-5 d-flex justify-content-center">
+        <div class="row d-flex justify-content-center">
             <div class="post-action-bar-headline"><h4>@Model.Content.FeaturedHeadline</h4></div>
             <div class="col-md-12">
                 <div class="row carousel-sponsor d-flex align-items-center">
                     @foreach (FeaturedItem f in Model.Content.FeaturedList)
                     {
                         <div class="mx-auto py-3 px-2 img-grayscale"><img src="@f.FeaturedImage.Url" alt="@f.FeaturedName logo"></div>
-
                     }
                 </div>
             </div>
@@ -56,10 +29,12 @@
     </div>
 </section>
 <!-- END MOST VISITED PLACES -->
-<section class="container clearance-grey">
+<!-- START ACTIVITY CALENDAR -->
+<section class="container clearance-top col-md-8 d-flex justify-content-center">
     <div id='calendar'></div>
 </section>
-
+<!-- end ACTIVITY CALENDAR -->
+<!-- START CONTENT -->
 <section class="container clearance">
     <article>
         <h3>@Model.Content.Headline</h3>
@@ -79,8 +54,8 @@
         </div>
         <button type="button" class="btn btn-readmore mt-3 mr-5 float-right bg-success text-white" data-toggle="collapse" data-target="#retningslinjer">Læs mere</button>
     </article>
-
 </section>
+<!-- END CONTENT -->
 
 @section scripts{
     <script src="/assets/js/moment.js"></script>
