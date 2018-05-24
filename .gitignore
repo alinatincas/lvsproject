@@ -638,3 +638,4 @@ typings/
 # Ignore SDF database file
 # ---
 **/App_Data/umbraco.sdf
+NEW_UMBRACO LVS/UmbracoLVS/UmbracoLVS/Media/created-packages/lvs_1\.0\.0\.zip

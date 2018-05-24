@@ -7,10 +7,16 @@
 
 .text-container {
     position: absolute;
-    top: 8px;
-    left: 16px;
+    top: 0px;
+    left: 0px;
+    right: 0;
+    bottom: 0;
     color: white;
     visibility: hidden;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.8);
+    transition: all 0.2s;
+    ;
 }
 
 .gridimg-wrapper {
