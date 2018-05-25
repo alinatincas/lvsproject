@@ -21,7 +21,7 @@ using Umbraco.ModelsBuilder.Umbraco;
 namespace Umbraco.Web.PublishedContentModels
 {
 	// Mixin content Type 1157 with alias "item"
-	/// <summary>Details</summary>
+	/// <summary>details</summary>
 	public partial interface IItem : IPublishedContent
 	{
 		/// <summary>Description</summary>
@@ -31,7 +31,7 @@ namespace Umbraco.Web.PublishedContentModels
 		IPublishedContent Image { get; }
 	}
 
-	/// <summary>Details</summary>
+	/// <summary>details</summary>
 	[PublishedContentModel("item")]
 	public partial class Item : PublishedContentModel, IItem
 	{

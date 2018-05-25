@@ -1,7 +1,8 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Medarbejdere>
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Employees>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "_Master.cshtml";
+    var employees = Model.Content.Children<Employee>();
 
     List<GridItem> GIlist = new List<GridItem>();
 
@@ -85,41 +86,32 @@
     <!-- END SECTION RESULTS -->
     <div class="container">
         <div class="row">
-            @foreach (Arbejder ar in Model.Content.ArbejderAfLvs)
+            @foreach (Employee e in employees)
             {
-                <div class="col-4">
-                    <div class="row">
-                        <div class="col-5">
-                            <figure class="figure d-inline">
-                                <img src="@ar.ArbejderBillede.Url" class="figure-img img-fluid rounded" alt="Arbejder billede">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-5">
+                        <figure class="figure">
+                            <img src="@e.ArbejderBillede.Url" class="figure-img img-fluid rounded" alt="Arbejder billede">
 
-                            </figure>
-                        </div>
-                        <div class="col-7">
-                            <figcaption class="figure-caption">
-                                <h2 class="worker-headline">
-                                    @ar.ArbejderNavn
-                                </h2>
-                                <p class="worker-text">
-                                    @ar.ArbejderAfdeling <br />
-                                    @ar.ArbejderEmail <br />
-                                    @ar.ArbejderTelefon <br />
-                                </p>
-                            </figcaption>
-                        </div>
+                        </figure>
+                    </div>
+                    <div class="col-7">
+                        <figcaption class="figure-caption">
+                            <h2 class="worker-headline">
+                                @e.ArbejderNavn
+                            </h2>
+                            <p class="worker-text">
+                                @e.ArbejderAfdeling <br />
+                                <a href="mailto: @e.ArbejderEmail">@e.ArbejderEmail</a> <br />
+                                <a href="tel:@e.ArbejderTelefon">@e.ArbejderTelefon</a><br />
+                            </p>
+                        </figcaption>
                     </div>
                 </div>
+            </div>
             }
-
-
-
-
         </div>
-
-
-
-
-
 
     </div>
 </div>

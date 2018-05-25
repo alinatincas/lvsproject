@@ -46,7 +46,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// OpeningHours
+		/// Opening Hours
 		///</summary>
 		[ImplementPropertyType("openingHours")]
 		public string OpeningHours
@@ -55,7 +55,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ShelterEmail
+		/// Email
 		///</summary>
 		[ImplementPropertyType("shelterEmail")]
 		public string ShelterEmail
@@ -64,7 +64,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ShelterName
+		/// Name
 		///</summary>
 		[ImplementPropertyType("shelterName")]
 		public string ShelterName
@@ -73,7 +73,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ShelterPhone
+		/// Phone
 		///</summary>
 		[ImplementPropertyType("shelterPhone")]
 		public string ShelterPhone
@@ -82,7 +82,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ShelterWebsite
+		/// Website
 		///</summary>
 		[ImplementPropertyType("shelterWebsite")]
 		public string ShelterWebsite

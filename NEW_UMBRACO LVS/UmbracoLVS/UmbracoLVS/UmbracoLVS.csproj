@@ -502,7 +502,7 @@
     <Content Include="Views\Employee.cshtml" />
     <Content Include="Views\SearchPage.cshtml" />
     <Content Include="Views\IDVI.cshtml" />
-    <Content Include="Views\Medarbejdere.cshtml" />
+    <Content Include="Views\Employees.cshtml" />
     <Content Include="Views\UnderretningIDVI.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

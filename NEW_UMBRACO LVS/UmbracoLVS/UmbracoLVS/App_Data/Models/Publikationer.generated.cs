@@ -20,7 +20,7 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Udgivelser</summary>
+	/// <summary>Publications</summary>
 	[PublishedContentModel("publikationer")]
 	public partial class Publikationer : PublishedContentModel, IBaseContent, IHeroHeader
 	{
