@@ -47,13 +47,13 @@
 }
 
 .carousel-indicators li {
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     border-radius: 100%;
     background-color: $action-bar-border;
     margin: 2%;
     margin-bottom: 100px;
-    box-shadow: inset 0px -1px 0px 1px rgba(0, 0, 0, 0.15);
+    /*box-shadow: inset 0px -1px 0px 1px rgba(0, 0, 0, 0.15);*/
 }
 
 .carousel-indicators .active {

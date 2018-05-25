@@ -5,4 +5,52 @@
     .card-img-padding {
         padding: 50px;
     }
+    .header-title-white{
+        font-size: 2em;
+    }
+
+    .searchform{
+        opacity: 1;
+        position: relative;
+        top: 0;
+        padding: 0;
+        margin-top: 20px;
+        input{
+            width: 100% !important;
+        }
+        button{
+            margin-top: 10px;
+        }
+    }
+
+    .action-bar-text{
+        font-size: 1.2em;
+    }
+
+    #search-icon {
+        display: none;
+    }
+
+    .tile {
+        width: 100% !important;
+
+        .tile-text-headline, .tile-text {
+            font-size: 2em !important;
+        }
+
+        &.double-vertical {
+            height: 275px !important;
+
+            .tile-text-headline {
+                font-size: 2rem !important;
+                width: 100% !important;
+            }
+
+            .tile-text {
+                font-size: 2rem !important;
+                width: 100% !important;
+            }
+        }
+    }
+     
 }
