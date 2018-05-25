@@ -481,13 +481,13 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 1rem; }
 
 .carousel-indicators li {
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   border-radius: 100%;
   background-color: rgba(132, 132, 132, 0.15);
   margin: 2%;
   margin-bottom: 100px;
-  box-shadow: inset 0px -1px 0px 1px rgba(0, 0, 0, 0.15); }
+  /*box-shadow: inset 0px -1px 0px 1px rgba(0, 0, 0, 0.15);*/ }
 
 .carousel-indicators .active {
   background-color: black; }
@@ -727,7 +727,35 @@ p.spacing {
   .hide-mobile {
     display: none; }
   .card-img-padding {
-    padding: 50px; } }
+    padding: 50px; }
+  .header-title-white {
+    font-size: 2em; }
+  .searchform {
+    opacity: 1;
+    position: relative;
+    top: 0;
+    padding: 0;
+    margin-top: 20px; }
+    .searchform input {
+      width: 100% !important; }
+    .searchform button {
+      margin-top: 10px; }
+  .action-bar-text {
+    font-size: 1.2em; }
+  #search-icon {
+    display: none; }
+  .tile {
+    width: 100% !important; }
+    .tile .tile-text-headline, .tile .tile-text {
+      font-size: 2em !important; }
+    .tile.double-vertical {
+      height: 275px !important; }
+      .tile.double-vertical .tile-text-headline {
+        font-size: 2rem !important;
+        width: 100% !important; }
+      .tile.double-vertical .tile-text {
+        font-size: 2rem !important;
+        width: 100% !important; } }
 
 @media only screen and (max-width: 992px) {
   .action-bar {
