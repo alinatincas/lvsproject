@@ -33,9 +33,13 @@
 </div>
 
 <section class="container-fluid bg-light post-action-bar">
-    <!-- STAR DESCRIPTION -->
-        <h3 class="text-center">@Model.Content.Headline</h3>
-        @Html.GetGridHtml(Model.Content, "content")
+    <div class="row">
+        <div class="col-12 clearance-bottom-grey">
+            <!-- STAR DESCRIPTION -->
+            <h3 class="text-center">@Model.Content.Headline</h3>
+            @Html.GetGridHtml(Model.Content, "content")
+        </div>
+    </div>  
 </section>
 <section class="container clearance">
     @*
