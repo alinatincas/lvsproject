@@ -2,108 +2,30 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "_Master.cshtml";
-    var employees = Model.Content.Children<Employee>();
 }
 <div class="hero-image hero-image" style="background-image: url('@Model.Content.HeroImage.Url')">
     <div class="overlay d-flex align-items-center justify-content-center">
-        <h1 class="header-title-white">@Model.Content.Headline</h1>
+        <h1 class="header-title-white">@Model.Content.HeroHeadline</h1>
     </div>
 </div>
 
 <!-- START LVS CONTACT INFO -->
 <section class="container clearance-grey">
-    <h3>@Model.Content.Headline</h3>
-    @Html.GetGridHtml(Model.Content, "content")
-</section>
-<!-- END LVS CONTACT INFO -->
-<!-- START EMPLOYEE CARD -->
-@*<section class="container-fluid bg-light">
-        <div class="container clearance-grey">
-            <div class="row justify-content-center">
-                <div class="row justify-content-center card-member-padding">
-                    <div class="col-md-12">
-                        <div class="card p-4">
-                            @foreach (Employee e in employees)
-                            {
-                                <div class="row align-items-center blockquote">
-                                    <div class="col-md-6">
-                                        <img class="card-img-top img-fluid rounded-circle card-img-padding" src="@e.ProfileImage.Url" alt="Card image">
-                                    </div>
-                                    <div class="col-md-6 hjem-quote">
-                                        <div class="text-card card-body blockquote">
-                                            <h4 class="card-title pt-4">
-                                                <b>@e.PersonName</b>
-                                            </h4>
-                                            <p class="card-quote">
-                                                <i>@e.JobTitle</i>
-                                                <br>
-                                                <br>
-                                            </p>
-                                            <p class="card-text pt-4">
-                                                Telefon : @e.PersonPhone <br><br>
-                                                Email : @e.PersonEmail
-                                            </p>
-                                            <br>
-                                        </div>
-                                    </div>
-                                </div>
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <h3>@Model.Content.Headline</h3>
+            @Html.GetGridHtml(Model.Content, "content")
         </div>
-    </section>*@
-<section>
-    <div class="container">
-
-        <div class="row  clearance-bottom">
-            <div class="col-1"></div>
-            <div class="col-4 pr-2">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    @{ string activeClass = "active";}
-                    @foreach (Employee e in employees)
-                    {
-                        <a class="nav-link @activeClass z-depth-1 mb-3" id="v-pills-@e.Id-tab" data-toggle="pill" href="#v-pills-@e.Id" role="tab" aria-controls="v-pills-@e.Id-tab"
-                           aria-selected="true">
-                            <div class="row">
-                                <div class="col-md-2 pl-4 pt-4">
-                                    <img src="@e.ProfileImage.Url?width=35" alt="@e.PersonName">
-                                </div>
-                                <div class="col-md-9 pt-4">
-                                    <h5 class="mb-3">@e.PersonName</h5>
-                                </div>
-                            </div>
-                        </a>
-                        activeClass = "";
-                    }
-                </div>
-            </div>
-            <div class="col-6 pl-2">
-                <div class="tab-content" id="v-pills-tabContent">
-                    @{ string shownActive = "show active";}
-                    @foreach (Employee e in employees)
-                    {
-                        <div class="tab-pane fade z-depth-1 @shownActive" id="v-pills-@e.Id" role="tabpanel" aria-labelledby="v-pills-@e.Id-tab">
-                            <img src="@e.ProfileImage.Url" alt="@e.PersonName">
-                            <div class="centertxt text-muted">
-                                <p><b>@e.PersonName</b><br/>
-                                @*@e.Department<br />*@
-                                @e.JobTitle<br />
-                                @e.PersonPhone<br />
-                                @e.PersonEmail
-                            </div>
-                        </div>
-                        shownActive = "";
-                    }
-                </div>
-            </div>
-            <div class="col-1"></div>
-
+        <div class="col-sm-12 col-md-6">
+            <iframe class="container" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1218554.7023152593!2d10.405898103599023!3d55.2792606371077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sv%C3%A6resteder!5e0!3m2!1sen!2sdk!4v1523644881930" width="1140" height="600" frameborder="0" style="border:0"></iframe>
         </div>
     </div>
+    
+    
 </section>
-<!-- END EMPLOYEE CARD -->
+
+
+
 <!-- START FORM -->
 <section class="container">
     <div class="containter clearance">
