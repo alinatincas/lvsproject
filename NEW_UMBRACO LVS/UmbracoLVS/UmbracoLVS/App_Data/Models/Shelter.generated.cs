@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Shelter</summary>
 	[PublishedContentModel("shelter")]
-	public partial class Shelter : PublishedContentModel, IItem, ILocation, IPerson
+	public partial class Shelter : PublishedContentModel, IItem, ILocation
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "shelter";
@@ -142,33 +142,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public int PostCode
 		{
 			get { return Umbraco.Web.PublishedContentModels.Location.GetPostCode(this); }
-		}
-
-		///<summary>
-		/// Email
-		///</summary>
-		[ImplementPropertyType("personEmail")]
-		public string PersonEmail
-		{
-			get { return Umbraco.Web.PublishedContentModels.Person.GetPersonEmail(this); }
-		}
-
-		///<summary>
-		/// Name
-		///</summary>
-		[ImplementPropertyType("personName")]
-		public string PersonName
-		{
-			get { return Umbraco.Web.PublishedContentModels.Person.GetPersonName(this); }
-		}
-
-		///<summary>
-		/// Phone
-		///</summary>
-		[ImplementPropertyType("personPhone")]
-		public string PersonPhone
-		{
-			get { return Umbraco.Web.PublishedContentModels.Person.GetPersonPhone(this); }
 		}
 	}
 }

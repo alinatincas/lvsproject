@@ -4,9 +4,9 @@
     Layout = "_Master.cshtml";
     var newslist = Model.Content.Children<Article>();
 }
-<div class="hero-image hero-image" style="background-image: url('assets/img/frontpage-header.png')">
-    <div class="overlay d-flex align-items-center justify-content-center overlay-blue">
-        <h1 class="header-title-white">NYHEDER</h1>
+<div class="hero-image hero-image" style="background-image: url('@Model.Content.HeroImage.Url')">
+    <div class="overlay d-flex align-items-center justify-content-center overlay-green">
+        <h1 class="header-title-white">@Model.Content.HeroHeadline</h1>
     </div>
 </div>
 

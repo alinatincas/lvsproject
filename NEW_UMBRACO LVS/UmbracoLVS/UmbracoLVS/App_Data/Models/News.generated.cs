@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>News</summary>
 	[PublishedContentModel("news")]
-	public partial class News : PublishedContentModel
+	public partial class News : PublishedContentModel, IHeroHeader
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "news";
@@ -43,6 +43,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<News, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Headline
+		///</summary>
+		[ImplementPropertyType("heroHeadline")]
+		public string HeroHeadline
+		{
+			get { return Umbraco.Web.PublishedContentModels.HeroHeader.GetHeroHeadline(this); }
+		}
+
+		///<summary>
+		/// Background Image
+		///</summary>
+		[ImplementPropertyType("heroImage")]
+		public IPublishedContent HeroImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.HeroHeader.GetHeroImage(this); }
 		}
 	}
 }
