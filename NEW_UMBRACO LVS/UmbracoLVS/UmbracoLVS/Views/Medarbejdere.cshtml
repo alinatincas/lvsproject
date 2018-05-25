@@ -2,21 +2,13 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "_Master.cshtml";
-    List<GridItem>
-        GIlist = new List<GridItem>
-            ();
+
+    List<GridItem> GIlist = new List<GridItem>();
+
     foreach (GridItem gi in Model.Content.GridList)
     {
         GIlist.Add(gi);
     }
-    List<Arbejder>
-        arb = new List<Arbejder>
-            ();
-    foreach (Arbejder ar in Model.Content.ArbejderAfLvs)
-    {
-        arb.Add(ar);
-    }
-    var employeeList = Model.Content.Children<Employee>();
 }
 <div class="hero-image hero-image" style="background-image: url('@Model.Content.HeroImage.Url')">
     <div class="overlay d-flex align-items-center justify-content-center overlay-green">
@@ -90,310 +82,42 @@
         </div>
     </section>
 
-    <section>
-        <div class="row  clearance-bottom">
-            <div class="col-5 pr-2">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    @{ string activeClass = "active";}
-                    @foreach (Employee s in employeeList)
-                    {
-                        <a class="nav-link @activeClass z-depth-1 mb-3" id="v-pills-@s.Id-tab" data-toggle="pill" href="#v-pills-@s.Id" role="tab" aria-controls="v-pills-@s.Id-tab"
-                           aria-selected="true">
-                            <div class="row">
-                                <div class="col-md-9 pt-md-4 mt-6">
-                                    <h5 class="mb-1">@s.Name</h5>
-                                </div>
-                            </div>
-
-                        </a>
-                        activeClass = "";
-                    }
-                </div>
-            </div>
-            <div class="col-7 pl-2">
-                <div class="tab-content" id="v-pills-tabContent">
-                    @{ string shownActive = "show active";}
-                    @foreach (Employee s in employeeList)
-                    {
-                        <div class="tab-pane fade z-depth-1 @shownActive" id="v-pills-@s.Id" role="tabpanel" aria-labelledby="v-pills-@s.Id-tab">
-                            <!-- START EMPLOYEE CARD -->
-                            <div class="container-fluid bg-light p-5">
-                                <div class="container clearance-grey">
-                                    <div class="carousel-inner">
-                                        <!--Start carousel slide 1-->
-                                        <div class="row carousel-card-padding kontakt-card pb-5 pt-4">
-                                            <div class="col-md-12 card-member-padding card card-shadow">
-                                                <div class="pt-4">
-                                                    <img class="card-img-top img-fluid rounded-circle card-img-padding" src="@s.ProfileImage.Url" alt="Card image">
-                                                </div>
-                                                <div class="text-card card-body blockquote">
-                                                    <h4 class="card-title  text-center pt-4">
-                                                        <b>@s.Name</b><br>
-                                                    </h4>
-                                                    <br>
-                                                    <p class="card-quote text-center">
-                                                        @s.JobTitle <br />
-                                                        @s.PersonEmail <br />
-                                                        @s.PersonPhone <br />
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- END EMPLOYEE CARD -->
-
-                        </div>
-                        shownActive = "";
-                    }
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- END SECTION RESULTS -->
     <div class="container">
         <div class="row">
-            <div class="col-md-2">
-                <figure class="figure d-inline">
-                    <img src="@arb[0].ArbejderBillede.Url" class="figure-img img-fluid rounded" alt="Arbejder billede">
+            @foreach (Arbejder ar in Model.Content.ArbejderAfLvs)
+            {
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col-5">
+                            <figure class="figure d-inline">
+                                <img src="@ar.ArbejderBillede.Url" class="figure-img img-fluid rounded" alt="Arbejder billede">
 
-                </figure>
-            </div>
-            <div class="col-md-2">
-                <figcaption class="figure-caption">
-                    <h2 class="tile-text-headline">
-                        @arb[0].ArbejderNavn <br />
-                    </h2>
-                    <p class="tile-text">
-                        @arb[0].ArbejderAfdeling <br />
-                        @arb[0].ArbejderEmail <br />
-                        @arb[0].ArbejderTelefon <br />
-                    </p>
-                </figcaption>
-            </div>
+                            </figure>
+                        </div>
+                        <div class="col-7">
+                            <figcaption class="figure-caption">
+                                <h2 class="worker-headline">
+                                    @ar.ArbejderNavn
+                                </h2>
+                                <p class="worker-text">
+                                    @ar.ArbejderAfdeling <br/>
+                                    @ar.ArbejderEmail <br/>
+                                    @ar.ArbejderTelefon <br/>
+                                </p>
+                            </figcaption>
+                        </div>
+                    </div>
+                </div>
+            }
+            
 
-            <div class="col-md-2">
-                <figure class="figure d-inline">
-                    <img src="@arb[1].ArbejderBillede.Url" class="figure-img img-fluid rounded" alt="Arbejder billede">
 
-                </figure>
-            </div>
-            <div class="col-md-2">
-                <figcaption class="figure-caption">
-                    <h2 class="tile-text-headline">
-                        @arb[1].ArbejderNavn <br />
-                    </h2>
-                    <p class="tile-text">
-                        @arb[1].ArbejderAfdeling <br />
-                        @arb[1].ArbejderEmail <br />
-                        @arb[1].ArbejderTelefon <br />
-                    </p>
-                </figcaption>
-            </div>
-
-            <div class="col-md-2">
-                <figure class="figure d-inline">
-                    <img src="@arb[2].ArbejderBillede.Url" class="figure-img img-fluid rounded" alt="Arbejder billede">
-
-                </figure>
-            </div>
-            <div class="col-md-2">
-                <figcaption class="figure-caption">
-                    <h2 class="tile-text-headline">
-                        @arb[2].ArbejderNavn <br />
-                    </h2>
-                    <p class="tile-text">
-                        @arb[2].ArbejderAfdeling <br />
-                        @arb[2].ArbejderEmail <br />
-                        @arb[2].ArbejderTelefon <br />
-                    </p>
-                </figcaption>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-md-2">
-                <figure class="figure d-inline">
-                    <img src="@arb[3].ArbejderBillede.Url" class="figure-img img-fluid rounded" alt="Arbejder billede">
-
-                </figure>
-            </div>
-            <div class="col-md-2">
-                <figcaption class="figure-caption">
-                    <h2 class="tile-text-headline">
-                        @arb[3].ArbejderNavn <br />
-                    </h2>
-                    <p class="tile-text">
-                        @arb[3].ArbejderAfdeling <br />
-                        @arb[3].ArbejderEmail <br />
-                        @arb[3].ArbejderTelefon <br />
-                    </p>
-                </figcaption>
-            </div>
-
-            <div class="col-md-2">
-                <figure class="figure d-inline">
-                    <img src="@arb[4].ArbejderBillede.Url" class="figure-img img-fluid rounded" alt="Arbejder billede">
-
-                </figure>
-            </div>
-            <div class="col-md-2">
-                <figcaption class="figure-caption">
-                    <h2 class="tile-text-headline">
-                        @arb[4].ArbejderNavn <br />
-                    </h2>
-                    <p class="tile-text">
-                        @arb[4].ArbejderAfdeling <br />
-                        @arb[4].ArbejderEmail <br />
-                        @arb[4].ArbejderTelefon <br />
-                    </p>
-                </figcaption>
-            </div>
-
-            <div class="col-md-2">
-                <figure class="figure d-inline">
-                    <img src="@arb[5].ArbejderBillede.Url" class="figure-img img-fluid rounded" alt="Arbejder billede">
-
-                </figure>
-            </div>
-            <div class="col-md-2">
-                <figcaption class="figure-caption">
-                    <h2 class="tile-text-headline">
-                        @arb[5].ArbejderNavn <br />
-                    </h2>
-                    <p class="tile-text">
-                        @arb[5].ArbejderAfdeling <br />
-                        @arb[5].ArbejderEmail <br />
-                        @arb[5].ArbejderTelefon <br />
-                    </p>
-                </figcaption>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-md-2">
-                <figure class="figure d-inline">
-                    <img src="@arb[6].ArbejderBillede.Url" class="figure-img img-fluid rounded" alt="Arbejder billede">
-
-                </figure>
-            </div>
-            <div class="col-md-2">
-                <figcaption class="figure-caption">
-                    <h2 class="tile-text-headline">
-                        @arb[6].ArbejderNavn <br />
-                    </h2>
-                    <p class="tile-text">
-                        @arb[6].ArbejderAfdeling <br />
-                        @arb[6].ArbejderEmail <br />
-                        @arb[6].ArbejderTelefon <br />
-                    </p>
-                </figcaption>
-            </div>
-
-            <div class="col-md-2">
-                <figure class="figure d-inline">
-                    <img src="@arb[7].ArbejderBillede.Url" class="figure-img img-fluid rounded" alt="Arbejder billede">
-
-                </figure>
-            </div>
-            <div class="col-md-2">
-                <figcaption class="figure-caption">
-                    <h2 class="tile-text-headline">
-                        @arb[7].ArbejderNavn <br />
-                    </h2>
-                    <p class="tile-text">
-                        @arb[7].ArbejderAfdeling <br />
-                        @arb[7].ArbejderEmail <br />
-                        @arb[7].ArbejderTelefon <br />
-                    </p>
-                </figcaption>
-            </div>
-
-            @*<div class="col-md-2">
-                <figure class="figure d-inline">
-                    <img src="@arb[8].ArbejderBillede.Url" class="figure-img img-fluid rounded" alt="Arbejder billede">
-
-                </figure>
-            </div>
-            <div class="col-md-2">
-                <figcaption class="figure-caption">
-                    <h2 class="tile-text-headline">
-                        @arb[8].ArbejderNavn <br />
-                    </h2>
-                    <p class="tile-text">
-                        @arb[8].ArbejderAfdeling <br />
-                        @arb[8].ArbejderEmail <br />
-                        @arb[8].ArbejderTelefon
-                    </p>
-                </figcaption>
-            </div>
 
         </div>
 
 
-        <div class="row">
-            <div class="col-md-2">
-                <figure class="figure d-inline">
-                    <img src="@arb[9].ArbejderBillede.Url" class="figure-img img-fluid rounded" alt="Arbejder billede">
-
-                </figure>
-            </div>
-            <div class="col-md-2">
-                <figcaption class="figure-caption">
-                    <h2 class="tile-text-headline">
-                        @arb[9].ArbejderNavn <br />
-                    </h2>
-                    <p class="tile-text">
-                        @arb[9].ArbejderAfdeling <br />
-                        @arb[9].ArbejderEmail <br />
-                        @arb[9].ArbejderTelefon <br />
-                    </p>
-                </figcaption>
-            </div>
-
-            <div class="col-md-2">
-                <figure class="figure d-inline">
-                    <img src="@arb[10].ArbejderBillede.Url" class="figure-img img-fluid rounded" alt="Arbejder billede">
-
-                </figure>
-            </div>
-            <div class="col-md-2">
-                <figcaption class="figure-caption">
-                    <h2 class="tile-text-headline">
-                        @arb[10].ArbejderNavn <br />
-                    </h2>
-                    <p class="tile-text">
-                        @arb[10].ArbejderAfdeling <br />
-                        @arb[10].ArbejderEmail <br />
-                        @arb[10].ArbejderTelefon <br />
-                    </p>
-                </figcaption>
-            </div>
-
-            <div class="col-md-2">
-                <figure class="figure d-inline">
-                    <img src="@arb[11].ArbejderBillede.Url" class="figure-img img-fluid rounded" alt="Arbejder billede">
-
-                </figure>
-            </div>
-            <div class="col-md-2">
-                <figcaption class="figure-caption">
-                    <h2 class="tile-text-headline">
-                        @arb[11].ArbejderNavn <br />
-                    </h2>
-                    <p class="tile-text">
-                        @arb[11].ArbejderAfdeling <br />
-                        @arb[11].ArbejderEmail <br />
-                        @arb[11].ArbejderTelefon <br />
-                    </p>
-                </figcaption>
-            </div>*@
-
-        </div>
+        
 
 
 
