@@ -84,36 +84,35 @@
 
     <section>
         <div class="row  clearance-bottom">
-            <div class="col-4 pr-2">
+            <div class="col-5 pr-2">
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     @{ string activeClass = "active";}
                     @foreach (UnderretningIdvi s in details)
-                    {
+                {
                     <a class="nav-link @activeClass z-depth-1 mb-3" id="v-pills-@s.Id-tab" data-toggle="pill" href="#v-pills-@s.Id" role="tab" aria-controls="v-pills-@s.Id-tab"
                        aria-selected="true">
                         <h5 class="m-2">@s.Headline</h5>
-                        
 
                     </a>
-                        activeClass = "";
-                    }
+                activeClass = "";
+            }
                 </div>
             </div>
-            <div class="col-8 pl-2">
+            <div class="col-7 pl-2">
                 <div class="tab-content" id="v-pills-tabContent">
                     @{ string shownActive = "show active";}
                     @foreach (UnderretningIdvi s in details)
-                    {
-                        <div class="tab-pane fade z-depth-1 @shownActive" id="v-pills-@s.Id" role="tabpanel" aria-labelledby="v-pills-@s.Id-tab">
-                            <div class="varested-img" style="background-image: url('@s.Image.Url?width=700')">
+                {
+                    <div class="tab-pane fade z-depth-1 @shownActive" id="v-pills-@s.Id" role="tabpanel" aria-labelledby="v-pills-@s.Id-tab">
+                        <div class="varested-img" style="background-image: url('@s.Image.Url?width=700')">
 
-                            </div>
-                            <div class="centertxt text-muted">
-                                @Html.Raw(s.Description)
-                            </div>
                         </div>
-                        shownActive = "";
-                    }
+                        <div class="centertxt text-muted">
+                            @Html.Raw(s.Description)
+                        </div>
+                    </div>
+                shownActive = "";
+            }
                 </div>
             </div>
         </div>
