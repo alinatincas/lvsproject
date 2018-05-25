@@ -639,6 +639,6 @@ typings/
 # ---
 **/App_Data/umbraco.sdf
 
-NEW_UMBRACO LVS/UmbracoLVS/UmbracoLVS/Media/created-packages/
+**/Media/created-packages/
 
-NEW_UMBRACO LVS/UmbracoLVS/UmbracoLVS/App_Data/Models/
+**/App_Data/Models/
