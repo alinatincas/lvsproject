@@ -13,46 +13,14 @@
 <section class="container-fluid bg-light">
     <!-- STAR DESCRIPTION -->
     <section class="container clearance-grey">
-        @*<h3 class="text-center">@Model.Content.Headline</h3>*@
+        <h3 class="text-center">@Model.Content.Headline</h3>
         @Html.GetGridHtml(Model.Content, "content")
     </section>
     <!-- END DESCRIPTION -->
 </section>
-<section class="container">
-    <!-- START EMPLOYEE CARD -->
-    <div class="row justify-content-center">
-        <div class="row justify-content-center card-member-padding">
-            <div class="col-md-12">
-                <div class="card p-4">
-                    <div class="row align-items-center blockquote">
-                        <div class="col-md-6">
-                            <img class="card-img-top img-fluid card-image-padding" src="@Model.Content.Image.Url"
-                                 alt="Card image">
-                        </div>
-                        <div class="col-md-6 hjem-quote">
-                            <div class="text-card card-body blockquote">
-                                <h4 class="card-title pt-4">
-                                    <b>@Model.Content.Headline</b>
-                                </h4>
-                                <p class="card-quote">
-                                    <i>
-                                        @Model.Content.Description
-                                    </i>
-                                    <br>
-                                    <br>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- END EMPLOYEE CARD -->
-<!-- START GREY SECTION -->
-<section class="container-fluid bg-light ">
-    <div class="container clearance-grey">
+<!-- START WHITE SECTION -->
+<section class="container pt-3">
+    <div class="container">
         <h3 class="text-center">DU KAN BESTILLE BOGEN HER</h3>
         <p>
             Bogen kan købes på linket nedenfor og koster 100 kr. pr. bog + forsendelse.
@@ -62,11 +30,7 @@
             forsendelsen først ske, når indbetalingen er modtaget.
         </p>
     </div>
-</section>
-<!-- END GREY SECTION -->
-<!-- START WHITE SECTION -->
-<section class="container clearance">
-    <h3 class="text-center">Indbetaling sker til følgende konto i Spar Nord Bank:</h3>
+    <h4 class="text-center">Indbetaling sker til følgende konto i Spar Nord Bank:</h4>
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form>
