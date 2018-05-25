@@ -3,7 +3,7 @@
         display: none;
     }
     .card-img-padding {
-        padding: 50px;
+        padding: 5px;
     }
     .header-title-white{
         font-size: 2em;
@@ -52,5 +52,7 @@
             }
         }
     }
-     
+    .card-text {
+        display: none;
+    }
 }
