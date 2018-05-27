@@ -39,7 +39,7 @@
             <h3 class="text-center">@Model.Content.Headline</h3>
             @Html.GetGridHtml(Model.Content, "content")
         </div>
-    </div>  
+    </div>
 </section>
 <section class="container clearance">
     @*
@@ -170,15 +170,16 @@
 <br>
 @section scripts{
     <script type="text/javascript">
-    @for (int i = 0; i < publications.Count; i = +3)
+    @for (int i = 0; i < publications.Count; i +=3)
     {
+
         try
         {
             for (int j = 0; j < 3; j++)
             {
                 Publication p = publications[i + j];
                 <text>
-                     $("#column@(j)").append('<div class="gridimg-wrapper"><a href="@p.Url" ><img src="@p.Image.Url" alt="@p.Headline" /><div class="text-container"><h2>@p.Headline</h2 ><p class="tile-text">@p.Description</p></div></a></div><br/>');
+                    $("#column@(j)").append('<div class="gridimg-wrapper"><a href="@p.Url"><img src="@p.Image.Url" alt="@p.Headline" /><div class="text-container"><h2>@p.Headline</h2><p class="tile-text">@Html.Raw(p.Description.ToString().Replace(System.Environment.NewLine, ""))</p></div></a></div><br />');
                 </text>
             }
         }
