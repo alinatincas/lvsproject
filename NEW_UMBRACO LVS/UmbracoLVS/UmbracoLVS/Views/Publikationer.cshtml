@@ -178,8 +178,9 @@
             for (int j = 0; j < 3; j++)
             {
                 Publication p = publications[i + j];
+                IHtmlString desc = Html.Raw(p.Description.ToString().Replace(@"\r\n", " ").Replace(System.Environment.NewLine, " "));
                 <text>
-                    $("#column@(j)").append('<div class="gridimg-wrapper"><a href="@p.Url"><img src="@p.Image.Url" alt="@p.Headline" /><div class="text-container"><h2>@p.Headline</h2><p class="tile-text">@Html.Raw(p.Description.ToString().Replace(System.Environment.NewLine, ""))</p></div></a></div><br />');
+                    $("#column@(j)").append('<div class="gridimg-wrapper"><a href="@p.Url"><img src="@p.Image.Url" alt="@p.Headline" /><div class="text-container"><h2>@p.Headline</h2><p class="tile-text">@desc</p></div></a></div><br />');
                 </text>
             }
         }
